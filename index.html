@@ -428,32 +428,52 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
   <h1 class="inicio-title">Law <em>Lover</em></h1>
   <p class="inicio-sub">Plataforma interactiva de estudio del sistema penal colombiano.</p>
   <p style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:14px">Selecciona una sección para comenzar</p>
-  <div class="inicio-chips" style="flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;justify-content:center;-webkit-overflow-scrolling:touch">
-    <button class="inicio-chip sust" onclick="showPanel('p599')">
+ <div class="inicio-chips" style="flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;justify-content:center;-webkit-overflow-scrolling:touch; gap: 12px;">
+  
+  <button class="inicio-chip sust" onclick="showPanel('p599')" style="min-width: 250px; display: flex; align-items: center; justify-content: space-between; text-align: left; padding: 12px 16px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
       <span class="inicio-chip-dot"></span>
-      <div><div class="inicio-chip-name">Derecho Sustancial</div><div class="inicio-chip-sub">LEY 599</div></div>
-      <span class="inicio-chip-arrow">→</span>
-    </button>
-    <button class="inicio-chip adj" onclick="showPanel('p906')">
-      <span class="inicio-chip-dot"></span>
-      <div><div class="inicio-chip-name">Derecho Procedimental</div><div class="inicio-chip-sub">LEYES 906 · 600 · 1826 · 1098</div></div>
-      <span class="inicio-chip-arrow">→</span>
-    </button>
-    <button class="inicio-chip juris" onclick="showPanel('pjuris')">
-      <span class="inicio-chip-dot"></span>
-      <div><div class="inicio-chip-name">Jurisprudencia</div><div class="inicio-chip-sub">CORTE SUPREMA DE JUSTICIA     CORTE CONSTITUCIONAL </div></div>
-      <span class="inicio-chip-arrow">→</span>
-    </button>
-  <button class="inicio-chip tools" onclick="showPanel('ptools')" style="padding-right: 35px;">
-        <span class="inicio-chip-dot"></span>
-        <div>
-          <div class="inicio-chip-name">Herramientas</div>
-          <div class="inicio-chip-sub">CALCULADORA  GLOSARIO</div>
-        </div>
-        <span class="inicio-chip-arrow">→</span>
-      </button>
+      <div>
+        <div class="inicio-chip-name">Derecho Sustancial</div>
+        <div class="inicio-chip-sub">LEY 599</div>
+      </div>
     </div>
-  </div>
+    <span class="inicio-chip-arrow" style="margin-left: auto;">→</span>
+  </button>
+
+  <button class="inicio-chip adj" onclick="showPanel('p906')" style="min-width: 290px; display: flex; align-items: center; justify-content: space-between; text-align: left; padding: 12px 16px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="inicio-chip-dot"></span>
+      <div>
+        <div class="inicio-chip-name">Derecho Procedimental</div>
+        <div class="inicio-chip-sub">LEYES 906 · 600 · 1826 · 1098</div>
+      </div>
+    </div>
+    <span class="inicio-chip-arrow" style="margin-left: auto;">→</span>
+  </button>
+
+  <button class="inicio-chip juris" onclick="showPanel('pjuris')" style="min-width: 270px; display: flex; align-items: center; justify-content: space-between; text-align: left; padding: 12px 16px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="inicio-chip-dot"></span>
+      <div>
+        <div class="inicio-chip-name">Jurisprudencia</div>
+        <div class="inicio-chip-sub">CORTE SUPREMA · CONSTITUCIONAL</div>
+      </div>
+    </div>
+    <span class="inicio-chip-arrow" style="margin-left: auto;">→</span>
+  </button>
+
+  <button class="inicio-chip tools" onclick="showPanel('ptools')" style="min-width: 250px; display: flex; align-items: center; justify-content: space-between; text-align: left; padding: 12px 16px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="inicio-chip-dot"></span>
+      <div>
+        <div class="inicio-chip-name">Herramientas</div>
+        <div class="inicio-chip-sub">CALCULADORA · GLOSARIO</div>
+      </div>
+    </div>
+    <span class="inicio-chip-arrow" style="margin-left: auto;">→</span>
+  </button>
+
 </div>
 <!-- ══ LEY 599 ══ -->
 <div class="panel" id="p599"><div class="panel-inner">
