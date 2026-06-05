@@ -1,0 +1,21 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "header", "key": "x-forwarded-proto", "value": "http" }],
+      "destination": "https://www.lexpraxis.co/$1",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    { "source": "/ley-599",        "destination": "/index.html" },
+    { "source": "/ley-906",        "destination": "/index.html" },
+    { "source": "/ley-1826",       "destination": "/index.html" },
+    { "source": "/ley-1098",       "destination": "/index.html" },
+    { "source": "/ley-600",        "destination": "/index.html" },
+    { "source": "/jurisprudencia", "destination": "/index.html" },
+    { "source": "/herramientas",   "destination": "/index.html" },
+    { "source": "/noticias",       "destination": "/noticias/index.html" },
+    { "source": "/(.*)",           "destination": "/index.html" }
+  ]
+}
