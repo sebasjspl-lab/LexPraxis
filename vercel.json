@@ -15,8 +15,11 @@
     { "source": "/ley-600",        "destination": "/index.html" },
     { "source": "/jurisprudencia", "destination": "/index.html" },
     { "source": "/herramientas",   "destination": "/index.html" },
+    { "source": "/sobre",          "destination": "/index.html" },
     { "source": "/noticias",       "destination": "/noticias/index.html" },
     { "source": "/noticias/:slug", "destination": "/noticias/:slug.html" },
+    { "source": "/lineas",         "destination": "/lineas/index.html" },
+    { "source": "/lineas/:slug",   "destination": "/lineas/:slug.html" },
     { "source": "/(.*)",           "destination": "/index.html" }
   ]
 }
