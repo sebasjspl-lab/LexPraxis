@@ -1065,7 +1065,30 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 .sobre-back{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--rojo);text-decoration:none}
 .sobre-back:hover{text-decoration:underline}
 .sobre-foot .actualizado-chip{margin-top:0}
-@media(max-width:600px){.sobre-block{grid-template-columns:1fr;gap:8px}.sobre-num{padding-top:0}}</style>
+@media(max-width:600px){.sobre-block{grid-template-columns:1fr;gap:8px}.sobre-num{padding-top:0}}
+#pjuris .lineas-mini-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:22px}
+#pjuris .lin-mini{display:block;background:white;border:1px solid var(--borde);border-left:3px solid var(--lmc,#7A2828);border-radius:0 9px 9px 0;padding:14px 18px;text-decoration:none;color:inherit;transition:all .16s;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+#pjuris .lin-mini:hover{transform:translateY(-1px);box-shadow:0 3px 12px rgba(0,0,0,.07);border-color:var(--lmc,#7A2828)}
+#pjuris .lin-mini-tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;color:var(--texto4);text-transform:uppercase;margin-bottom:6px}
+#pjuris .lin-mini-tit{font-family:'Lora',serif;font-size:14.5px;font-weight:700;color:var(--texto);line-height:1.4;letter-spacing:-.01em;margin-bottom:5px}
+#pjuris .lin-mini-tema{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--texto3);letter-spacing:.02em;margin-bottom:8px}
+#pjuris .lin-mini-arr{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--lmc,#7A2828);letter-spacing:.08em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:6px}
+#pjuris .lin-mini-arr span{transition:transform .16s}
+#pjuris .lin-mini:hover .lin-mini-arr span{transform:translateX(3px)}
+#pjuris .lin-mini.m1{--lmc:#856404}
+#pjuris .lin-mini.m2{--lmc:#7A2828}
+#pjuris .lin-mini.m3{--lmc:#1A3F6B}
+#pjuris .lin-mini.m4{--lmc:#6B21A8}
+#pjuris .lin-mini.m5{--lmc:#0F5C8A}
+#pjuris .lineas-vertodas{display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(135deg,rgba(133,100,4,.06) 0%,rgba(133,100,4,.02) 100%);border:1px solid rgba(133,100,4,.18);border-radius:10px;padding:18px 22px;text-decoration:none;color:inherit;transition:all .16s}
+#pjuris .lineas-vertodas:hover{background:linear-gradient(135deg,rgba(133,100,4,.11) 0%,rgba(133,100,4,.05) 100%);border-color:rgba(133,100,4,.35)}
+#pjuris .lvt-eye{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.16em;color:rgba(133,100,4,.85);text-transform:uppercase;font-weight:700;margin-bottom:6px}
+#pjuris .lvt-tit{font-family:'Lora',serif;font-size:16px;font-weight:700;color:var(--texto);letter-spacing:-.01em;margin-bottom:4px}
+#pjuris .lvt-sub{font-size:12.5px;color:var(--texto3);line-height:1.5}
+#pjuris .lvt-arr{font-family:'Lora',serif;font-size:28px;color:rgba(133,100,4,.7);flex-shrink:0;transition:transform .16s}
+#pjuris .lineas-vertodas:hover .lvt-arr{transform:translateX(4px);color:rgba(133,100,4,1)}
+@media(max-width:680px){#pjuris .lineas-vertodas{flex-direction:column;align-items:flex-start;gap:10px}#pjuris .lvt-arr{align-self:flex-end}}
+</style>
 </head>
 <body>
 <div class="rbar" id="rbar"></div>
@@ -3536,8 +3559,49 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 </div>
 
 <div id="jur-lineas" style="display:none">
-  <p style="font-size:13px;color:var(--texto3);margin-bottom:20px;line-height:1.7">Las <strong style="color:var(--texto2)">líneas jurisprudenciales</strong> muestran la evolución doctrinal de la Sala de Casación Penal: cómo empezó el criterio, qué lo transformó y cuál es la regla vigente hoy. Más que sentencias aisladas, es el hilo que las conecta y la herramienta para argumentar con precedente.</p>
-  <div id="jlineas-list"></div>
+  <p style="font-size:13px;color:var(--texto3);margin-bottom:22px;line-height:1.7">Las <strong style="color:var(--texto2)">líneas jurisprudenciales</strong> muestran la evolución doctrinal de la Sala de Casación Penal: cómo empezó el criterio, qué lo transformó y cuál es la regla vigente hoy. Más que sentencias aisladas, es el hilo que las conecta y la herramienta para argumentar con precedente.</p>
+
+  <div class="lineas-mini-grid">
+    <a href="/lineas/violencia-intrafamiliar" class="lin-mini m1">
+      <div class="lin-mini-tag">2014 &mdash; 2025 &middot; 20 sentencias</div>
+      <div class="lin-mini-tit">Violencia intrafamiliar: del requisito de convivencia a la protecci&oacute;n plena de la expareja</div>
+      <div class="lin-mini-tema">Art. 229 C.P. &middot; Ley 1959 de 2019</div>
+      <div class="lin-mini-arr">Ver l&iacute;nea completa <span>&rarr;</span></div>
+    </a>
+    <a href="/lineas/informes-policia-judicial" class="lin-mini m2">
+      <div class="lin-mini-tag">2010 &mdash; 2025 &middot; 9 sentencias</div>
+      <div class="lin-mini-tit">Informes de polic&iacute;a judicial: criterios orientadores y testimonio del investigador</div>
+      <div class="lin-mini-tema">Arts. 205-212, 431 y 438 Ley 906</div>
+      <div class="lin-mini-arr">Ver l&iacute;nea completa <span>&rarr;</span></div>
+    </a>
+    <a href="/lineas/testimonio-adjunto" class="lin-mini m3">
+      <div class="lin-mini-tag">2020 &mdash; 2024 &middot; 9 sentencias</div>
+      <div class="lin-mini-tit">Testimonio adjunto: del formalismo ritual a la primac&iacute;a de la contradicci&oacute;n efectiva</div>
+      <div class="lin-mini-tema">Art. 347 Ley 906 &middot; Declaraci&oacute;n previa</div>
+      <div class="lin-mini-arr">Ver l&iacute;nea completa <span>&rarr;</span></div>
+    </a>
+    <a href="/lineas/inasistencia-alimentaria" class="lin-mini m4">
+      <div class="lin-mini-tag">2020 &mdash; 2025 &middot; 6 sentencias</div>
+      <div class="lin-mini-tit">Inasistencia alimentaria: capacidad econ&oacute;mica como carga exclusiva de la Fiscal&iacute;a</div>
+      <div class="lin-mini-tema">Art. 233 C.P. &middot; In dubio pro reo</div>
+      <div class="lin-mini-arr">Ver l&iacute;nea completa <span>&rarr;</span></div>
+    </a>
+    <a href="/lineas/prueba-sobreviniente" class="lin-mini m5">
+      <div class="lin-mini-tag">2020 &mdash; 2024 &middot; 5 sentencias</div>
+      <div class="lin-mini-tit">Prueba sobreviniente: la excepci&oacute;n restrictiva del Art. 344 Ley 906</div>
+      <div class="lin-mini-tema">Diligencia &middot; trascendencia &middot; pertinencia</div>
+      <div class="lin-mini-arr">Ver l&iacute;nea completa <span>&rarr;</span></div>
+    </a>
+  </div>
+
+  <a href="/lineas" class="lineas-vertodas">
+    <div>
+      <div class="lvt-eye">&Iacute;ndice editorial</div>
+      <div class="lvt-tit">Ver todas las l&iacute;neas jurisprudenciales</div>
+      <div class="lvt-sub">P&aacute;gina dedicada con las 5 l&iacute;neas, su evoluci&oacute;n doctrinal y el criterio vigente de la Sala.</div>
+    </div>
+    <div class="lvt-arr">&rarr;</div>
+  </a>
 </div>
 </div></div>
 
@@ -6006,74 +6070,13 @@ var JLINEAS=[{
 }
 ];
 
-function jlineasRender(){
-  var el=document.getElementById('jlineas-list');
-  if(!el)return;
-  el.innerHTML='';
-  JLINEAS.forEach(function(lin){
-    var card=document.createElement('div');
-    card.className='jlinea-card';
-    card.id='jlin-'+lin.id;
-    var hdr=document.createElement('div');hdr.className='jlinea-card-hdr';
-    hdr.addEventListener('click',function(){card.classList.toggle('open');});
-    hdr.innerHTML='<div style="flex:1">'
-      +'<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:7px">'
-      +'<span class="jlinea-badge">'+lin.periodo+'</span>'
-      +'<span style="font-family:\'JetBrains Mono\',monospace;font-size:8px;color:var(--texto4);letter-spacing:.05em">'+lin.tema+'</span>'
-      +'</div>'
-      +'<div class="jlinea-card-title">'+lin.titulo+'</div>'
-      +'<div class="jlinea-card-meta">'+lin.sentencias+' sentencias · Sala Casación Penal CSJ</div>'
-      +'</div><span class="jlinea-arr">›</span>';
-    card.appendChild(hdr);
-    var body=document.createElement('div');body.className='jlinea-body';
-    var intro=document.createElement('div');intro.className='jlinea-intro';intro.textContent=lin.intro;
-    body.appendChild(intro);
-    lin.fases.forEach(function(fase){
-      var secT=document.createElement('div');secT.className='jlinea-sec-title';secT.textContent=fase.titulo;
-      body.appendChild(secT);
-      var wrap=document.createElement('div');wrap.className='jlinea-etapas';
-      fase.etapas.forEach(function(et,i){
-        var isLast=(i===fase.etapas.length-1);
-        var etDiv=document.createElement('div');etDiv.className='jlinea-etapa';
-        var left=document.createElement('div');left.className='jle-left';
-        var dotClass='jle-dot'+(et.tipo==='pivot'?' pivot':et.tipo==='matiz'?' matiz':'');
-        var dot=document.createElement('div');dot.className=dotClass;
-        var line=document.createElement('div');line.className='jle-line';
-        left.appendChild(dot);
-        if(!isLast)left.appendChild(line);
-        var sentClass='jle-sent'+(et.tipo==='pivot'?' pivot':et.tipo==='matiz'?' matiz':'');
-        var cont=document.createElement('div');cont.className='jle-content';
-        cont.innerHTML='<div class="jle-year">'+et.anio+'</div>'
-          +'<span class="'+sentClass+'">'+et.sent+'</span>'
-          +'<div class="jle-titulo">'+et.titulo+'</div>'
-          +'<div class="jle-ratio">'+et.ratio+'</div>'
-          +(et.nota?'<div class="jle-nota">'+et.nota+'</div>':'');
-        etDiv.appendChild(left);etDiv.appendChild(cont);
-        wrap.appendChild(etDiv);
-      });
-      body.appendChild(wrap);
-    });
-    if(lin.conclusiones&&lin.conclusiones.length){
-      var concl=document.createElement('div');concl.className='jlinea-conclusion';
-      concl.innerHTML='<div class="jlinea-concl-hdr">✓ Criterio vigente — resumen práctico para el litigante</div>';
-      lin.conclusiones.forEach(function(c){
-        var item=document.createElement('div');item.className='jlinea-concl-item';
-        item.innerHTML='<strong>'+c.label+':</strong> '+c.texto;
-        concl.appendChild(item);
-      });
-      body.appendChild(concl);
-    }
-    card.appendChild(body);
-    el.appendChild(card);
-  });
-}
+function jlineasRender(){ /* Las líneas ya no se renderizan dentro del SPA: cada una tiene su URL propia en /lineas/[slug]. El panel pjuris muestra mini-tarjetas estáticas que enlazan a esas URLs. */ }
 
 function switchJurTab(tab){
   document.getElementById('jur-buscador').style.display=tab==='buscador'?'block':'none';
   document.getElementById('jur-lineas').style.display=tab==='lineas'?'block':'none';
   document.querySelectorAll('.jur-tab').forEach(function(b){b.classList.remove('on');});
   document.getElementById('jtab-'+tab).classList.add('on');
-  if(tab==='lineas')jlineasRender();
 }
 
 var jdbActive='todos';
@@ -6799,22 +6802,12 @@ if(document.getElementById('mag-quiz-q'))magQuizRender();
 
 function magGoPractica(l){showPanel('p'+l);setTimeout(function(){try{if(l==='599'){show599('s-practica','sub599-practica');}else{showSec(l,'s'+l+'-practica','sub'+l+'-practica');}}catch(e){}},80);}
 function magOpenLinea(lid){
-  showPanel('pjuris');
-  setTimeout(function(){
-    // Cambiar a la pestaña de Líneas (esto renderiza las tarjetas)
-    try{ switchJurTab('lineas'); }catch(e){}
-    // Esperar a que las tarjetas estén en el DOM
-    setTimeout(function(){
-      var card = document.getElementById('jlin-'+lid);
-      if(!card){ return; }
-      // Cerrar las demás, abrir la elegida
-      document.querySelectorAll('.jlinea-card.open').forEach(function(c){ if(c.id!=='jlin-'+lid) c.classList.remove('open'); });
-      card.classList.add('open');
-      // Scroll suave con desfase
-      var y = card.getBoundingClientRect().top + window.pageYOffset - 70;
-      window.scrollTo({top: y, behavior: 'smooth'});
-    }, 60);
-  }, 90);
+  /* DEPRECATED: las líneas ahora tienen URL propia en /lineas/[slug].
+     Fallback de seguridad por si una versión vieja cacheada del HTML llama esta función:
+     mapeamos el id al slug correspondiente y navegamos a la URL real. */
+  var slugs = {'linea-vif':'violencia-intrafamiliar','linea-ipj':'informes-policia-judicial','linea-ta':'testimonio-adjunto','linea-ia':'inasistencia-alimentaria','linea-ps':'prueba-sobreviniente'};
+  if(slugs[lid]){ window.location.href = '/lineas/' + slugs[lid]; }
+  else { showPanel('pjuris'); }
 }
 
 var MAG_WQ=[{"ley": "599", "q": "Un médico opera correctamente según todos los protocolos, pero el paciente muere por una complicación absolutamente imprevisible. ¿Cuál elemento del delito está ausente?", "o": [{"t": "Tipicidad — la muerte no encaja en ningún tipo penal (atipicidad objetiva)", "ok": false}, {"t": "Antijuridicidad — hay estado de necesidad médico", "ok": false}, {"t": "Tipicidad — falta el tipo subjetivo: sin dolo ni culpa no hay tipo (caso fortuito, Art. 32 num. 1)", "ok": true}, {"t": "Culpabilidad — el médico era inimputable en ese momento", "ok": false}]}, {"ley": "599", "q": "Carlos porta marihuana medicinal recetada en otro país, sin saber que en Colombia está prohibida. ¿Qué figura aplica?", "o": [{"t": "Error de tipo invencible — no conocía los hechos constitutivos del tipo", "ok": false}, {"t": "Error de prohibición — conocía los hechos pero creía que estaban permitidos", "ok": true}, {"t": "Legítima defensa putativa — tenía prescripción médica", "ok": false}, {"t": "No opera ninguna causal — responde penalmente sin atenuación", "ok": false}]}, {"ley": "599", "q": "Pedro disparó a Juan con intención de matarlo. Juan sobrevivió porque la ambulancia llegó a tiempo. ¿Qué figura aplica?", "o": [{"t": "Homicidio consumado — el dolo era de matar y eso basta", "ok": false}, {"t": "Tentativa acabada de homicidio — no se consumió por causa ajena a su voluntad (Art. 27 inc. 1)", "ok": true}, {"t": "Lesiones personales — Juan no murió, eso define el delito", "ok": false}, {"t": "Desistimiento voluntario — Pedro no remató a Juan teniendo la oportunidad", "ok": false}]}, {"ley": "599", "q": "Andrés convence a Beatriz de que mate a Carlos prometeréndole dinero. Beatriz lo hace. ¿Cuál es la calidad de Andrés en la conducta punible?", "o": [{"t": "Coautor — hubo acuerdo común", "ok": false}, {"t": "Cómplice — prestó ayuda posterior", "ok": false}, {"t": "Determinador — indujo a otro a realizar la conducta antijurídica (Art. 30 inc. 2)", "ok": true}, {"t": "Autor mediato — usó a Beatriz como instrumento sin voluntad propia", "ok": false}]}, {"ley": "599", "q": "Un particular (Diego) actúa junto a un servidor público (Efraín) en un peculado por apropiación. Diego no tiene la calidad de servidor público. ¿Cómo responde Diego?", "o": [{"t": "No responde — el peculado exige ser servidor público y Diego no lo es", "ok": false}, {"t": "Responde por peculado con la pena completa como si fuera servidor público", "ok": false}, {"t": "Responde como interviniente con rebaja de una cuarta parte (Art. 30 inc. final)", "ok": true}, {"t": "Responde por hurto agravado, no por peculado", "ok": false}]}, {"ley": "599", "q": "Fernando comete hurto calificado (pena: 8–16 años) y daño en bien ajeno (pena: 16–90 meses) en un mismo acto. ¿Cómo se dosifica la pena en concurso (Art. 31)?", "o": [{"t": "Se suman aritméticamente las dos penas impuestas", "ok": false}, {"t": "Se aplica la del delito más grave aumentada hasta en otro tanto, sin superar la suma aritmética", "ok": true}, {"t": "Solo se aplica la del delito más grave, sin ningún aumento", "ok": false}, {"t": "Se aplica la del delito menos grave como sanción accesoria", "ok": false}]}, {"ley": "599", "q": "Gloria sorprende a un extraño que intenta forzar la puerta de su habitación a las 2 a.m. Lo golpea causándole lesiones. ¿Qué causal aplica preferentemente?", "o": [{"t": "Estado de necesidad — había un peligro actual e inevitable", "ok": false}, {"t": "Legítima defensa privilegiada — rechazo al extraño que penetra arbitrariamente en habitación (Art. 32 num. 6.1)", "ok": true}, {"t": "Legítima defensa ordinaria — debía demostrar proporcionalidad estricta", "ok": false}, {"t": "Miedo insuperable — actuó bajo pánico", "ok": false}]}, {"ley": "599", "q": "El tipo penal tiene pena de 8 a 20 años. Concurren una atenuante y una agravante simultáneamente. ¿En qué cuartos debe moverse el juez al dosificar (Art. 61)?", "o": [{"t": "Cuarto mínimo — porque hay una atenuante", "ok": false}, {"t": "Cuarto máximo — porque hay una agravante", "ok": false}, {"t": "Cuartos medios — cuando concurren atenuantes y agravantes simultáneamente", "ok": true}, {"t": "Cualquier cuarto — el juez tiene plena discreción siempre", "ok": false}]}, {"ley": "599", "q": "Hugo es condenado por cohecho propio a 7 años. No tiene antecedentes. ¿Puede acceder a suspensión condicional de la ejecución de la pena (Art. 63)?", "o": [{"t": "Sí — no tiene antecedentes y la pena no supera los 8 años del Art. 63", "ok": false}, {"t": "No — el cohecho propio está excluido por el Art. 68A (delito doloso contra la adm. pública)", "ok": true}, {"t": "Depende — el juez tiene discreción absoluta en delitos de servidor público", "ok": false}, {"t": "Sí — la ausencia de antecedentes siempre permite la suspensión", "ok": false}]}, {"ley": "599", "q": "Un servidor público comete peculado por apropiación con pena máxima de 22.5 años. ¿Cuál es el término de prescripción de la acción penal antes de la interrupción?", "o": [{"t": "20 años — tope máximo ordinario del Art. 83", "ok": false}, {"t": "22.5 años — equivale al máximo de la pena sin tope", "ok": false}, {"t": "30 años — tope de 20 años aumentado en la mitad por ser servidor público en ejercicio (Art. 83 inc. 6)", "ok": true}, {"t": "10 años — la prescripción ordinaria máxima es 10 años", "ok": false}]}, {"ley": "906", "q": "¿En qué audiencia puede el imputado obtener la mayor rebaja de pena y de cuánto es?", "o": [{"t": "En la audiencia preparatoria — 40%", "ok": false}, {"t": "En la formulación de imputación — hasta el 50%", "ok": true}, {"t": "Al inicio del juicio oral — 35%", "ok": false}, {"t": "Después del sentido del fallo — sin límite", "ok": false}]}, {"ley": "906", "q": "¿Cuál es el remedio principal en la Ley 906 cuando se obtiene una prueba con violación de derechos fundamentales?", "o": [{"t": "Nulidad de todo el proceso desde el inicio", "ok": false}, {"t": "Exclusión probatoria — solo se saca esa prueba, el proceso continúa", "ok": true}, {"t": "Preclusión inmediata de la investigación", "ok": false}, {"t": "Casación automática ante la Corte Suprema", "ok": false}]}, {"ley": "906", "q": "El imputado lleva detenido 95 días sin que la Fiscalía haya presentado escrito de acusación. ¿Qué opera?", "o": [{"t": "Se extingue la acción penal", "ok": false}, {"t": "El imputado queda libre — vencimiento de términos Art. 317 — pero el proceso continúa", "ok": true}, {"t": "El proceso se archiva automáticamente", "ok": false}, {"t": "La Fiscalía tiene 30 días adicionales de gracia", "ok": false}]}, {"ley": "906", "q": "¿Qué juez controla la legalidad de los actos de investigación de la Fiscalía que afectan derechos fundamentales?", "o": [{"t": "El juez de conocimiento que dictará la sentencia", "ok": false}, {"t": "El juez de control de garantías — juez diferente al de conocimiento", "ok": true}, {"t": "La Sala Penal del Tribunal Superior", "ok": false}, {"t": "El Ministerio Público", "ok": false}]}, {"ley": "906", "q": "En el juicio oral de la Ley 906, ¿quién tiene la carga de la prueba y cuál es el estándar exigido?", "o": [{"t": "La defensa debe probar la inocencia del acusado", "ok": false}, {"t": "La Fiscalía debe probar la culpabilidad más allá de toda duda razonable", "ok": true}, {"t": "El juez busca la verdad real de oficio", "ok": false}, {"t": "La carga se reparte entre Fiscalía y defensa por igual", "ok": false}]}, {"ley": "906", "q": "¿Qué principio prohíbe que el Tribunal agrave la situación del apelante único en segunda instancia?", "o": [{"t": "Principio de inmediación", "ok": false}, {"t": "Non reformatio in pejus — prohibición de reforma en perjuicio", "ok": true}, {"t": "Non bis in idem", "ok": false}, {"t": "Principio de concentración", "ok": false}]}, {"ley": "906", "q": "El escrito de acusación debe contener la relación clara y sucinta de los hechos. ¿Qué límite tiene el juez para condenar?", "o": [{"t": "Puede condenar por cualquier hecho que surja del juicio aunque no esté en la acusación", "ok": false}, {"t": "Solo puede condenar por los hechos y cargos incluidos en la acusación — congruencia fáctica", "ok": true}, {"t": "Puede agregar cargos en la sentencia si la prueba lo demuestra", "ok": false}, {"t": "El límite lo fija el Ministerio Público en los alegatos", "ok": false}]}, {"ley": "906", "q": "Un testigo declara en el juicio oral de forma distinta a su declaración previa ante la Fiscalía. ¿Qué figura permite introducir esa declaración anterior?", "o": [{"t": "Prueba de referencia — el testigo está indisponible", "ok": false}, {"t": "Testimonio adjunto — el testigo disponible se retracta en juicio", "ok": true}, {"t": "Prueba anticipada — la declaración se tomó ante juez", "ok": false}, {"t": "No puede introducirse — solo vale lo dicho en juicio", "ok": false}]}, {"ley": "906", "q": "¿En qué se diferencia la casación de la apelación en el sistema de la Ley 906?", "o": [{"t": "La casación es una tercera instancia donde la CSJ revisa hechos y pruebas libremente", "ok": false}, {"t": "La casación corrige errores de derecho — no revalúa hechos; la apelación es segunda instancia ordinaria", "ok": true}, {"t": "No hay diferencia — ambas permiten revisar cualquier aspecto del fallo", "ok": false}, {"t": "La apelación solo procede contra autos; la casación contra sentencias", "ok": false}]}, {"ley": "906", "q": "La Fiscalía solicita medida de aseguramiento de detención preventiva. ¿Qué debe demostrar?", "o": [{"t": "Solo que hay prueba del delito — la peligrosidad se presume", "ok": false}, {"t": "Inferencia razonable de autoría + necesidad de la medida + proporcionalidad (Art. 308)", "ok": true}, {"t": "Que el imputado ya tiene antecedentes penales previos", "ok": false}, {"t": "Que la pena supera los 10 años de prisión", "ok": false}]}, {"ley": "600", "q": "Proceso por homicidio cometido en Bogotá en 2003. ¿Qué ley aplica y cómo se interrumpe la prescripción?", "o": [{"t": "Ley 906 — prescripción se interrumpe con la imputación", "ok": false}, {"t": "Ley 600 — prescripción se interrumpe con la resolución acusatoria", "ok": true}, {"t": "Ley 906 — la prescripción se interrumpe con la indagatoria", "ok": false}, {"t": "Ley 600 — la prescripción se interrumpe con la indagatoria", "ok": false}]}, {"ley": "600", "q": "El procesado acepta responsabilidad durante la instrucción en la Ley 600. ¿Cuál es la rebaja?", "o": [{"t": "50% — igual que en la imputación de la Ley 906", "ok": false}, {"t": "1/3 (33%) — sentencia anticipada durante la instrucción", "ok": true}, {"t": "1/6 (17%) — eso es solo en el juicio", "ok": false}, {"t": "40% — como en la acusación de la Ley 906", "ok": false}]}, {"ley": "600", "q": "¿Cuál es la diferencia fundamental entre la nulidad en la Ley 600 y la exclusión probatoria en la Ley 906?", "o": [{"t": "No hay diferencia — ambas invalidan todo el proceso", "ok": false}, {"t": "La nulidad invalida la actuación desde el acto viciado; la exclusión solo saca la prueba ilícita", "ok": true}, {"t": "La exclusión invalida todo el proceso; la nulidad solo saca la prueba", "ok": false}, {"t": "En la Ley 906 no existen nulidades procesales de ningún tipo", "ok": false}]}, {"ley": "600", "q": "¿Cuál es la principal característica del sistema probatorio de la Ley 600 respecto a quién practica las pruebas?", "o": [{"t": "Las pruebas se practican exclusivamente en el juicio oral con inmediación del juez", "ok": false}, {"t": "El fiscal practica y valora las pruebas durante la instrucción — sin inmediación judicial directa", "ok": true}, {"t": "Solo el juez puede practicar pruebas y siempre en audiencia pública", "ok": false}, {"t": "La defensa y la Fiscalía aportan pruebas en igualdad de condiciones ante el juez", "ok": false}]}, {"ley": "600", "q": "En la Ley 600, ¿qué documento califica el mérito sumarial e interrumpe la prescripción?", "o": [{"t": "La indagatoria del procesado", "ok": false}, {"t": "La resolución de apertura de instrucción", "ok": false}, {"t": "La resolución de acusación ejecutoriada (Arts. 393-399)", "ok": true}, {"t": "El auto de cierre de investigación", "ok": false}]}, {"ley": "600", "q": "En la Ley 600, el delito de homicidio simple tiene pena máxima de 25 años. ¿Cuál es el término de prescripción en la fase de investigación?", "o": [{"t": "25 años — el máximo de la pena", "ok": false}, {"t": "20 años — porque el tope máximo del Art. 83 es 20 años", "ok": true}, {"t": "12.5 años — la mitad del máximo de la pena", "ok": false}, {"t": "5 años — el mínimo absoluto de prescripción", "ok": false}]}, {"ley": "600", "q": "Un servidor público comete peculado en ejercicio de sus funciones en 2001. ¿Cómo se modifica el término de prescripción en la Ley 600?", "o": [{"t": "No se modifica — la calidad de servidor público no afecta la prescripción", "ok": false}, {"t": "El término prescriptivo se aumenta en la mitad para la fase de investigación (Art. 83 inc. 6)", "ok": true}, {"t": "El término se reduce a la mitad por conexión con la función pública", "ok": false}, {"t": "El plazo máximo pasa automáticamente a 30 años sin ningún otro cálculo", "ok": false}]}, {"ley": "600", "q": "En la Ley 600, ¿puede el juez de conocimiento decretar pruebas de oficio?", "o": [{"t": "No — en el sistema mixto solo la Fiscalía puede decretar pruebas", "ok": false}, {"t": "Sí — el juez puede decretar pruebas de oficio en el juicio para buscar la verdad", "ok": true}, {"t": "Solo si las partes están de acuerdo", "ok": false}, {"t": "Solo en delitos que tengan pena superior a 8 años", "ok": false}]}, {"ley": "600", "q": "En el sistema de la Ley 600, ¿qué ocurre si el procesado no comparece a rendir indagatoria?", "o": [{"t": "El proceso se archiva definitivamente", "ok": false}, {"t": "Se declara persona ausente y el proceso continúa con defensor de oficio", "ok": true}, {"t": "Se extingue la acción penal por abandono del proceso", "ok": false}, {"t": "La Fiscalía debe iniciar un nuevo proceso desde cero", "ok": false}]}, {"ley": "600", "q": "¿Cuál es la diferencia entre la resolución de preclusión y la resolución inhibitoria en la Ley 600?", "o": [{"t": "No hay diferencia — son el mismo acto con distinto nombre", "ok": false}, {"t": "Inhibitoria: al inicio, sin sindicado. Preclusión: cuando hay sindicado vinculado al proceso.", "ok": true}, {"t": "La preclusión la dicta el juez y la inhibitoria la dicta el fiscal", "ok": false}, {"t": "Ambas tienen los mismos efectos de cosa juzgada material", "ok": false}]}, {"ley": "1826", "q": "¿Cuál es la primera audiencia formal en el proceso abreviado de la Ley 1826, a diferencia de la Ley 906?", "o": [{"t": "La audiencia de imputación — igual que en la Ley 906", "ok": false}, {"t": "El traslado del escrito de acusación — sin audiencia de imputación", "ok": true}, {"t": "La audiencia de medida de aseguramiento", "ok": false}, {"t": "La audiencia preparatoria", "ok": false}]}, {"ley": "1826", "q": "En el proceso abreviado, el acusado acepta cargos al momento del traslado del escrito de acusación. ¿Cuál es la rebaja máxima?", "o": [{"t": "50% — igual que en la imputación de la Ley 906", "ok": false}, {"t": "40% — máxima rebaja del proceso abreviado", "ok": true}, {"t": "1/3 — como en la instrucción de la Ley 600", "ok": false}, {"t": "35% — la misma que en la audiencia preparatoria de la Ley 906", "ok": false}]}, {"ley": "1826", "q": "¿Quién conoce de las solicitudes de medida de aseguramiento en el proceso abreviado?", "o": [{"t": "El juez de control de garantías, igual que en la Ley 906", "ok": false}, {"t": "El juez de conocimiento — en la Ley 1826 no hay separación de jueces", "ok": true}, {"t": "El Ministerio Público", "ok": false}, {"t": "La Sala Civil del Tribunal Superior", "ok": false}]}, {"ley": "1826", "q": "¿Qué ocurre en la audiencia concentrada de la Ley 1826 que no ocurre en la audiencia preparatoria de la Ley 906?", "o": [{"t": "Se practica el juicio oral en la misma audiencia", "ok": false}, {"t": "El juez interroga al acusado sobre su voluntad de aceptar cargos — rebaja del 30%", "ok": true}, {"t": "Se decide la apelación de la medida de aseguramiento", "ok": false}, {"t": "La Fiscalía puede modificar los hechos de la acusación libremente", "ok": false}]}, {"ley": "1826", "q": "¿Qué tipo de delitos son competencia del proceso abreviado según la Ley 1826?", "o": [{"t": "Todos los delitos sin distinción de gravedad", "ok": false}, {"t": "Exclusivamente los delitos querellables y otros expresamente listados en el Art. 534", "ok": true}, {"t": "Solo los delitos con pena inferior a 5 años", "ok": false}, {"t": "Los delitos de competencia del juez municipal", "ok": false}]}, {"ley": "1826", "q": "¿Qué es el acusador privado en la Ley 1826 y cuál es su característica principal?", "o": [{"t": "Un fiscal especial designado por la Fiscalía para casos de menor cuantía", "ok": false}, {"t": "La víctima que asume la acción penal con su abogado, desplazando a la Fiscalía — ejerce función pública transitoria", "ok": true}, {"t": "El Ministerio Público cuando la Fiscalía no actúa", "ok": false}, {"t": "Un abogado ad honorem designado por el juez", "ok": false}]}, {"ley": "1826", "q": "En el proceso abreviado, ¿cuánto tiempo tiene el acusado para preparar su defensa antes de la audiencia concentrada?", "o": [{"t": "30 días desde el traslado", "ok": false}, {"t": "60 días desde el traslado del escrito de acusación (Art. 542)", "ok": true}, {"t": "15 días hábiles", "ok": false}, {"t": "El juez fija libremente el término", "ok": false}]}, {"ley": "1826", "q": "Una víctima que actuaba como acusadora privada decide revertir la acción a la Fiscalía. ¿Es posible?", "o": [{"t": "No — la conversión es irrevocable una vez otorgada", "ok": false}, {"t": "Sí — el acusador privado puede revertir en cualquier momento (Art. 560)", "ok": true}, {"t": "Solo si hay acuerdo del fiscal y del acusado", "ok": false}, {"t": "Solo si el Tribunal lo autoriza", "ok": false}]}, {"ley": "1826", "q": "¿Cuánto tiempo tiene el juez para dictar la sentencia escrita después de anunciar el sentido del fallo en la Ley 1826?", "o": [{"t": "3 días hábiles", "ok": false}, {"t": "10 días (Art. 545)", "ok": true}, {"t": "15 días, igual que en la Ley 906", "ok": false}, {"t": "El mismo día de la audiencia", "ok": false}]}, {"ley": "1826", "q": "¿Cuál es una causal que impide la conversión de la acción penal al acusador privado según el Art. 554?", "o": [{"t": "Que el delito sea querellable", "ok": false}, {"t": "Que el indiciado pertenezca a una organización criminal", "ok": true}, {"t": "Que la víctima sea mayor de edad", "ok": false}, {"t": "Que el delito sea de competencia del juez municipal", "ok": false}]}, {"ley": "1098", "q": "¿Qué edad mínima y máxima tiene el adolescente sujeto al Sistema de Responsabilidad Penal (SRPA)?", "o": [{"t": "10 a 17 años", "ok": false}, {"t": "14 a 17 años inclusive (en la fecha de la conducta)", "ok": true}, {"t": "12 a 18 años", "ok": false}, {"t": "16 a 18 años", "ok": false}]}, {"ley": "1098", "q": "¿Cuál es la finalidad principal del SRPA según la Ley 1098?", "o": [{"t": "Sancionar con la mayor severidad posible para disuadir", "ok": false}, {"t": "Educativa, protectora y restaurativa — no retributiva", "ok": true}, {"t": "Igual que el sistema de adultos — pena retributiva y proporcional", "ok": false}, {"t": "Reparar exclusivamente a las víctimas", "ok": false}]}, {"ley": "1098", "q": "¿Cuál es la sanción más grave que puede imponerse a un adolescente en el SRPA?", "o": [{"t": "Prisión en establecimiento carcelario de adultos — hasta 20 años", "ok": false}, {"t": "Privación de libertad en Centro de Atención Especializado (CAE) — máximo 8 años", "ok": true}, {"t": "Pena de multa equivalente a 200 SMLMV", "ok": false}, {"t": "Libertad vigilada indefinida", "ok": false}]}, {"ley": "1098", "q": "Un adolescente cumple su sanción en el SRPA a los 19 años. ¿Tiene antecedentes penales?", "o": [{"t": "Sí — los antecedentes del SRPA son permanentes como los de adultos", "ok": false}, {"t": "Sí, pero solo por 5 años después de la condena", "ok": false}, {"t": "No — las sanciones del SRPA no generan antecedentes penales (Art. 167)", "ok": true}, {"t": "Depende de la gravedad del delito cometido", "ok": false}]}, {"ley": "1098", "q": "¿Qué sanciones NO privativas de libertad contempla el SRPA?", "o": [{"t": "Solo la libertad vigilada", "ok": false}, {"t": "Amonestación, imposición de reglas de conducta, prestación de servicios a la comunidad, libertad asistida, internación en medio semicerrado", "ok": true}, {"t": "Únicamente multa y arresto domiciliario", "ok": false}, {"t": "El SRPA solo tiene una sanción: la privación de libertad en CAE", "ok": false}]}, {"ley": "1098", "q": "¿Puede un adolescente ser capturado en flagrancia? ¿Qué sucede?", "o": [{"t": "No — los adolescentes no pueden ser capturados en ningún caso", "ok": false}, {"t": "Sí — pero debe ser entregado a las autoridades del ICBF en 36 horas para control de legalidad", "ok": true}, {"t": "Sí — se aplica el mismo régimen de captura que para adultos sin diferencia", "ok": false}, {"t": "Solo si el delito tiene pena superior a 10 años en el Código Penal", "ok": false}]}, {"ley": "1098", "q": "¿Quién es el Defensor de Familia en el SRPA y qué función cumple?", "o": [{"t": "El abogado defensor designado de oficio cuando el adolescente no tiene recursos", "ok": false}, {"t": "Funcionario del ICBF que interviene en todos los procesos del SRPA como garante del interés superior del menor", "ok": true}, {"t": "El juez especializado en menores del Tribunal Superior", "ok": false}, {"t": "El representante del Ministerio Público en el proceso", "ok": false}]}, {"ley": "1098", "q": "¿Por cuánto tiempo máximo puede extenderse la privación de libertad en CAE cuando el adolescente comete homicidio doloso?", "o": [{"t": "5 años máximo", "ok": false}, {"t": "8 años máximo — es el tope absoluto del SRPA", "ok": true}, {"t": "20 años — la misma pena del adulto se aplica en CAE", "ok": false}, {"t": "Hasta que el adolescente cumpla 25 años", "ok": false}]}, {"ley": "1098", "q": "¿Cuándo el adolescente cumple 18 años estando en ejecución de sanción en el SRPA, qué pasa?", "o": [{"t": "El proceso se traslada automáticamente al sistema penal de adultos", "ok": false}, {"t": "Continúa cumpliendo la sanción del SRPA hasta su vencimiento — no pasa al sistema de adultos", "ok": true}, {"t": "Se extingue la sanción automáticamente al cumplir la mayoría de edad", "ok": false}, {"t": "El juez debe iniciar un nuevo proceso bajo el régimen de adultos", "ok": false}]}, {"ley": "1098", "q": "¿Qué principio establece la Ley 1098 como rector de toda interpretación y aplicación de normas sobre menores?", "o": [{"t": "El principio de proporcionalidad penal", "ok": false}, {"t": "El interés superior del menor — prevalecen los derechos del niño sobre los de los demás", "ok": true}, {"t": "El principio de tipicidad estricta", "ok": false}, {"t": "El principio de oportunidad fiscal", "ok": false}]}];
