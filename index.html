@@ -86,6 +86,8 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
 .sb-toggle{position:fixed;top:14px;left:14px;z-index:300;background:var(--texto);border:none;border-radius:7px;width:34px;height:34px;display:none;align-items:center;justify-content:center;cursor:pointer;color:rgba(255,255,255,.6);font-size:15px;transition:all .2s;box-shadow:0 2px 10px rgba(0,0,0,.3)}
 .sb-toggle:hover{color:white}
 .sb-toggle.show{display:flex}
+/* En la portada (inicio) NUNCA mostramos el hamburger flotante: el cabezal .mag ya trae su propio botón .mag-mobnav */
+body.on-home #sb-toggle{display:none!important}
 
 /* ══ MAIN ══ */
 .main{margin-left:var(--sb);flex:1;min-height:100vh;transition:margin-left .28s cubic-bezier(.4,0,.2,1)}
@@ -866,13 +868,12 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
 .mag .sec-eyebrow{display:inline-flex;align-items:center;gap:9px}
 .mag .sec-eyebrow::before{content:"";width:18px;height:2px;background:var(--rojo);display:inline-block;border-radius:2px}
 .mag .sec-title{font-size:23px}
-/* Botón de menú móvil dentro del cabezal (sustituye al hamburger flotante en la portada) */
-.mag-mobnav{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:rgba(255,255,255,.7);cursor:pointer;flex-shrink:0}
+/* Botón de menú integrado en el cabezal de portada — visible SIEMPRE (escritorio + móvil) */
+.mag-mobnav{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:rgba(255,255,255,.7);cursor:pointer;flex-shrink:0;margin-left:14px}
 .mag-mobnav:hover{color:#fff;border-color:rgba(255,255,255,.3)}
 .mag-mobnav svg{display:block;width:18px;height:18px;pointer-events:none}
-@media(max-width:900px){.mag .hdr-fecha{display:none}.mag-mobnav{display:flex}}
-/* En la portada se oculta el hamburger flotante: el cabezal ya trae su navegación */
-body.on-home #sb-toggle{display:none!important}
+@media(max-width:900px){.mag .hdr-fecha{display:none}.mag-mobnav{margin-left:0}}
+/* El hamburger flotante .sb-toggle se oculta en portada vía body.on-home (regla más arriba); aquí .mag-mobnav es el único punto de entrada al sidebar */
 
 /* ===== Panel Noticias / Análisis ===== */
 #noticias .panel-inner{max-width:860px}
@@ -1208,18 +1209,21 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
       </div>
     </div>
     <!-- Grupo Jurisprudencia (Providencias + Líneas) -->
-    <div class="sb-group">
+    <div class="sb-group open" id="grp-juris">
       <div class="sb-group-hdr" onclick="toggleGrp('grp-juris')">
         <span class="sb-group-label">Jurisprudencia</span>
-        <svg class="sb-group-arr" id="grp-juris-arr" width="9" height="9" viewBox="0 0 9 9" fill="none"><polyline points="2,3.5 4.5,6 7,3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        <span class="sb-group-arrow"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><polyline points="3,1.5 7,5 3,8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
       </div>
-      <div class="sb-group-items" id="grp-juris">
-        <button class="sb-item-direct" id="nav-juris" onclick="showPanel('pjuris')"><span class="sb-nav-icon" style="color:rgba(133,100,4,.8)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="9.5" y1="9.5" x2="13.5" y2="13.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>Providencias<span class="sb-badge" style="background:rgba(133,100,4,.45);color:#d4b87a;margin-left:auto">CSJ</span></button>
-        <a href="/lineas" class="sb-item-direct" id="nav-lineas"><span class="sb-nav-icon" style="color:rgba(133,100,4,.8)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 4h10M2.5 7.5h10M2.5 11h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="13" cy="11" r="1.2" fill="currentColor"/></svg></span>Líneas<span class="sb-badge" style="background:rgba(133,100,4,.45);color:#d4b87a;margin-left:auto">NUEVO</span></a>
+      <div class="sb-group-body">
+        <button class="sb-item-direct" id="nav-juris" onclick="showPanel('pjuris')"><span class="sb-nav-icon" style="color:rgba(212,184,122,.9)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="9.5" y1="9.5" x2="13.5" y2="13.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>Providencias<span class="sb-badge" style="background:rgba(133,100,4,.45);color:#d4b87a;margin-left:auto">CSJ</span></button>
+        <a href="/lineas" class="sb-item-direct" id="nav-lineas"><span class="sb-nav-icon" style="color:rgba(212,184,122,.9)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 4h10M2.5 7.5h10M2.5 11h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="13" cy="11" r="1.2" fill="currentColor"/></svg></span>Líneas<span class="sb-badge" style="background:rgba(133,100,4,.45);color:#d4b87a;margin-left:auto">NUEVO</span></a>
       </div>
     </div>
 
-    <!-- Directos -->
+    <!-- Separador visual antes de items sueltos -->
+    <div style="height:1px;background:rgba(255,255,255,.06);margin:14px 18px 8px"></div>
+
+    <!-- Directos sueltos -->
     <div style="padding:4px 8px 2px">
       <button class="sb-item-direct" id="nav-tools" onclick="showPanel('ptools')"><span class="sb-nav-icon" style="color:rgba(255,255,255,.55)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M11.5 2C10 2 9 3 9 4.5c0 .4.1.7.2.9L3.5 11l.3 2.2 2.2-.3 5.6-5.6c.3.1.6.2.9.2C13 7.5 14 6.5 14 5s-1-2.5-2.5-2.5z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" fill="none"/></svg></span>Herramientas</button>
       <a href="#noticias" onclick="showPanel('noticias');return false;" class="sb-item-direct" id="nav-noticias"><span class="sb-nav-icon" style="color:rgba(122,40,40,.9)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1.5" y="3" width="12" height="9.5" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="4.5" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="4.5" y1="8.5" x2="8.5" y2="8.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="4.5" y1="4.5" x2="6.5" y2="4.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>Análisis<span class="sb-badge" style="background:rgba(122,40,40,.5);color:#e8a0a0;margin-left:auto">NUEVO</span></a>
@@ -4109,7 +4113,7 @@ function showPanel(id){
     }
   }catch(e){/* entorno restringido, sin efecto */}
   closeMob();
-  if(id==='inicio'){closeSB();document.body.classList.add('on-home');var _t=document.getElementById('sb-toggle');if(_t)_t.classList.remove('show');}else{openSB();document.body.classList.remove('on-home');}
+  if(id==='inicio'){closeSB();document.body.classList.add('on-home');}else{openSB();document.body.classList.remove('on-home');}
   /* Gestionar sub-menús */
   var panelToLey={'p599':'599','p600':'600','p906':'906','p1826':'1826','p1098':'1098'};
   var activeLey=panelToLey[id];
