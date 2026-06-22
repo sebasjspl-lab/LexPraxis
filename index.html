@@ -1066,28 +1066,35 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 .sobre-back:hover{text-decoration:underline}
 .sobre-foot .actualizado-chip{margin-top:0}
 @media(max-width:600px){.sobre-block{grid-template-columns:1fr;gap:8px}.sobre-num{padding-top:0}}
-#pjuris .lineas-mini-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:22px}
-#pjuris .lin-mini{display:block;background:white;border:1px solid var(--borde);border-left:3px solid var(--lmc,#7A2828);border-radius:0 9px 9px 0;padding:14px 18px;text-decoration:none;color:inherit;transition:all .16s;box-shadow:0 1px 2px rgba(0,0,0,.03)}
-#pjuris .lin-mini:hover{transform:translateY(-1px);box-shadow:0 3px 12px rgba(0,0,0,.07);border-color:var(--lmc,#7A2828)}
-#pjuris .lin-mini-tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;color:var(--texto4);text-transform:uppercase;margin-bottom:6px}
-#pjuris .lin-mini-tit{font-family:'Lora',serif;font-size:14.5px;font-weight:700;color:var(--texto);line-height:1.4;letter-spacing:-.01em;margin-bottom:5px}
-#pjuris .lin-mini-tema{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--texto3);letter-spacing:.02em;margin-bottom:8px}
-#pjuris .lin-mini-arr{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--lmc,#7A2828);letter-spacing:.08em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:6px}
-#pjuris .lin-mini-arr span{transition:transform .16s}
-#pjuris .lin-mini:hover .lin-mini-arr span{transform:translateX(3px)}
-#pjuris .lin-mini.m1{--lmc:#856404}
-#pjuris .lin-mini.m2{--lmc:#7A2828}
-#pjuris .lin-mini.m3{--lmc:#1A3F6B}
-#pjuris .lin-mini.m4{--lmc:#6B21A8}
-#pjuris .lin-mini.m5{--lmc:#0F5C8A}
-#pjuris .lineas-vertodas{display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(135deg,rgba(133,100,4,.06) 0%,rgba(133,100,4,.02) 100%);border:1px solid rgba(133,100,4,.18);border-radius:10px;padding:18px 22px;text-decoration:none;color:inherit;transition:all .16s}
-#pjuris .lineas-vertodas:hover{background:linear-gradient(135deg,rgba(133,100,4,.11) 0%,rgba(133,100,4,.05) 100%);border-color:rgba(133,100,4,.35)}
-#pjuris .lvt-eye{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.16em;color:rgba(133,100,4,.85);text-transform:uppercase;font-weight:700;margin-bottom:6px}
-#pjuris .lvt-tit{font-family:'Lora',serif;font-size:16px;font-weight:700;color:var(--texto);letter-spacing:-.01em;margin-bottom:4px}
-#pjuris .lvt-sub{font-size:12.5px;color:var(--texto3);line-height:1.5}
-#pjuris .lvt-arr{font-family:'Lora',serif;font-size:28px;color:rgba(133,100,4,.7);flex-shrink:0;transition:transform .16s}
-#pjuris .lineas-vertodas:hover .lvt-arr{transform:translateX(4px);color:rgba(133,100,4,1)}
-@media(max-width:680px){#pjuris .lineas-vertodas{flex-direction:column;align-items:flex-start;gap:10px}#pjuris .lvt-arr{align-self:flex-end}}
+#pjuris .jur-lin-count{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--texto4);letter-spacing:.06em;margin-bottom:16px;text-transform:lowercase}
+#pjuris .jur-lin-list{display:flex;flex-direction:column}
+#pjuris .jur-lin-card{display:grid;grid-template-columns:88px 1px 1fr auto;gap:22px;padding:24px 4px;text-decoration:none;color:inherit;border-bottom:1px solid var(--borde);transition:background .16s,padding .16s;align-items:start}
+#pjuris .jur-lin-card:hover{background:rgba(133,100,4,.025);padding-left:10px;padding-right:10px}
+#pjuris .jur-lin-card:last-child{border-bottom:none}
+#pjuris .jlc-num{text-align:center;padding-top:4px}
+#pjuris .jlc-num-big{font-family:"Lora",serif;font-size:30px;font-weight:700;color:var(--texto);line-height:1;letter-spacing:-.02em}
+#pjuris .jlc-num-lbl{font-family:"JetBrains Mono",monospace;font-size:8px;color:var(--texto4);letter-spacing:.16em;margin-top:6px;font-weight:600}
+#pjuris .jlc-num-yr{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--texto4);letter-spacing:.04em;margin-top:8px;line-height:1.4}
+#pjuris .jlc-sep{width:1px;background:var(--borde);align-self:stretch}
+#pjuris .jlc-body{min-width:0}
+#pjuris .jlc-cat{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#856404;background:rgba(133,100,4,.09);padding:3px 9px;border-radius:4px;font-weight:600;margin-bottom:10px}
+#pjuris .jlc-titulo{font-family:"Lora",serif;font-size:17.5px;font-weight:700;color:var(--texto);line-height:1.32;letter-spacing:-.015em;margin-bottom:9px}
+#pjuris .jlc-resumen{font-size:13.5px;color:var(--texto2);line-height:1.65;margin-bottom:14px;text-align:justify}
+#pjuris .jlc-foot{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+#pjuris .jlc-tema{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--texto3);letter-spacing:.04em}
+#pjuris .jlc-cta{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#856404;font-weight:700;display:inline-flex;align-items:center;gap:6px;margin-left:auto}
+#pjuris .jur-lin-card:hover .jlc-cta svg{transform:translateX(3px);transition:transform .16s}
+#pjuris .jlc-arr{font-family:"Lora",serif;font-size:24px;color:var(--texto4);font-weight:300;align-self:center;transition:transform .16s,color .16s}
+#pjuris .jur-lin-card:hover .jlc-arr{color:#856404;transform:translateX(3px)}
+@media(max-width:680px){
+  #pjuris .jur-lin-card{grid-template-columns:60px 1px 1fr;gap:14px;padding:18px 4px}
+  #pjuris .jlc-arr{display:none}
+  #pjuris .jlc-num-big{font-size:24px}
+  #pjuris .jlc-titulo{font-size:15px}
+  #pjuris .jlc-resumen{font-size:13px;text-align:left}
+  #pjuris .jlc-foot{flex-direction:column;align-items:flex-start;gap:8px}
+  #pjuris .jlc-cta{margin-left:0}
+}
 </style>
 </head>
 <body>
@@ -3559,49 +3566,108 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 </div>
 
 <div id="jur-lineas" style="display:none">
-  <p style="font-size:13px;color:var(--texto3);margin-bottom:22px;line-height:1.7">Las <strong style="color:var(--texto2)">líneas jurisprudenciales</strong> muestran la evolución doctrinal de la Sala de Casación Penal: cómo empezó el criterio, qué lo transformó y cuál es la regla vigente hoy. Más que sentencias aisladas, es el hilo que las conecta y la herramienta para argumentar con precedente.</p>
+  <p style="font-size:13px;color:var(--texto3);margin-bottom:24px;line-height:1.7">Evoluci&oacute;n doctrinal de la Sala de Casaci&oacute;n Penal, fase por fase. Cada l&iacute;nea muestra c&oacute;mo naci&oacute; el criterio, qu&eacute; lo transform&oacute; y cu&aacute;l es la regla vigente hoy. <strong style="color:var(--texto2)">Ratio decidendi verificado</strong> contra el texto de cada sentencia.</p>
 
-  <div class="lineas-mini-grid">
-    <a href="/lineas/violencia-intrafamiliar" class="lin-mini m1">
-      <div class="lin-mini-tag">2014 &mdash; 2025 &middot; 20 sentencias</div>
-      <div class="lin-mini-tit">Violencia intrafamiliar: del requisito de convivencia a la protecci&oacute;n plena de la expareja</div>
-      <div class="lin-mini-tema">Art. 229 C.P. &middot; Ley 1959 de 2019</div>
-      <div class="lin-mini-arr">Ver l&iacute;nea completa <span>&rarr;</span></div>
+  <div class="jur-lin-count">5 l&iacute;neas jurisprudenciales</div>
+
+  <div class="jur-lin-list">
+
+    <a class="jur-lin-card" href="/lineas/violencia-intrafamiliar">
+      <div class="jlc-num">
+        <div class="jlc-num-big">01</div>
+        <div class="jlc-num-lbl">L&Iacute;NEA</div>
+        <div class="jlc-num-yr">2014 &mdash;<br>2025</div>
+      </div>
+      <div class="jlc-sep"></div>
+      <div class="jlc-body">
+        <div class="jlc-cat">20 sentencias &middot; Sala Casaci&oacute;n Penal</div>
+        <div class="jlc-titulo">Violencia intrafamiliar: del requisito de convivencia a la protecci&oacute;n plena de la expareja</div>
+        <div class="jlc-resumen">Tres momentos antes de la reforma de 2019 (visi&oacute;n amplia, doctrina restrictiva, matiz de dominio), la Ley 1959 incluyendo a las exparejas, y el debate vigente sobre la agravante de g&eacute;nero. S&iacute;ntesis final 2025.</div>
+        <div class="jlc-foot">
+          <span class="jlc-tema">Art. 229 C.P. &middot; Ley 1959 de 2019</span>
+          <span class="jlc-cta">VER L&Iacute;NEA <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="2" y1="6" x2="9.5" y2="6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><polyline points="6.5,3 9.5,6 6.5,9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        </div>
+      </div>
+      <div class="jlc-arr">&rsaquo;</div>
     </a>
-    <a href="/lineas/informes-policia-judicial" class="lin-mini m2">
-      <div class="lin-mini-tag">2010 &mdash; 2025 &middot; 9 sentencias</div>
-      <div class="lin-mini-tit">Informes de polic&iacute;a judicial: criterios orientadores y testimonio del investigador</div>
-      <div class="lin-mini-tema">Arts. 205-212, 431 y 438 Ley 906</div>
-      <div class="lin-mini-arr">Ver l&iacute;nea completa <span>&rarr;</span></div>
+
+    <a class="jur-lin-card" href="/lineas/informes-policia-judicial">
+      <div class="jlc-num">
+        <div class="jlc-num-big">02</div>
+        <div class="jlc-num-lbl">L&Iacute;NEA</div>
+        <div class="jlc-num-yr">2010 &mdash;<br>2025</div>
+      </div>
+      <div class="jlc-sep"></div>
+      <div class="jlc-body">
+        <div class="jlc-cat">9 sentencias &middot; Sala Casaci&oacute;n Penal</div>
+        <div class="jlc-titulo">Informes de polic&iacute;a judicial: de "criterios orientadores" a la doctrina consolidada del testimonio del investigador</div>
+        <div class="jlc-resumen">Quince a&ntilde;os de doctrina coherente: los informes no son prueba. Nacida en 2010, afianzada con fundamentos constitucionales en SP1162-2022, complementada con subreglas sobre usos instrumentales, anexos y documentos voluminosos.</div>
+        <div class="jlc-foot">
+          <span class="jlc-tema">Arts. 205-212, 431 y 438 Ley 906</span>
+          <span class="jlc-cta">VER L&Iacute;NEA <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="2" y1="6" x2="9.5" y2="6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><polyline points="6.5,3 9.5,6 6.5,9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        </div>
+      </div>
+      <div class="jlc-arr">&rsaquo;</div>
     </a>
-    <a href="/lineas/testimonio-adjunto" class="lin-mini m3">
-      <div class="lin-mini-tag">2020 &mdash; 2024 &middot; 9 sentencias</div>
-      <div class="lin-mini-tit">Testimonio adjunto: del formalismo ritual a la primac&iacute;a de la contradicci&oacute;n efectiva</div>
-      <div class="lin-mini-tema">Art. 347 Ley 906 &middot; Declaraci&oacute;n previa</div>
-      <div class="lin-mini-arr">Ver l&iacute;nea completa <span>&rarr;</span></div>
+
+    <a class="jur-lin-card" href="/lineas/testimonio-adjunto">
+      <div class="jlc-num">
+        <div class="jlc-num-big">03</div>
+        <div class="jlc-num-lbl">L&Iacute;NEA</div>
+        <div class="jlc-num-yr">2020 &mdash;<br>2024</div>
+      </div>
+      <div class="jlc-sep"></div>
+      <div class="jlc-body">
+        <div class="jlc-cat">9 sentencias &middot; Sala Casaci&oacute;n Penal</div>
+        <div class="jlc-titulo">Testimonio adjunto: del formalismo ritual a la primac&iacute;a de la contradicci&oacute;n efectiva</div>
+        <div class="jlc-resumen">Doctrina edificada 2020-2022 sobre requisitos estrictos. Giro decisivo en 2023 (Rad. 62852): lo que importa no es la liturgia formal sino que materialmente se haya garantizado la contradicci&oacute;n. Consolidaci&oacute;n 2024.</div>
+        <div class="jlc-foot">
+          <span class="jlc-tema">Art. 347 Ley 906 &middot; Declaraci&oacute;n previa &middot; Retractaci&oacute;n</span>
+          <span class="jlc-cta">VER L&Iacute;NEA <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="2" y1="6" x2="9.5" y2="6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><polyline points="6.5,3 9.5,6 6.5,9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        </div>
+      </div>
+      <div class="jlc-arr">&rsaquo;</div>
     </a>
-    <a href="/lineas/inasistencia-alimentaria" class="lin-mini m4">
-      <div class="lin-mini-tag">2020 &mdash; 2025 &middot; 6 sentencias</div>
-      <div class="lin-mini-tit">Inasistencia alimentaria: capacidad econ&oacute;mica como carga exclusiva de la Fiscal&iacute;a</div>
-      <div class="lin-mini-tema">Art. 233 C.P. &middot; In dubio pro reo</div>
-      <div class="lin-mini-arr">Ver l&iacute;nea completa <span>&rarr;</span></div>
+
+    <a class="jur-lin-card" href="/lineas/inasistencia-alimentaria">
+      <div class="jlc-num">
+        <div class="jlc-num-big">04</div>
+        <div class="jlc-num-lbl">L&Iacute;NEA</div>
+        <div class="jlc-num-yr">2020 &mdash;<br>2025</div>
+      </div>
+      <div class="jlc-sep"></div>
+      <div class="jlc-body">
+        <div class="jlc-cat">6 sentencias &middot; Sala Casaci&oacute;n Penal</div>
+        <div class="jlc-titulo">Inasistencia alimentaria: la capacidad econ&oacute;mica como carga exclusiva de la Fiscal&iacute;a y la atipicidad por justa causa</div>
+        <div class="jlc-resumen">L&iacute;nea garantista y pac&iacute;fica. La expresi&oacute;n "sin justa causa" es ingrediente normativo del tipo: su ausencia la prueba la Fiscal&iacute;a. La incapacidad econ&oacute;mica real opera como fuerza mayor que excluye la tipicidad.</div>
+        <div class="jlc-foot">
+          <span class="jlc-tema">Art. 233 C.P. &middot; In dubio pro reo</span>
+          <span class="jlc-cta">VER L&Iacute;NEA <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="2" y1="6" x2="9.5" y2="6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><polyline points="6.5,3 9.5,6 6.5,9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        </div>
+      </div>
+      <div class="jlc-arr">&rsaquo;</div>
     </a>
-    <a href="/lineas/prueba-sobreviniente" class="lin-mini m5">
-      <div class="lin-mini-tag">2020 &mdash; 2024 &middot; 5 sentencias</div>
-      <div class="lin-mini-tit">Prueba sobreviniente: la excepci&oacute;n restrictiva del Art. 344 Ley 906</div>
-      <div class="lin-mini-tema">Diligencia &middot; trascendencia &middot; pertinencia</div>
-      <div class="lin-mini-arr">Ver l&iacute;nea completa <span>&rarr;</span></div>
+
+    <a class="jur-lin-card" href="/lineas/prueba-sobreviniente">
+      <div class="jlc-num">
+        <div class="jlc-num-big">05</div>
+        <div class="jlc-num-lbl">L&Iacute;NEA</div>
+        <div class="jlc-num-yr">2020 &mdash;<br>2024</div>
+      </div>
+      <div class="jlc-sep"></div>
+      <div class="jlc-body">
+        <div class="jlc-cat">5 sentencias &middot; Sala Casaci&oacute;n Penal</div>
+        <div class="jlc-titulo">Prueba sobreviniente: la excepci&oacute;n restrictiva del Art. 344 Ley 906</div>
+        <div class="jlc-resumen">Doctrina deliberadamente restrictiva. No es mecanismo para subsanar negligencia: exige hallazgo tard&iacute;o, causa no imputable, vital trascendencia y sustentaci&oacute;n de pertinencia. Distinci&oacute;n crucial con la prueba de refutaci&oacute;n.</div>
+        <div class="jlc-foot">
+          <span class="jlc-tema">Art. 344 inc. final Ley 906</span>
+          <span class="jlc-cta">VER L&Iacute;NEA <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="2" y1="6" x2="9.5" y2="6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><polyline points="6.5,3 9.5,6 6.5,9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        </div>
+      </div>
+      <div class="jlc-arr">&rsaquo;</div>
     </a>
+
   </div>
-
-  <a href="/lineas" class="lineas-vertodas">
-    <div>
-      <div class="lvt-eye">&Iacute;ndice editorial</div>
-      <div class="lvt-tit">Ver todas las l&iacute;neas jurisprudenciales</div>
-      <div class="lvt-sub">P&aacute;gina dedicada con las 5 l&iacute;neas, su evoluci&oacute;n doctrinal y el criterio vigente de la Sala.</div>
-    </div>
-    <div class="lvt-arr">&rarr;</div>
-  </a>
 </div>
 </div></div>
 
