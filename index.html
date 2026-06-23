@@ -1096,6 +1096,50 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
   #pjuris .jlc-foot{flex-direction:column;align-items:flex-start;gap:8px}
   #pjuris .jlc-cta{margin-left:0}
 }
+
+/* ════ BUSCADOR NIVEL 1 ════ */
+.mag-search-btn{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 13px;border-radius:8px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:rgba(255,255,255,.55);cursor:pointer;flex-shrink:0;margin-left:12px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.04em;transition:all .2s}
+.mag-search-btn:hover{color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.08)}
+.mag-search-btn svg{width:14px;height:14px;flex-shrink:0;opacity:.75}
+.mag-search-btn .lp-kbd{display:inline-flex;align-items:center;padding:2px 6px;border-radius:4px;background:rgba(255,255,255,.08);font-size:9px;color:rgba(255,255,255,.5);margin-left:4px;letter-spacing:.04em}
+@media(max-width:900px){.mag-search-btn .lp-kbd-text,.mag-search-btn .lp-kbd{display:none}.mag-search-btn{padding:0;width:38px;justify-content:center;margin-left:8px}}
+.sb-search-item{display:flex;align-items:center;gap:9px;width:calc(100% - 16px);padding:8px 11px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:rgba(255,255,255,.55);cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.03em;margin:6px 8px 4px;transition:all .15s;box-sizing:border-box}
+.sb-search-item:hover{color:#fff;border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.06)}
+.sb-search-item svg{width:13px;height:13px;flex-shrink:0;opacity:.7}
+.sb-search-item .lp-kbd{margin-left:auto;padding:2px 5px;border-radius:3px;background:rgba(255,255,255,.06);font-size:9px;color:rgba(255,255,255,.45)}
+.lp-modal{position:fixed;inset:0;z-index:1000;background:rgba(8,10,14,.78);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding:80px 20px 20px;overflow-y:auto}
+.lp-modal.open{display:flex}
+.lp-modal-box{width:100%;max-width:680px;background:#1a1d24;border:1px solid rgba(255,255,255,.10);border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.55);overflow:hidden;display:flex;flex-direction:column;max-height:calc(100vh - 100px)}
+.lp-search-row{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.lp-search-row > svg{width:17px;height:17px;color:rgba(255,255,255,.4);flex-shrink:0}
+.lp-search-input{flex:1;background:none;border:none;outline:none;color:#fff;font-family:"Lora",serif;font-size:16px;font-weight:400;letter-spacing:-.01em}
+.lp-search-input::placeholder{color:rgba(255,255,255,.35)}
+.lp-search-close{font-family:"JetBrains Mono",monospace;font-size:9px;padding:3px 8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:rgba(255,255,255,.55);cursor:pointer;letter-spacing:.05em}
+.lp-search-close:hover{color:#fff;border-color:rgba(255,255,255,.25)}
+.lp-results{flex:1;overflow-y:auto;padding:8px 0;min-height:120px}
+.lp-group{margin-bottom:6px}
+.lp-group-hdr{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:10px 18px 6px;display:flex;align-items:center;gap:8px}
+.lp-group-hdr::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.08)}
+.lp-group-count{padding:1px 6px;background:rgba(255,255,255,.06);border-radius:3px;color:rgba(255,255,255,.55);font-weight:600}
+.lp-item{padding:11px 18px;cursor:pointer;border-left:2px solid transparent;transition:background .12s,border-color .12s}
+.lp-item:hover,.lp-item.active{background:rgba(255,255,255,.05);border-left-color:#b94545}
+.lp-item-meta{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.08em;color:rgba(255,255,255,.42);text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lp-item-chip{padding:1px 5px;background:rgba(255,255,255,.07);border-radius:3px;font-weight:600;letter-spacing:.04em}
+.lp-item-title{font-family:"Lora",serif;font-size:13.5px;font-weight:600;color:#fff;line-height:1.35;margin-bottom:3px;letter-spacing:-.01em}
+.lp-item-snippet{font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.lp-item mark{background:rgba(212,165,116,.22);color:#f0c97d;padding:0 2px;border-radius:2px;font-weight:600}
+.lp-empty{padding:24px 18px;text-align:center}
+.lp-empty-msg{font-size:11px;color:rgba(255,255,255,.5);font-family:"JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.lp-empty-msg b{color:#fff;font-weight:600}
+.lp-suggestions{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:8px}
+.lp-suggestion{padding:5px 11px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:14px;color:rgba(255,255,255,.65);font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.03em;cursor:pointer;transition:all .15s}
+.lp-suggestion:hover{color:#fff;border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.08)}
+.lp-noresults{padding:30px 18px;text-align:center;color:rgba(255,255,255,.5);font-family:"Lora",serif;font-size:12.5px;line-height:1.6}
+.lp-noresults b{color:#fff;font-weight:600}
+.lp-modal-foot{padding:10px 18px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:14px;font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.05em;color:rgba(255,255,255,.35);flex-wrap:wrap}
+.lp-foot-hint{display:flex;align-items:center;gap:5px}
+.lp-foot-hint kbd{display:inline-flex;align-items:center;padding:2px 5px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);border-radius:3px;color:rgba(255,255,255,.55);font-family:"JetBrains Mono",monospace;font-size:8.5px;min-width:14px;justify-content:center}
+@media(max-width:600px){.lp-modal{padding:50px 12px 12px}.lp-modal-box{max-height:calc(100vh - 70px)}.lp-search-row{padding:12px 14px}.lp-search-input{font-size:15px}.lp-item{padding:10px 14px}.lp-group-hdr{padding:9px 14px 5px}.lp-modal-foot{padding:8px 14px;font-size:8.5px;gap:10px}}
 </style>
 </head>
 <body>
@@ -1114,6 +1158,8 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
     <button class="sb-close" onclick="toggleSB()"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><polyline points="9.5,2 5,7 9.5,12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button>
   </div>
   <div style="flex:1;overflow-y:auto;scrollbar-width:none;padding-bottom:8px">
+    <!-- Buscador -->
+    <button class="sb-search-item" onclick="lpOpen()" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>Buscar</span><span class="lp-kbd">⌘K</span></button>
     <!-- Inicio -->
     <div style="padding:6px 8px 2px">
       <button class="sb-item-direct active" id="nav-inicio" onclick="showPanel('inicio')"><span class="sb-nav-icon" style="color:rgba(255,255,255,.55)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1.5" y="1.5" width="5" height="5" rx="1.2" fill="currentColor" opacity=".7"/><rect x="8.5" y="1.5" width="5" height="5" rx="1.2" fill="currentColor" opacity=".7"/><rect x="1.5" y="8.5" width="5" height="5" rx="1.2" fill="currentColor" opacity=".7"/><rect x="8.5" y="8.5" width="5" height="5" rx="1.2" fill="currentColor" opacity=".7"/></svg></span>Inicio</button>
@@ -1361,6 +1407,7 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
     </nav>
 
     <div class="hdr-fecha" id="mag-fecha"></div>
+    <button class="mag-search-btn" onclick="lpOpen()" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="lp-kbd-text">Buscar</span><span class="lp-kbd">⌘K</span></button>
     <button class="mag-mobnav" onclick="handleToggle()" aria-label="Abrir menu"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><line x1="2.5" y1="5" x2="14.5" y2="5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="2.5" y1="8.5" x2="14.5" y2="8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="2.5" y1="12" x2="14.5" y2="12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
   </div>
 </header>
@@ -6685,6 +6732,365 @@ function jdbInit(){
 
 /* ══ INICIO — llamar después de que todo esté definido ══ */
 ['599','600','906','1826','1098'].forEach(function(l){initLey(l);});
+/* ════════════════════════════════════════════
+   BUSCADOR NIVEL 1 — Lex Praxis
+   Búsqueda léxica unificada sobre todo el corpus
+   ════════════════════════════════════════════ */
+
+var LP_NOTICIAS = [
+  {slug:'suspension-provisional-petro-2026',
+   titulo:'¿Puede la Comisión de Acusación suspender al Presidente? El choque jurídico del Auto Rad. 7525',
+   eyebrow:'Derecho Disciplinario · Actualidad', chip:'AUTO RAD. 7525',
+   resumen:'La Representante Investigadora ordenó la suspensión provisional de Gustavo Petro por presunta participación en política y rectificó el auto en horas. Análisis del artículo 217 de la Ley 1952, la tensión con el fuero presidencial de los artículos 175 y 199 de la Constitución, y el vicio de competencia que hizo colapsar la medida.',
+   year:2026},
+  {slug:'extorsion-atipicidad-sp337-2026',
+   titulo:'No toda exigencia de dinero es extorsión: el constreñimiento como elemento sine qua non',
+   eyebrow:'Jurisprudencia · SP337-2026', chip:'RAD. 67954',
+   resumen:'La mera exigencia económica sin violencia, amenaza ni presión que doble la voluntad de la víctima no configura el tipo penal del Art. 244 Ley 599. La víctima conservó autonomía plena.',
+   year:2026},
+  {slug:'evidencia-demostrativa-ley-906',
+   titulo:'Evidencia demostrativa en el proceso penal colombiano: legalidad vs. autenticidad',
+   eyebrow:'Jurisprudencia · SP196-2026', chip:'ART. 423 L.906',
+   resumen:'Es herramienta procesal para que el testigo comunique eficientemente lo que conoce, no prueba autónoma. La prueba es el testimonio. Art. 423 Ley 906.',
+   year:2026},
+  {slug:'inimputabilidad-sp205-2026',
+   titulo:'Inimputabilidad: las reglas que reitera la Corte Suprema en la SP205-2026',
+   eyebrow:'Jurisprudencia · SP205-2026', chip:'RAD. 64067',
+   resumen:'La Sala de Casación Penal confirmó la condena contra un habitante de calle con esquizofrenia por actos sexuales con menor de 14 años. Reitera las reglas del Art. 33 C.P.: condición mental, concomitancia, incidencia funcional y reserva judicial. M.P. Jorge Hernán Díaz Soto.',
+   year:2026}
+];
+
+var LP_LINEA_SLUGS = {
+  'linea-ipj':'informes-policia-judicial',
+  'linea-vif':'violencia-intrafamiliar',
+  'linea-ta':'testimonio-adjunto',
+  'linea-ia':'inasistencia-alimentaria',
+  'linea-ps':'prueba-sobreviniente'
+};
+
+var LP_INDEX = [];
+var LP_CURRENT_RESULTS = [];
+var LP_ACTIVE_IDX = -1;
+var LP_FREQ = ['extorsión','violencia intrafamiliar','prescripción','evidencia demostrativa'];
+var LP_RECENT_KEY = 'lp_recent_searches';
+
+function lpBuildIndex(){
+  LP_INDEX = [];
+  if(typeof JDB !== 'undefined' && Array.isArray(JDB)){
+    JDB.forEach(function(j){
+      LP_INDEX.push({
+        type:'providencia', id:j.id,
+        title:j.titulo || '',
+        subtitle:j.dec || '',
+        meta:(j.dec||'') + ' ' + (j.rad||''),
+        body:[(j.ratio||''),(j.tags||[]).join(' '),(j.refs||[]).join(' ')].join('  '),
+        chip:j.dec || '', year:j.anio || 0,
+        action:(function(id){ return function(){
+          lpClose(); showPanel('pjuris');
+          setTimeout(function(){
+            if(typeof jdbToggle==='function') jdbToggle(id);
+            var row=document.getElementById('row-'+id);
+            if(row) row.scrollIntoView({behavior:'smooth',block:'center'});
+          },140);
+        };})(j.id)
+      });
+    });
+  }
+  if(typeof JLINEAS !== 'undefined' && Array.isArray(JLINEAS)){
+    JLINEAS.forEach(function(L){
+      var parts = [L.intro||''];
+      (L.fases||[]).forEach(function(f){
+        parts.push(f.titulo||'');
+        (f.etapas||[]).forEach(function(e){
+          parts.push((e.titulo||'') + ' ' + (e.ratio||'') + ' ' + (e.sent||'') + ' ' + (e.nota||''));
+        });
+      });
+      LP_INDEX.push({
+        type:'linea', id:L.id,
+        title:L.titulo || '',
+        subtitle:L.tema || '',
+        meta:(L.tema||'') + ' ' + (L.periodo||''),
+        body:parts.join('  '),
+        chip:(L.sentencias||0) + ' SENT.', year:0,
+        action:(function(id){ return function(){
+          var slug = LP_LINEA_SLUGS[id] || id.replace(/^linea-/,'');
+          window.location.href = '/lineas/' + slug;
+        };})(L.id)
+      });
+    });
+  }
+  LP_NOTICIAS.forEach(function(N){
+    LP_INDEX.push({
+      type:'analisis', id:N.slug,
+      title:N.titulo, subtitle:N.eyebrow,
+      meta:N.eyebrow + ' ' + (N.chip||''),
+      body:N.resumen,
+      chip:N.chip, year:N.year || 2026,
+      action:(function(slug){ return function(){
+        window.location.href = '/noticias/' + slug;
+      };})(N.slug)
+    });
+  });
+  if(typeof MAG_QUIZ !== 'undefined' && Array.isArray(MAG_QUIZ)){
+    MAG_QUIZ.forEach(function(q, idx){
+      LP_INDEX.push({
+        type:'quiz', id:'q'+idx,
+        title:q.q, subtitle:'Pregunta de práctica',
+        meta:'quiz pregunta',
+        body:(q.opts||[]).join(' ') + ' ' + (q.exp||''),
+        chip:'QUIZ', year:0,
+        action:(function(i){ return function(){
+          lpClose(); showPanel('inicio');
+          setTimeout(function(){
+            try{ window.magQIdx = i; if(typeof magQuizRender==='function') magQuizRender(); }catch(e){}
+            var el = document.getElementById('mag-quiz-q');
+            if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+          },160);
+        };})(idx)
+      });
+    });
+  }
+}
+
+function lpNorm(s){
+  return (s==null?'':String(s)).toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9\s]/g,' ')
+    .replace(/\s+/g,' ').trim();
+}
+
+function lpSearch(query){
+  var nq = lpNorm(query);
+  if(!nq) return [];
+  var tokens = nq.split(' ').filter(function(t){ return t.length >= 2; });
+  if(!tokens.length) return [];
+  var results = [];
+  LP_INDEX.forEach(function(item){
+    var nTitle = lpNorm(item.title);
+    var nSubtitle = lpNorm(item.subtitle);
+    var nMeta = lpNorm(item.meta);
+    var nBody = lpNorm(item.body);
+    var score = 0, hitsAll = true;
+    tokens.forEach(function(tok){
+      var s = 0;
+      if(nTitle.indexOf(tok) !== -1) s += 100;
+      if(nMeta.indexOf(tok) !== -1) s += 90;
+      if(nSubtitle.indexOf(tok) !== -1) s += 70;
+      if(nBody.indexOf(tok) !== -1) s += 30;
+      if(s === 0) hitsAll = false;
+      score += s;
+    });
+    if(hitsAll && score > 0){
+      if(item.year >= 2025) score += 10;
+      else if(item.year >= 2023) score += 5;
+      results.push({item:item, score:score});
+    }
+  });
+  results.sort(function(a,b){ return b.score - a.score; });
+  return results;
+}
+
+function lpEsc(t){
+  return (t==null?'':String(t)).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+
+function lpHighlight(text, tokens){
+  if(!text) return '';
+  var raw = String(text);
+  var nText = lpNorm(raw);
+  var firstIdx = -1;
+  tokens.forEach(function(tok){
+    var i = nText.indexOf(tok);
+    if(i !== -1 && (firstIdx === -1 || i < firstIdx)) firstIdx = i;
+  });
+  var snippet = raw;
+  if(firstIdx > 80){
+    var start = Math.max(0, firstIdx - 60);
+    snippet = '… ' + raw.slice(start);
+  }
+  if(snippet.length > 240) snippet = snippet.slice(0, 237) + '…';
+  var esc = lpEsc(snippet);
+  tokens.forEach(function(tok){
+    var pattern = tok.split('').map(function(ch){
+      var map = {a:'[aáàâä]',e:'[eéèêë]',i:'[iíìîï]',o:'[oóòôö]',u:'[uúùûü]',n:'[nñ]'};
+      return map[ch] || ch.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+    }).join('');
+    try{ esc = esc.replace(new RegExp('('+pattern+')','gi'), '<mark>$1</mark>'); }catch(e){}
+  });
+  return esc;
+}
+
+function lpGetRecent(){
+  try{ var r = localStorage.getItem(LP_RECENT_KEY); return r ? JSON.parse(r) : []; }catch(e){ return []; }
+}
+function lpAddRecent(q){
+  try{
+    var r = lpGetRecent();
+    r = r.filter(function(x){ return x !== q; });
+    r.unshift(q);
+    if(r.length > 4) r = r.slice(0, 4);
+    localStorage.setItem(LP_RECENT_KEY, JSON.stringify(r));
+  }catch(e){}
+}
+
+function lpRender(query){
+  var box = document.getElementById('lp-results');
+  if(!box) return;
+  LP_ACTIVE_IDX = -1;
+  if(!query || !query.trim()){
+    var recent = lpGetRecent();
+    var html = '<div class="lp-empty">';
+    if(recent.length){
+      html += '<div class="lp-empty-msg">Búsquedas <b>recientes</b></div><div class="lp-suggestions">';
+      recent.forEach(function(r){
+        html += '<button class="lp-suggestion" data-q="'+lpEsc(r)+'">'+lpEsc(r)+'</button>';
+      });
+      html += '</div>';
+    }
+    html += '<div class="lp-empty-msg" style="margin-top:18px">Búsquedas <b>frecuentes</b></div><div class="lp-suggestions">';
+    LP_FREQ.forEach(function(s){
+      html += '<button class="lp-suggestion" data-q="'+lpEsc(s)+'">'+lpEsc(s)+'</button>';
+    });
+    html += '</div></div>';
+    box.innerHTML = html;
+    box.querySelectorAll('.lp-suggestion').forEach(function(b){
+      b.addEventListener('click', function(){ lpRunSuggestion(b.dataset.q); });
+    });
+    LP_CURRENT_RESULTS = [];
+    return;
+  }
+  var results = lpSearch(query);
+  LP_CURRENT_RESULTS = results;
+  if(!results.length){
+    box.innerHTML = '<div class="lp-noresults">No hay coincidencias para <b>"'+lpEsc(query)+'"</b>.<br>Probá con términos más amplios o revisá la ortografía.</div>';
+    return;
+  }
+  var tokens = lpNorm(query).split(' ').filter(function(t){ return t.length >= 2; });
+  var groups = {providencia:[], linea:[], analisis:[], quiz:[]};
+  var labels = {providencia:'Providencias', linea:'Líneas jurisprudenciales', analisis:'Análisis', quiz:'Quiz'};
+  results.forEach(function(r){ if(groups[r.item.type]) groups[r.item.type].push(r); });
+  var html = '', globalIdx = 0, indexMap = [];
+  ['providencia','linea','analisis','quiz'].forEach(function(t){
+    var arr = groups[t];
+    if(!arr.length) return;
+    html += '<div class="lp-group"><div class="lp-group-hdr">'+labels[t]+' <span class="lp-group-count">'+arr.length+'</span></div>';
+    arr.slice(0, 5).forEach(function(r){
+      var it = r.item;
+      var snippet = lpHighlight(it.body || it.subtitle || '', tokens);
+      var titleHi = lpHighlight(it.title || '', tokens);
+      var chipHtml = it.chip ? '<span class="lp-item-chip">'+lpEsc(it.chip)+'</span>' : '';
+      var yearTxt = it.year ? ' · '+it.year : '';
+      html += '<div class="lp-item" data-idx="'+globalIdx+'">'+
+        '<div class="lp-item-meta">'+chipHtml+'<span>'+labels[t]+yearTxt+'</span></div>'+
+        '<div class="lp-item-title">'+titleHi+'</div>'+
+        (snippet ? '<div class="lp-item-snippet">'+snippet+'</div>' : '')+
+      '</div>';
+      indexMap.push(results.indexOf(r));
+      globalIdx++;
+    });
+    if(arr.length > 5){
+      html += '<div style="padding:4px 18px 8px;font-family:\'JetBrains Mono\',monospace;font-size:9px;color:rgba(255,255,255,.4);letter-spacing:.05em">+ '+(arr.length-5)+' más en esta categoría — refiná la búsqueda</div>';
+    }
+    html += '</div>';
+  });
+  box.innerHTML = html;
+  box.querySelectorAll('.lp-item').forEach(function(el){
+    el.addEventListener('click', function(){
+      var idx = parseInt(el.dataset.idx, 10);
+      lpRunResult(indexMap[idx]);
+    });
+  });
+  box._indexMap = indexMap;
+}
+
+function lpRunSuggestion(q){
+  var input = document.getElementById('lp-search-input');
+  if(input){ input.value = q; input.focus(); lpRender(q); }
+}
+function lpRunResult(resultIdx){
+  if(resultIdx < 0 || resultIdx >= LP_CURRENT_RESULTS.length) return;
+  var input = document.getElementById('lp-search-input');
+  if(input && input.value.trim()) lpAddRecent(input.value.trim());
+  LP_CURRENT_RESULTS[resultIdx].item.action();
+}
+function lpSetActive(visualIdx){
+  var items = document.querySelectorAll('#lp-results .lp-item');
+  items.forEach(function(el,i){ el.classList.toggle('active', i===visualIdx); });
+  LP_ACTIVE_IDX = visualIdx;
+  if(items[visualIdx]) items[visualIdx].scrollIntoView({block:'nearest'});
+}
+
+function lpOpen(){
+  if(!LP_INDEX.length) lpBuildIndex();
+  var m = document.getElementById('lp-modal');
+  if(!m) return;
+  m.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  lpRender('');
+  setTimeout(function(){
+    var i = document.getElementById('lp-search-input');
+    if(i){ i.value=''; i.focus(); }
+  }, 40);
+}
+function lpClose(){
+  var m = document.getElementById('lp-modal');
+  if(!m) return;
+  m.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e){
+  if((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')){
+    e.preventDefault(); lpOpen(); return;
+  }
+  var m = document.getElementById('lp-modal');
+  if(!m || !m.classList.contains('open')) return;
+  if(e.key === 'Escape'){ e.preventDefault(); lpClose(); return; }
+  if(e.key === 'ArrowDown'){
+    e.preventDefault();
+    var max = (document.querySelectorAll('#lp-results .lp-item')||[]).length;
+    if(max === 0) return;
+    var next = LP_ACTIVE_IDX + 1;
+    if(next >= max) next = 0;
+    lpSetActive(next);
+    return;
+  }
+  if(e.key === 'ArrowUp'){
+    e.preventDefault();
+    var max2 = (document.querySelectorAll('#lp-results .lp-item')||[]).length;
+    if(max2 === 0) return;
+    var prev = LP_ACTIVE_IDX - 1;
+    if(prev < 0) prev = max2 - 1;
+    lpSetActive(prev);
+    return;
+  }
+  if(e.key === 'Enter'){
+    e.preventDefault();
+    var box = document.getElementById('lp-results');
+    var map = box && box._indexMap;
+    if(LP_ACTIVE_IDX >= 0 && map){ lpRunResult(map[LP_ACTIVE_IDX]); }
+    else if(LP_CURRENT_RESULTS.length > 0){ lpRunResult(0); }
+    return;
+  }
+});
+
+(function lpAttachInput(){
+  var iv;
+  document.addEventListener('input', function(e){
+    if(e.target && e.target.id === 'lp-search-input'){
+      clearTimeout(iv);
+      var v = e.target.value;
+      iv = setTimeout(function(){ lpRender(v); }, 80);
+    }
+  });
+})();
+
+setTimeout(lpBuildIndex, 250);
+
+/* ════ FIN BUSCADOR NIVEL 1 ════ */
+
 showPanel(cur);
 if(cur==='pjuris')jdbInit();
 
@@ -6816,4 +7222,21 @@ function magWQanswer(ok,btn,it){
 }
 if(document.getElementById('mag-wq-q')) magWQrender();
 </script>
+
+<!-- ════ BUSCADOR NIVEL 1 — Modal ════ -->
+<div class="lp-modal" id="lp-modal" onclick="if(event.target===this)lpClose()" role="dialog" aria-modal="true" aria-label="Buscar en Lex Praxis">
+  <div class="lp-modal-box">
+    <div class="lp-search-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="lp-search-input" id="lp-search-input" placeholder="Buscar providencias, líneas, análisis, quiz…" autocomplete="off" spellcheck="false" aria-label="Buscar">
+      <button class="lp-search-close" onclick="lpClose()" aria-label="Cerrar">ESC</button>
+    </div>
+    <div class="lp-results" id="lp-results"></div>
+    <div class="lp-modal-foot">
+      <span class="lp-foot-hint"><kbd>↑</kbd><kbd>↓</kbd> navegar</span>
+      <span class="lp-foot-hint"><kbd>↵</kbd> abrir</span>
+      <span class="lp-foot-hint"><kbd>esc</kbd> cerrar</span>
+    </div>
+  </div>
+</div>
 </body></html>
