@@ -943,11 +943,25 @@ body.on-home #sb-toggle{display:none!important}
 .mag .hb-metric.m2{--mcol:#9a8ad9;--mdim:rgba(72,38,148,.25)}
 .mag .hb-metric.m3{--mcol:#d9c47a;--mdim:rgba(122,92,30,.2)}
 @media(max-width:680px){
-  .mag .hb-metrics{flex-direction:column;align-items:center;gap:14px;padding:18px 0 8px;border-top:1px solid rgba(255,255,255,.08)}
-  .mag .hb-metric{padding:0;border-left:none!important;gap:11px;width:220px;justify-content:flex-start;text-align:left}
-  .mag .hb-m-ico{width:22px;justify-content:flex-start}
-  .mag .hb-m-num{font-size:14.5px}
-  .mag .hb-m-lbl{font-size:10px}
+  /* Mismo formato del escritorio (icono + número + label + separador) pero escalado abajo para no competir con las tarjetas grandes */
+  .mag .hb-metrics{flex-direction:row;align-items:center;justify-content:center;gap:0;padding:9px 4px 10px;flex-wrap:nowrap;border-top:1px solid rgba(255,255,255,.08)}
+  .mag .hb-metric{padding:1px 10px;gap:6px;width:auto;flex-direction:row;align-items:center;text-align:left;flex-shrink:1;min-width:0;justify-content:center}
+  .mag .hb-metric+.hb-metric{border-left:1px solid rgba(255,255,255,.09)}
+  .mag .hb-m-ico{width:auto;justify-content:center;flex-shrink:0}
+  .mag .hb-m-ico svg{width:11px;height:11px}
+  .mag .hb-m-num{font-size:11.5px;font-weight:700;line-height:1.15;white-space:nowrap}
+  .mag .hb-m-lbl{font-size:7.5px;line-height:1.25;color:rgba(255,255,255,.4);font-weight:300}
+}
+@media(max-width:400px){
+  .mag .hb-metric{padding:1px 7px;gap:5px}
+  .mag .hb-m-ico svg{width:10px;height:10px}
+  .mag .hb-m-num{font-size:10.5px}
+  .mag .hb-m-lbl{font-size:7px}
+}
+@media(max-width:360px){
+  .mag .hb-metric{padding:1px 5px;gap:4px}
+  .mag .hb-m-num{font-size:10px}
+  .mag .hb-m-lbl{font-size:6.5px}
 }
 /* ===== Lineas jurisprudenciales: pills ===== */
 .mag .lin-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
@@ -1102,7 +1116,7 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 .mag-search-btn:hover{color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.08)}
 .mag-search-btn svg{width:14px;height:14px;flex-shrink:0;opacity:.75}
 .mag-search-btn .lp-kbd{display:inline-flex;align-items:center;padding:2px 6px;border-radius:4px;background:rgba(255,255,255,.08);font-size:9px;color:rgba(255,255,255,.5);margin-left:4px;letter-spacing:.04em}
-@media(max-width:900px){.mag-search-btn .lp-kbd-text,.mag-search-btn .lp-kbd{display:none}.mag-search-btn{padding:0;width:38px;justify-content:center;margin-left:8px}}
+@media(max-width:900px){.mag-search-btn .lp-kbd-text,.mag-search-btn .lp-kbd{display:none}.mag-search-btn{padding:0;width:38px;justify-content:center;margin-left:auto}.mag .hdr-top{gap:8px}}
 .sb-search-item{display:flex;align-items:center;gap:9px;width:calc(100% - 16px);padding:8px 11px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:rgba(255,255,255,.55);cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.03em;margin:6px 8px 4px;transition:all .15s;box-sizing:border-box}
 .sb-search-item:hover{color:#fff;border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.06)}
 .sb-search-item svg{width:13px;height:13px;flex-shrink:0;opacity:.7}
