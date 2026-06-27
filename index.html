@@ -277,6 +277,25 @@ body.on-home #sb-toggle{display:none!important}
 
 /* ══ JURISPRUDENCIA ══ */
 @keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
+/* ══ CORTE IDH — acordeón ══ */
+.cidh-caso{border:1px solid rgba(26,100,180,.15);border-radius:14px;overflow:hidden;margin-bottom:18px}
+.cidh-caso-hdr{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:22px 28px;cursor:pointer;background:linear-gradient(135deg,rgba(26,100,180,.06) 0%,rgba(26,100,180,.015) 100%);transition:background .18s;user-select:none}
+.cidh-caso-hdr:hover{background:linear-gradient(135deg,rgba(26,100,180,.1) 0%,rgba(26,100,180,.03) 100%)}
+.cidh-caso.open .cidh-caso-hdr{border-bottom:1px solid rgba(26,100,180,.1)}
+.cidh-caso-meta{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,100,180,.65);font-weight:700;margin-bottom:7px}
+.cidh-caso-titulo{font-family:'Lora',serif;font-size:20px;font-weight:700;color:var(--texto);line-height:1.25;letter-spacing:-.02em;margin-bottom:5px}
+.cidh-caso-sub{font-size:11.5px;color:var(--texto3);margin-bottom:12px}
+.cidh-caso-tags{display:flex;flex-wrap:wrap;gap:6px}
+.cidh-caso-tag{font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 9px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600}
+.cidh-caso-toggle{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0}
+.cidh-caso-toggle-btn{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);font-weight:700;white-space:nowrap}
+.cidh-caso-arrow{width:28px;height:28px;border-radius:50%;border:1px solid rgba(26,100,180,.2);display:flex;align-items:center;justify-content:center;color:rgba(26,100,180,.55);transition:transform .22s,background .18s}
+.cidh-caso.open .cidh-caso-arrow{transform:rotate(180deg);background:rgba(26,100,180,.07)}
+.cidh-caso-body{display:none;padding:24px 28px}
+.cidh-caso.open .cidh-caso-body{display:block}
+.cidh-caso-footer{display:none;padding:13px 28px;border-top:1px solid rgba(26,100,180,.1);background:rgba(26,100,180,.02);flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.cidh-caso.open .cidh-caso-footer{display:flex}
+@media(max-width:600px){.cidh-caso-hdr{padding:18px 18px;grid-template-columns:1fr auto}.cidh-caso-titulo{font-size:17px}.cidh-caso-body{padding:18px 18px}.cidh-caso-footer{padding:12px 18px}}
 /* ══ JURISPRUDENCIA — base de datos ══ */
 .jur-tabs{display:flex;gap:4px;margin-bottom:22px;border-bottom:1px solid var(--borde);padding-bottom:0}
 .jur-tab{padding:8px 18px;font-size:12.5px;font-weight:600;cursor:pointer;border:none;background:none;color:var(--texto3);font-family:inherit;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .18s;border-radius:6px 6px 0 0}
@@ -1275,8 +1294,12 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
         <span class="sb-group-arrow"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><polyline points="3,1.5 7,5 3,8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
       </div>
       <div class="sb-group-body">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.18);padding:6px 12px 3px">CSJ Sala Penal</div>
         <button class="sb-item-direct" id="nav-juris" onclick="showPanel('pjuris')"><span class="sb-nav-icon" style="color:rgba(212,184,122,.9)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="9.5" y1="9.5" x2="13.5" y2="13.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>Providencias<span class="sb-badge" style="background:rgba(133,100,4,.45);color:#d4b87a;margin-left:auto">CSJ</span></button>
         <a href="/lineas" class="sb-item-direct" id="nav-lineas"><span class="sb-nav-icon" style="color:rgba(212,184,122,.9)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 4h10M2.5 7.5h10M2.5 11h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="13" cy="11" r="1.2" fill="currentColor"/></svg></span>Líneas<span class="sb-badge" style="background:rgba(133,100,4,.45);color:#d4b87a;margin-left:auto">NUEVO</span></a>
+        <div style="height:1px;background:rgba(255,255,255,.07);margin:8px 12px 5px"></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.18);padding:3px 12px 4px">Sistema Interamericano</div>
+        <button class="sb-item-direct" id="nav-cidh" onclick="showPanel('pcidh')"><span class="sb-nav-icon" style="color:rgba(100,160,220,.85)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.2" fill="none"/><ellipse cx="7.5" cy="7.5" rx="2.5" ry="5.5" stroke="currentColor" stroke-width="1" fill="none"/><line x1="2" y1="7.5" x2="13" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>Corte IDH<span class="sb-badge" style="background:rgba(26,100,180,.45);color:#90c0f0;margin-left:auto">NUEVO</span></button>
       </div>
     </div>
 
@@ -1393,13 +1416,17 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
         </div>
       </div>
 
-      <div class="nav-item">
+        <div class="nav-item">
         <button class="nav-link" onclick="showPanel('pjuris')">Jurisprudencia <span class="nav-arr">▾</span></button>
-        <div class="mega" style="min-width:240px">
+        <div class="mega" style="min-width:260px">
           <div class="mega-hdr">CSJ Sala de Casación Penal</div>
           <div class="mega-items">
             <a href="/jurisprudencia" onclick="showPanel('pjuris');return false;" class="mega-item"><span class="mega-item-dot" style="background:var(--amarillo)"></span><div class="mega-item-txt"><div class="mega-item-name">Buscador de decisiones</div><div class="mega-item-desc">Busca por radicado, tema o palabra clave</div></div></a>
             <a href="/jurisprudencia" onclick="showPanel('pjuris');return false;" class="mega-item"><span class="mega-item-dot" style="background:var(--amarillo)"></span><div class="mega-item-txt"><div class="mega-item-name">Líneas jurisprudenciales</div><div class="mega-item-desc">Evolución del criterio de la Corte por tema</div></div></a>
+          </div>
+          <div class="mega-hdr" style="margin-top:10px;border-top:1px solid var(--borde);padding-top:10px">Sistema Interamericano de DDHH</div>
+          <div class="mega-items">
+            <a href="/cidh" onclick="showPanel('pcidh');return false;" class="mega-item"><span class="mega-item-dot" style="background:#2E75B6"></span><div class="mega-item-txt"><div class="mega-item-name">Corte IDH — Sentencias clave</div><div class="mega-item-desc">Análisis con relevancia para Colombia</div></div></a>
           </div>
           <div class="mega-footer"><a href="/jurisprudencia" onclick="showPanel('pjuris');return false;">Ir a jurisprudencia →</a></div>
         </div>
@@ -3649,6 +3676,512 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 </div></div>
 
 <!-- ══ HERRAMIENTAS ══ -->
+<!-- ══ CORTE IDH ══ -->
+<div class="panel" id="pcidh"><div class="panel-inner">
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:28px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Sistema Interamericano de Derechos Humanos</div>
+  <span class="ley-num" style="color:rgba(26,100,180,.8)">Corte Interamericana de Derechos Humanos</span>
+  <h1 class="ley-title" style="font-size:clamp(26px,3.5vw,40px)">Jurisprudencia <em style="color:rgba(26,100,180,.35)">interamericana</em></h1>
+  <p class="ley-desc">Análisis de sentencias clave de la Corte IDH en materia de derechos humanos, violencia de género y acceso a la justicia, con especial atención a su relevancia para el ordenamiento jurídico colombiano y el control de convencionalidad.</p>
+  <a href="https://www.corteidh.or.cr/casos-contenciosos.cfm" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;color:rgba(26,100,180,.6);text-decoration:none;border-bottom:1px solid rgba(26,100,180,.2);padding-bottom:1px;transition:color .18s" onmouseover="this.style.color='rgba(26,100,180,.9)'" onmouseout="this.style.color='rgba(26,100,180,.6)'">
+    <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.2" fill="none"/><ellipse cx="7.5" cy="7.5" rx="2.5" ry="5.5" stroke="currentColor" stroke-width="1" fill="none"/><line x1="2" y1="7.5" x2="13" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+    Consulta oficial — Corte IDH →
+  </a>
+</div>
+
+<!-- TARJETA INTRO -->
+<div style="padding:16px 20px;border-radius:10px;background:rgba(26,100,180,.04);border:1px solid rgba(26,100,180,.12);font-size:12.5px;color:var(--texto3);line-height:1.7;margin-bottom:28px">
+  <strong style="color:var(--texto2)">Sobre esta sección:</strong> Las sentencias de la Corte IDH son vinculantes para Colombia como Estado parte de la Convención Americana. Cada análisis identifica los <em>hechos relevantes</em>, los <em>estándares fijados</em> (ratio decidendi interamericana), las <em>normas convencionales</em> aplicadas y la <em>relevancia directa</em> para operadores jurídicos colombianos.
+</div>
+
+<!-- LISTADO POR BLOQUES TEMÁTICOS -->
+
+<!-- helper CSS para separadores de bloque -->
+<style>
+.cidh-bloque{margin-bottom:28px}
+.cidh-bloque-hdr{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:rgba(26,100,180,.55);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.cidh-bloque-hdr::after{content:'';flex:1;height:1px;background:rgba(26,100,180,.12)}
+.cidh-lista{display:flex;flex-direction:column;border:1px solid rgba(26,100,180,.14);border-radius:12px;overflow:hidden}
+.cidh-card{padding:18px 22px;cursor:pointer;transition:background .15s;background:white;border-bottom:1px solid rgba(26,100,180,.08);display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+.cidh-card:last-child{border-bottom:none}
+.cidh-card:hover{background:rgba(26,100,180,.025)}
+.cidh-card.prep{cursor:default}
+.cidh-card.prep:hover{background:white}
+.cidh-card-meta{font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:.13em;text-transform:uppercase;color:rgba(26,100,180,.55);font-weight:700;margin-bottom:5px}
+.cidh-card-titulo{font-family:'Lora',serif;font-size:16px;font-weight:700;color:var(--texto);line-height:1.25;letter-spacing:-.015em;margin-bottom:5px}
+.cidh-card.prep .cidh-card-titulo{color:var(--texto3)}
+.cidh-card-desc{font-size:12px;color:var(--texto3);line-height:1.55;margin-bottom:8px}
+.cidh-card-tags{display:flex;flex-wrap:wrap;gap:4px}
+.cidh-tag{font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 7px;border-radius:4px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.75);font-weight:600}
+.cidh-tag.prep{background:rgba(0,0,0,.04);color:var(--texto4)}
+.cidh-card-cta{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:4px}
+.cidh-card-cta-lbl{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.5);font-weight:700}
+.cidh-card-cta-icon{width:30px;height:30px;border-radius:50%;border:1px solid rgba(26,100,180,.2);display:flex;align-items:center;justify-content:center;color:rgba(26,100,180,.45)}
+.cidh-card.prep .cidh-card-cta-lbl{color:var(--texto4)}
+.cidh-card.prep .cidh-card-cta-icon{border-color:var(--borde);color:var(--texto4)}
+@media(max-width:600px){.cidh-card{grid-template-columns:1fr}.cidh-card-cta{display:none}}
+</style>
+
+<!-- BLOQUE I: Obligaciones generales -->
+<div class="cidh-bloque">
+  <div class="cidh-bloque-hdr">I &middot; Obligaciones generales del Estado</div>
+  <div class="cidh-lista">
+
+    <div class="cidh-card prep">
+      <div>
+        <div class="cidh-card-meta">Serie C No. 4 &middot; 29 jul 1988 &middot; Honduras</div>
+        <div class="cidh-card-titulo">Vel&aacute;squez Rodr&iacute;guez <em style="font-style:italic;color:var(--texto4)">vs.</em> Honduras</div>
+        <div class="cidh-card-desc">Piedra angular del sistema contencioso. Define el deber de garantía del art. 1.1 y la obligación de investigar como deber jurídico propio —de medios, no de resultado—.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag prep">Desaparición forzada</span><span class="cidh-tag prep">Deber de garantía</span><span class="cidh-tag prep">En preparación</span></div>
+      </div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+    </div>
+
+    <div class="cidh-card prep">
+      <div>
+        <div class="cidh-card-meta">Serie C No. 52 &middot; 30 may 1999 &middot; Per&uacute;</div>
+        <div class="cidh-card-titulo">Castillo Petruzzi y otros <em style="font-style:italic;color:var(--texto4)">vs.</em> Per&uacute;</div>
+        <div class="cidh-card-desc">Límite tajante a la justicia penal militar: juzgar civiles ante tribunales militares viola el derecho al juez natural, la independencia y la imparcialidad del art. 8.1.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag prep">Juez natural</span><span class="cidh-tag prep">Debido proceso</span><span class="cidh-tag prep">En preparación</span></div>
+      </div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BLOQUE II: Amnistía e impunidad -->
+<div class="cidh-bloque">
+  <div class="cidh-bloque-hdr">II &middot; Amnist&iacute;a, impunidad y control de convencionalidad</div>
+  <div class="cidh-lista">
+
+    <div class="cidh-card prep">
+      <div>
+        <div class="cidh-card-meta">Serie C No. 75 &middot; 14 mar 2001 &middot; Per&uacute;</div>
+        <div class="cidh-card-titulo">Barrios Altos <em style="font-style:italic;color:var(--texto4)">vs.</em> Per&uacute;</div>
+        <div class="cidh-card-desc">Consagra la inadmisibilidad de leyes de amnistía que impidan investigar y sancionar graves violaciones de DDHH. Esas leyes carecen de efectos jurídicos ab initio por violar los arts. 8 y 25.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag prep">Amnistía</span><span class="cidh-tag prep">Impunidad</span><span class="cidh-tag prep">En preparación</span></div>
+      </div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+    </div>
+
+    <div class="cidh-card prep">
+      <div>
+        <div class="cidh-card-meta">Serie C No. 154 &middot; 26 sep 2006 &middot; Chile</div>
+        <div class="cidh-card-titulo">Almonacid Arellano y otros <em style="font-style:italic;color:var(--texto4)">vs.</em> Chile</div>
+        <div class="cidh-card-desc">Caso hito del control de convencionalidad. Obliga formalmente a los jueces locales a velar porque los efectos de las leyes internas no mermen el objeto y fin de la Convención Americana.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag prep">Control de convencionalidad</span><span class="cidh-tag prep">Decreto Ley</span><span class="cidh-tag prep">En preparación</span></div>
+      </div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+    </div>
+
+    <div class="cidh-card prep">
+      <div>
+        <div class="cidh-card-meta">Serie C No. 221 &middot; 24 feb 2011 &middot; Uruguay</div>
+        <div class="cidh-card-titulo">Gelman <em style="font-style:italic;color:var(--texto4)">vs.</em> Uruguay</div>
+        <div class="cidh-card-desc">Precisa que la legitimidad democrática de una ley (incluso validada por plebiscito) está limitada por los compromisos internacionales. Profundiza el derecho a la verdad.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag prep">Democracia</span><span class="cidh-tag prep">Derecho a la verdad</span><span class="cidh-tag prep">En preparación</span></div>
+      </div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BLOQUE III: Violencia de género -->
+<div class="cidh-bloque">
+  <div class="cidh-bloque-hdr">III &middot; Violencia de g&eacute;nero, grupos vulnerables y NNA</div>
+  <div class="cidh-lista">
+
+    <div class="cidh-card prep">
+      <div>
+        <div class="cidh-card-meta">Serie C No. 205 &middot; 16 nov 2009 &middot; M&eacute;xico</div>
+        <div class="cidh-card-titulo">Gonz&aacute;lez y otras (&ldquo;Campo Algodonero&rdquo;) <em style="font-style:italic;color:var(--texto4)">vs.</em> M&eacute;xico</div>
+        <div class="cidh-card-desc">Vincula la violencia contra la mujer con discriminación de Estado. Establece la debida diligencia reforzada ante contextos de feminicidio estructural: investigación con perspectiva de género, de oficio e inmediata.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag prep">Feminicidio</span><span class="cidh-tag prep">Debida diligencia</span><span class="cidh-tag prep">En preparación</span></div>
+      </div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+    </div>
+
+    <div class="cidh-card" onclick="showPanel('pcaso-rosendo')">
+      <div>
+        <div class="cidh-card-meta">Serie C No. 216 &middot; 31 ago 2010 &middot; M&eacute;xico</div>
+        <div class="cidh-card-titulo">Rosendo Cant&uacute; y otra <em style="font-style:italic;color:var(--texto3)">vs.</em> M&eacute;xico</div>
+        <div class="cidh-card-desc">Violaci&oacute;n sexual por militares a mujer ind&iacute;gena Me&#x2019;phaa. Violaci&oacute;n sexual como tortura, valoraci&oacute;n del testimonio sin prueba documental, interseccionalidad, incompetencia del fuero militar.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag">Violencia sexual</span><span class="cidh-tag">Interseccionalidad</span><span class="cidh-tag">Fuero militar</span><span class="cidh-tag">4 est&aacute;ndares</span></div>
+      </div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Leer</div><div class="cidh-card-cta-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="2" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="7,3 10.5,6.5 7,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></div>
+    </div>
+
+    <div class="cidh-card" onclick="showPanel('pcaso-vrp')">
+      <div>
+        <div class="cidh-card-meta">Serie C No. 350 &middot; 8 mar 2018 &middot; Nicaragua</div>
+        <div class="cidh-card-titulo">V.R.P., V.P.C. y otros <em style="font-style:italic;color:var(--texto3)">vs.</em> Nicaragua</div>
+        <div class="cidh-card-desc">Violaci&oacute;n sexual a ni&ntilde;a de 8 a&ntilde;os. Debida diligencia reforzada para NNA, prohibici&oacute;n de revictimizaci&oacute;n, C&aacute;mara Gesell, deber de motivaci&oacute;n en el juicio por jurados.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag">NNA v&iacute;ctimas</span><span class="cidh-tag">Revictimizaci&oacute;n</span><span class="cidh-tag">Motivaci&oacute;n</span><span class="cidh-tag">4 est&aacute;ndares</span></div>
+      </div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Leer</div><div class="cidh-card-cta-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="2" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="7,3 10.5,6.5 7,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></div>
+    </div>
+
+    <div class="cidh-card prep">
+      <div>
+        <div class="cidh-card-meta">Serie C No. 239 &middot; 24 feb 2012 &middot; Chile</div>
+        <div class="cidh-card-titulo">Atala Riffo y ni&ntilde;as <em style="font-style:italic;color:var(--texto4)">vs.</em> Chile</div>
+        <div class="cidh-card-desc">Primer caso donde la Corte declara que la orientación sexual y la identidad de género son categorías protegidas por el art. 1.1. Prohíbe estereotipos sexuales para decidir custodia de menores.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag prep">LGTBI</span><span class="cidh-tag prep">No discriminaci&oacute;n</span><span class="cidh-tag prep">En preparación</span></div>
+      </div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BLOQUE IV: Pueblos indígenas -->
+<div class="cidh-bloque">
+  <div class="cidh-bloque-hdr">IV &middot; Pueblos ind&iacute;genas y derechos colectivos</div>
+  <div class="cidh-lista">
+
+    <div class="cidh-card prep">
+      <div>
+        <div class="cidh-card-meta">Serie C No. 79 &middot; 31 ago 2001 &middot; Nicaragua</div>
+        <div class="cidh-card-titulo">Comunidad Mayagna (Sumo) Awas Tingni <em style="font-style:italic;color:var(--texto4)">vs.</em> Nicaragua</div>
+        <div class="cidh-card-desc">Interpretación evolutiva del art. 21 para amparar la propiedad colectiva de pueblos indígenas sobre sus tierras ancestrales conforme a sus usos, costumbres y esquemas consuetudinarios.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag prep">Propiedad comunal</span><span class="cidh-tag prep">Tierras ancestrales</span><span class="cidh-tag prep">En preparación</span></div>
+      </div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BLOQUE V: Derechos reproductivos -->
+<div class="cidh-bloque">
+  <div class="cidh-bloque-hdr">V &middot; Derechos biom&eacute;dicos y reproductivos</div>
+  <div class="cidh-lista">
+
+    <div class="cidh-card prep">
+      <div>
+        <div class="cidh-card-meta">Serie C No. 257 &middot; 28 nov 2012 &middot; Costa Rica</div>
+        <div class="cidh-card-titulo">Artavia Murillo y otros (&ldquo;Fecundaci&oacute;n in vitro&rdquo;) <em style="font-style:italic;color:var(--texto4)">vs.</em> Costa Rica</div>
+        <div class="cidh-card-desc">Determina que la "concepción" del art. 4.1 ocurre con la implantación en el útero, no con la fecundación. El embrión no implantado no es persona bajo la Convención; valida las técnicas de reproducción asistida.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag prep">Derechos reproductivos</span><span class="cidh-tag prep">Art. 4 CADH</span><span class="cidh-tag prep">En preparación</span></div>
+      </div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+    </div>
+
+  </div>
+</div>
+
+</div></div><!-- /panel pcidh -->
+
+<!-- ══ PANELES PLACEHOLDER — 8 casos en preparación ══ -->
+
+<div class="panel" id="pcaso-velasquez"><div class="panel-inner">
+<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 4 &middot; 29 de julio de 1988</div>
+  <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Vel&aacute;squez Rodr&iacute;guez <em style="color:rgba(26,100,180,.35)">vs.</em> Honduras</h1>
+</div>
+<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
+  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+</div>
+</div></div>
+
+<div class="panel" id="pcaso-castillo"><div class="panel-inner">
+<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 52 &middot; 30 de mayo de 1999</div>
+  <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Castillo Petruzzi y otros <em style="color:rgba(26,100,180,.35)">vs.</em> Per&uacute;</h1>
+</div>
+<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
+  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+</div>
+</div></div>
+
+<div class="panel" id="pcaso-barrios"><div class="panel-inner">
+<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 75 &middot; 14 de marzo de 2001</div>
+  <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Barrios Altos <em style="color:rgba(26,100,180,.35)">vs.</em> Per&uacute;</h1>
+</div>
+<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
+  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+</div>
+</div></div>
+
+<div class="panel" id="pcaso-almonacid"><div class="panel-inner">
+<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 154 &middot; 26 de septiembre de 2006</div>
+  <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Almonacid Arellano y otros <em style="color:rgba(26,100,180,.35)">vs.</em> Chile</h1>
+</div>
+<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
+  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+</div>
+</div></div>
+
+<div class="panel" id="pcaso-gelman"><div class="panel-inner">
+<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 221 &middot; 24 de febrero de 2011</div>
+  <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Gelman <em style="color:rgba(26,100,180,.35)">vs.</em> Uruguay</h1>
+</div>
+<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
+  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+</div>
+</div></div>
+
+<div class="panel" id="pcaso-campo"><div class="panel-inner">
+<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 205 &middot; 16 de noviembre de 2009</div>
+  <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Gonz&aacute;lez y otras (&ldquo;Campo Algodonero&rdquo;) <em style="color:rgba(26,100,180,.35)">vs.</em> M&eacute;xico</h1>
+</div>
+<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
+  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+</div>
+</div></div>
+
+<div class="panel" id="pcaso-atala"><div class="panel-inner">
+<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 239 &middot; 24 de febrero de 2012</div>
+  <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Atala Riffo y ni&ntilde;as <em style="color:rgba(26,100,180,.35)">vs.</em> Chile</h1>
+</div>
+<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
+  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+</div>
+</div></div>
+
+<div class="panel" id="pcaso-awas"><div class="panel-inner">
+<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 79 &middot; 31 de agosto de 2001</div>
+  <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Comunidad Mayagna (Sumo) Awas Tingni <em style="color:rgba(26,100,180,.35)">vs.</em> Nicaragua</h1>
+</div>
+<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
+  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+</div>
+</div></div>
+
+<div class="panel" id="pcaso-artavia"><div class="panel-inner">
+<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 257 &middot; 28 de noviembre de 2012</div>
+  <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Artavia Murillo y otros (&ldquo;Fecundaci&oacute;n in vitro&rdquo;) <em style="color:rgba(26,100,180,.35)">vs.</em> Costa Rica</h1>
+</div>
+<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
+  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+</div>
+</div></div>
+
+
+<!-- ══ PANEL CASO: ROSENDO CANTÚ ══ -->
+<div class="panel" id="pcaso-rosendo"><div class="panel-inner">
+
+<div style="margin-bottom:24px">
+  <button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0;transition:color .16s" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button>
+</div>
+
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 216 &middot; 31 de agosto de 2010</div>
+  <span class="ley-num" style="color:rgba(26,100,180,.8)">Excepci&oacute;n Preliminar, Fondo, Reparaciones y Costas</span>
+  <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Rosendo Cant&uacute; y otra <em style="color:rgba(26,100,180,.35)">vs.</em> M&eacute;xico</h1>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Violencia sexual</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Pueblos ind&iacute;genas</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Acceso a la justicia</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Fuero militar</span>
+  </div>
+</div>
+
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9312; Hechos jur&iacute;dicamente relevantes</div>
+  <p style="font-size:13.5px;color:var(--texto2);line-height:1.7;text-align:justify">El 16 de febrero de 2002, Valentina Rosendo Cant&uacute;, mujer ind&iacute;gena Me&#x2019;phaa de 17 a&ntilde;os, fue v&iacute;ctima de violaci&oacute;n sexual perpetrada por miembros del Ej&eacute;rcito mexicano en el estado de Guerrero. Al acudir a las autoridades a denunciar, no cont&oacute; con int&eacute;rprete, fue sometida a examen m&eacute;dico que replic&oacute; la violencia sufrida y su denuncia fue remitida a la jurisdicci&oacute;n penal militar &mdash;fuero que la Corte declar&oacute; incompetente para investigar violaciones de derechos humanos cometidas por militares contra civiles&mdash;. Los hechos se enmarcaron en un contexto de militarizaci&oacute;n de la regi&oacute;n y de discriminaci&oacute;n estructural hacia la mujer ind&iacute;gena.</p>
+</div>
+
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9313; Normas convencionales aplicadas</div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px">
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">CADH Art. 5 &mdash; Integridad personal</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">CADH Art. 8 &mdash; Garant&iacute;as judiciales</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">CADH Art. 11 &mdash; Vida privada y dignidad</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">CADH Art. 19 &mdash; Derechos del ni&ntilde;o</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">CADH Art. 25 &mdash; Protecci&oacute;n judicial</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Bel&eacute;m do Par&aacute; Art. 7</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Conv. Tortura Arts. 1, 6 y 8</span>
+  </div>
+</div>
+
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9314; Est&aacute;ndares fijados &mdash; ratio decidendi</div>
+  <div style="display:flex;flex-direction:column;gap:14px">
+
+    <div style="display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start">
+      <div style="font-family:'Lora',serif;font-size:20px;font-weight:700;color:rgba(26,100,180,.35);line-height:1;padding-top:2px">1</div>
+      <div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--texto);margin-bottom:4px">Violaci&oacute;n sexual como tortura</div>
+        <p style="font-size:13px;color:var(--texto2);line-height:1.65;text-align:justify">La violaci&oacute;n sexual cometida por agentes del Estado constituye tortura cuando se ejecuta con una finalidad &mdash;intimidar, humillar, castigar o discriminar&mdash; y produce sufrimiento f&iacute;sico y psicol&oacute;gico severo. No se requiere que sea sistem&aacute;tica: un solo acto basta para configurar tortura cuando concurren sus elementos.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start">
+      <div style="font-family:'Lora',serif;font-size:20px;font-weight:700;color:rgba(26,100,180,.35);line-height:1;padding-top:2px">2</div>
+      <div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--texto);margin-bottom:4px">Est&aacute;ndar de valoraci&oacute;n del testimonio de la v&iacute;ctima</div>
+        <p style="font-size:13px;color:var(--texto2);line-height:1.65;text-align:justify">La Corte estableci&oacute; que la violaci&oacute;n sexual es un tipo particular de agresi&oacute;n que, en general, se produce en ausencia de otras personas m&aacute;s all&aacute; de la v&iacute;ctima y el agresor. Dada la naturaleza de esta forma de violencia, <strong>no se puede esperar la existencia de pruebas gr&aacute;ficas o documentales</strong>, y por ello la declaraci&oacute;n de la v&iacute;ctima constituye una prueba fundamental sobre el hecho (p&aacute;rr. 89). Su ausencia de respaldo documental no puede usarse para descartarla; debe valorarse en conjunto con los dem&aacute;s elementos del proceso. La Corte proh&iacute;be que el juzgador aplique estereotipos de g&eacute;nero y exige que la valoraci&oacute;n considere el impacto traum&aacute;tico y el temor a la estigmatizaci&oacute;n.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start">
+      <div style="font-family:'Lora',serif;font-size:20px;font-weight:700;color:rgba(26,100,180,.35);line-height:1;padding-top:2px">3</div>
+      <div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--texto);margin-bottom:4px">Debida diligencia con perspectiva de g&eacute;nero e interseccionalidad</div>
+        <p style="font-size:13px;color:var(--texto2);line-height:1.65;text-align:justify">El Estado tiene el deber de investigar la violencia sexual con perspectiva de g&eacute;nero e interseccionalidad. Cuando la v&iacute;ctima pertenece a un pueblo ind&iacute;gena, la debida diligencia exige garantizar interpretaci&oacute;n en su lengua, atenci&oacute;n m&eacute;dica especializada y sensible al trauma, y evitar que las diligencias investigativas repliquen la violencia (revictimizaci&oacute;n).</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start">
+      <div style="font-family:'Lora',serif;font-size:20px;font-weight:700;color:rgba(26,100,180,.35);line-height:1;padding-top:2px">4</div>
+      <div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--texto);margin-bottom:4px">Incompetencia del fuero militar para investigar violaciones de DDHH</div>
+        <p style="font-size:13px;color:var(--texto2);line-height:1.65;text-align:justify">El fuero militar no puede conocer de violaciones a los derechos humanos cometidas por militares contra civiles. La remisi&oacute;n de estas investigaciones a la justicia castrense constituye en s&iacute; misma una violaci&oacute;n del derecho al acceso a la justicia y al juez natural.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="padding:16px 20px;border-radius:10px;background:rgba(26,100,180,.04);border:1px solid rgba(26,100,180,.1);margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:10px">&#9315; Decisi&oacute;n &mdash; puntos resolutivos principales</div>
+  <p style="font-size:13px;color:var(--texto2);line-height:1.7">La Corte declar&oacute; la responsabilidad internacional de M&eacute;xico por violaci&oacute;n de los art&iacute;culos <strong>5.1 y 5.2</strong> (integridad personal), <strong>11.1 y 11.2</strong> (vida privada y dignidad), en relaci&oacute;n con los art&iacute;culos 1 y 6 de la Convenci&oacute;n contra la Tortura y el art&iacute;culo 7.a de la Convenci&oacute;n de Bel&eacute;m do Par&aacute;; de los art&iacute;culos <strong>8 y 25</strong> (garant&iacute;as judiciales y protecci&oacute;n judicial); y del art&iacute;culo <strong>19</strong> (derechos del ni&ntilde;o), en perjuicio de Valentina Rosendo Cant&uacute;.</p>
+</div>
+
+<div style="padding:18px 20px;border-radius:10px;background:rgba(37,107,56,.04);border:1px solid rgba(37,107,56,.14);margin-bottom:24px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(37,107,56,.75);font-weight:700;margin-bottom:10px">&#9316; Relevancia para Colombia &mdash; control de convencionalidad</div>
+  <div style="display:flex;flex-direction:column;gap:9px">
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65">&#9658; <strong>En investigaci&oacute;n de delitos sexuales:</strong> ning&uacute;n estereotipo de g&eacute;nero puede fundamentar la descalificaci&oacute;n de la declaraci&oacute;n de la v&iacute;ctima. La Ley 1719 de 2014 y el Decreto 1710 de 2020 incorporan parte de estos est&aacute;ndares.</p>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65">&#9658; <strong>En poblaciones ind&iacute;genas:</strong> las autoridades deben garantizar int&eacute;rprete y protocolo de atenci&oacute;n culturalmente adecuado, conforme al Convenio 169 OIT (Ley 21 de 1991).</p>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65">&#9658; <strong>En perspectiva de g&eacute;nero e interseccionalidad:</strong> las sentencias de violencia sexual deben motivar el an&aacute;lisis probatorio desde un enfoque de g&eacute;nero e interseccionalidad.</p>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65">&#9658; <strong>Caso relacionado:</strong> <em>Fern&aacute;ndez Ortega y otros vs. M&eacute;xico</em> (Corte IDH, 2010), fallado el mismo d&iacute;a, consolida los est&aacute;ndares de este caso.</p>
+  </div>
+</div>
+
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:16px;border-top:1px solid var(--borde)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--texto4)">Corte IDH &middot; Serie C No. 216 &middot; 31 ago 2010 &middot; Unanimidad</div>
+  <a href="https://www.corteidh.or.cr/docs/casos/articulos/seriec_216_esp.pdf" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,100,180,.7);text-decoration:none;display:inline-flex;align-items:center;gap:5px;border-bottom:1px solid rgba(26,100,180,.2);padding-bottom:1px" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.7)'">Texto completo del fallo &rarr;</a>
+</div>
+
+</div></div><!-- /panel pcaso-rosendo -->
+
+<!-- ══ PANEL CASO: V.R.P. VS NICARAGUA ══ -->
+<div class="panel" id="pcaso-vrp"><div class="panel-inner">
+
+<div style="margin-bottom:24px">
+  <button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0;transition:color .16s" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button>
+</div>
+
+<div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+  <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 350 &middot; 8 de marzo de 2018</div>
+  <span class="ley-num" style="color:rgba(26,100,180,.8)">Excepciones Preliminares, Fondo, Reparaciones y Costas</span>
+  <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">V.R.P., V.P.C. y otros <em style="color:rgba(26,100,180,.35)">vs.</em> Nicaragua</h1>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">NNA v&iacute;ctimas</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Debida diligencia reforzada</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">No revictimizaci&oacute;n</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Juicio por jurados</span>
+  </div>
+</div>
+
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9312; Hechos jur&iacute;dicamente relevantes</div>
+  <p style="font-size:13.5px;color:var(--texto2);line-height:1.7;text-align:justify">V.R.P. era una ni&ntilde;a de ocho a&ntilde;os cuando fue v&iacute;ctima de violaci&oacute;n sexual cometida por su padre en Nicaragua. Al denunciar los hechos, el Estado la someti&oacute; a un examen m&eacute;dico forense calificado por la Corte como revictimizante, sin personal especializado ni protocolos adecuados de atenci&oacute;n a menores. La ni&ntilde;a fue adem&aacute;s requerida a participar en una inspecci&oacute;n ocular y una reconstrucci&oacute;n de los hechos en el lugar del abuso, sin acompa&ntilde;amiento psicol&oacute;gico. El proceso penal se tramic&oacute; ante un jurado popular que emiti&oacute; un veredicto absolutorio sin motivaci&oacute;n, lo que la Corte encontr&oacute; incompatible con las garant&iacute;as judiciales. El Estado no adopt&oacute; medidas de protecci&oacute;n integral ni de acompa&ntilde;amiento durante todo el proceso.</p>
+</div>
+
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9313; Normas convencionales aplicadas</div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px">
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">CADH Art. 5 &mdash; Integridad personal</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">CADH Art. 8 &mdash; Garant&iacute;as judiciales</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">CADH Art. 11 &mdash; Vida privada y dignidad</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">CADH Art. 19 &mdash; Derechos del ni&ntilde;o</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">CADH Art. 24 &mdash; Igualdad ante la ley</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">CADH Art. 25 &mdash; Protecci&oacute;n judicial</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Bel&eacute;m do Par&aacute; Art. 7.b</span>
+    <span style="font-size:11.5px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Conv. Derechos del Ni&ntilde;o</span>
+  </div>
+</div>
+
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9314; Est&aacute;ndares fijados &mdash; ratio decidendi</div>
+  <div style="display:flex;flex-direction:column;gap:14px">
+
+    <div style="display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start">
+      <div style="font-family:'Lora',serif;font-size:20px;font-weight:700;color:rgba(26,100,180,.35);line-height:1;padding-top:2px">1</div>
+      <div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--texto);margin-bottom:4px">Debida diligencia reforzada en casos de NNA v&iacute;ctimas de violencia sexual</div>
+        <p style="font-size:13px;color:var(--texto2);line-height:1.65;text-align:justify">Cuando la v&iacute;ctima es una ni&ntilde;a, ni&ntilde;o o adolescente, el deber de debida diligencia se eleva a un est&aacute;ndar reforzado. El Estado debe garantizar: (i) examen m&eacute;dico forense por personal especializado en atenci&oacute;n a NNA, en condiciones de privacidad; (ii) declaraci&oacute;n testimonial en condiciones especialmente protegidas &mdash;C&aacute;mara Gesell o equivalente&mdash;, con acompa&ntilde;amiento psicol&oacute;gico, idealmente una sola vez; (iii) no exponer a la v&iacute;ctima a diligencias como reconstrucciones de hechos sin justificaci&oacute;n imperiosa y sin las medidas de protecci&oacute;n adecuadas.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start">
+      <div style="font-family:'Lora',serif;font-size:20px;font-weight:700;color:rgba(26,100,180,.35);line-height:1;padding-top:2px">2</div>
+      <div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--texto);margin-bottom:4px">Prohibici&oacute;n de revictimizaci&oacute;n</div>
+        <p style="font-size:13px;color:var(--texto2);line-height:1.65;text-align:justify">La revictimizaci&oacute;n &mdash;el da&ntilde;o adicional causado a la v&iacute;ctima por la forma en que el sistema de justicia conduce la investigaci&oacute;n&mdash; constituye en s&iacute; misma una violaci&oacute;n de sus derechos. En casos de violencia sexual contra NNA, cualquier diligencia que exponga a la v&iacute;ctima a revivir el hecho sin la contenci&oacute;n psicol&oacute;gica adecuada es per se revictimizante y compromete la responsabilidad del Estado.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start">
+      <div style="font-family:'Lora',serif;font-size:20px;font-weight:700;color:rgba(26,100,180,.35);line-height:1;padding-top:2px">3</div>
+      <div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--texto);margin-bottom:4px">Deber de motivaci&oacute;n &mdash; incompatibilidad del juicio por jurados sin motivaci&oacute;n</div>
+        <p style="font-size:13px;color:var(--texto2);line-height:1.65;text-align:justify">El art&iacute;culo 8.1 de la Convenci&oacute;n Americana exige que las decisiones judiciales sean motivadas. Un veredicto absolutorio emitido por un jurado popular sin expresi&oacute;n de las razones que lo sustentan es incompatible con esta garant&iacute;a, porque impide a las partes conocer los fundamentos y ejercer el derecho a la impugnaci&oacute;n.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start">
+      <div style="font-family:'Lora',serif;font-size:20px;font-weight:700;color:rgba(26,100,180,.35);line-height:1;padding-top:2px">4</div>
+      <div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--texto);margin-bottom:4px">Inter&eacute;s superior del ni&ntilde;o como principio rector del proceso penal</div>
+        <p style="font-size:13px;color:var(--texto2);line-height:1.65;text-align:justify">El inter&eacute;s superior del ni&ntilde;o &mdash;consagrado en el art&iacute;culo 19 de la CADH e integrado con la Convenci&oacute;n sobre los Derechos del Ni&ntilde;o&mdash; debe permear todas las actuaciones del proceso penal en que una ni&ntilde;a, ni&ntilde;o o adolescente sea v&iacute;ctima, incluyendo la prueba, las audiencias, las medidas de protecci&oacute;n y las reparaciones.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="padding:16px 20px;border-radius:10px;background:rgba(26,100,180,.04);border:1px solid rgba(26,100,180,.1);margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:10px">&#9315; Decisi&oacute;n &mdash; puntos resolutivos principales</div>
+  <p style="font-size:13px;color:var(--texto2);line-height:1.7">La Corte declar&oacute; la responsabilidad internacional de Nicaragua por violaci&oacute;n de los art&iacute;culos <strong>5, 8, 11, 19, 24 y 25</strong> de la CADH en perjuicio de V.R.P., V.P.C. y sus familiares; y del art&iacute;culo <strong>7.b de la Convenci&oacute;n de Bel&eacute;m do Par&aacute;</strong>, por incumplimiento del deber de investigar con debida diligencia, la revictimizaci&oacute;n de la ni&ntilde;a y el veredicto absolutorio sin motivaci&oacute;n.</p>
+</div>
+
+<div style="padding:18px 20px;border-radius:10px;background:rgba(37,107,56,.04);border:1px solid rgba(37,107,56,.14);margin-bottom:24px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(37,107,56,.75);font-weight:700;margin-bottom:10px">&#9316; Relevancia para Colombia &mdash; control de convencionalidad</div>
+  <div style="display:flex;flex-direction:column;gap:9px">
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65">&#9658; <strong>En delitos sexuales contra menores (Ley 1098/2006 y Ley 1719/2014):</strong> la declaraci&oacute;n de la v&iacute;ctima NNA debe recibirse con C&aacute;mara Gesell, psic&oacute;logo acompa&ntilde;ante y entrevistador especializado, sin someterla a diligencias que impliquen revivir el hecho.</p>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65">&#9658; <strong>En la motivaci&oacute;n de sentencias absolutorias:</strong> la sentencia debe explicar expresamente por qu&eacute; el testimonio de la v&iacute;ctima no fue suficiente para desvirtuar la presunci&oacute;n de inocencia, sin recurrir a estereotipos de g&eacute;nero.</p>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65">&#9658; <strong>En protocolos de atenci&oacute;n a v&iacute;ctimas NNA:</strong> las rutas de atenci&oacute;n deben acoger los est&aacute;ndares de debida diligencia reforzada, conforme al C&oacute;digo de Infancia y Adolescencia.</p>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65">&#9658; <strong>Relaci&oacute;n con Rosendo Cant&uacute;:</strong> ambos casos forman un corpus complementario &mdash; Rosendo Cant&uacute; fija los est&aacute;ndares generales sobre violencia sexual; V.R.P. los especifica para NNA.</p>
+  </div>
+</div>
+
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:16px;border-top:1px solid var(--borde)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--texto4)">Corte IDH &middot; Serie C No. 350 &middot; 8 mar 2018 &middot; Mayor&iacute;a</div>
+  <a href="https://www.corteidh.or.cr/docs/casos/articulos/seriec_350_esp.pdf" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,100,180,.7);text-decoration:none;display:inline-flex;align-items:center;gap:5px;border-bottom:1px solid rgba(26,100,180,.2);padding-bottom:1px" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.7)'">Texto completo del fallo &rarr;</a>
+</div>
+
+</div></div><!-- /panel pcaso-vrp -->
+
 <!-- ══ SOBRE LEX PRAXIS ══ -->
 <div class="panel" id="psobre"><div class="panel-inner">
   <div class="sobre-hdr">
@@ -4111,32 +4644,31 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 
 <script>
 /* ══ PANELES ══ */
-var PANELS=['inicio','noticias','p599','p600','p906','p1826','p1098','pjuris','ptools','psobre'];
-var NAVMAP={inicio:'nav-inicio',noticias:'nav-noticias',p599:'nav-599',p600:'nav-600',p906:'nav-906',p1826:'nav-1826',p1098:'nav-1098',pjuris:'nav-juris',ptools:'nav-tools'};
+var PANELS=['inicio','noticias','p599','p600','p906','p1826','p1098','pjuris','pcidh','pcaso-rosendo','pcaso-vrp','pcaso-velasquez','pcaso-castillo','pcaso-barrios','pcaso-almonacid','pcaso-gelman','pcaso-campo','pcaso-atala','pcaso-awas','pcaso-artavia','ptools','psobre'];
+var NAVMAP={inicio:'nav-inicio',noticias:'nav-noticias',p599:'nav-599',p600:'nav-600',p906:'nav-906',p1826:'nav-1826',p1098:'nav-1098',pjuris:'nav-juris',pcidh:'nav-cidh',ptools:'nav-tools'};
 
 /* ══ URL ROUTING — mapeo ruta limpia ↔ panel ══ */
 var URL_TO_PANEL={
-  '/ley-599':'p599',
-  '/ley-906':'p906',
-  '/ley-1826':'p1826',
-  '/ley-1098':'p1098',
-  '/ley-600':'p600',
-  '/jurisprudencia':'pjuris',
-  '/herramientas':'ptools',
-  '/noticias':'noticias',
-  '/sobre':'psobre'
+  '/ley-599':'p599','/ley-906':'p906','/ley-1826':'p1826','/ley-1098':'p1098','/ley-600':'p600',
+  '/jurisprudencia':'pjuris','/cidh':'pcidh',
+  '/cidh/rosendo-cantu':'pcaso-rosendo','/cidh/vrp-nicaragua':'pcaso-vrp',
+  '/cidh/velasquez-rodriguez':'pcaso-velasquez','/cidh/castillo-petruzzi':'pcaso-castillo',
+  '/cidh/barrios-altos':'pcaso-barrios','/cidh/almonacid-arellano':'pcaso-almonacid',
+  '/cidh/gelman':'pcaso-gelman','/cidh/campo-algodonero':'pcaso-campo',
+  '/cidh/atala-riffo':'pcaso-atala','/cidh/awas-tingni':'pcaso-awas',
+  '/cidh/artavia-murillo':'pcaso-artavia',
+  '/herramientas':'ptools','/noticias':'noticias','/sobre':'psobre'
 };
 var PANEL_TO_URL={
-  'inicio':'/',
-  'p599':'/ley-599',
-  'p906':'/ley-906',
-  'p1826':'/ley-1826',
-  'p1098':'/ley-1098',
-  'p600':'/ley-600',
-  'pjuris':'/jurisprudencia',
-  'ptools':'/herramientas',
-  'noticias':'/noticias',
-  'psobre':'/sobre'
+  'inicio':'/','p599':'/ley-599','p906':'/ley-906','p1826':'/ley-1826','p1098':'/ley-1098','p600':'/ley-600',
+  'pjuris':'/jurisprudencia','pcidh':'/cidh',
+  'pcaso-rosendo':'/cidh/rosendo-cantu','pcaso-vrp':'/cidh/vrp-nicaragua',
+  'pcaso-velasquez':'/cidh/velasquez-rodriguez','pcaso-castillo':'/cidh/castillo-petruzzi',
+  'pcaso-barrios':'/cidh/barrios-altos','pcaso-almonacid':'/cidh/almonacid-arellano',
+  'pcaso-gelman':'/cidh/gelman','pcaso-campo':'/cidh/campo-algodonero',
+  'pcaso-atala':'/cidh/atala-riffo','pcaso-awas':'/cidh/awas-tingni',
+  'pcaso-artavia':'/cidh/artavia-murillo',
+  'ptools':'/herramientas','noticias':'/noticias','psobre':'/sobre'
 };
 /* Leer la URL actual y resolver el panel inicial */
 (function(){
@@ -4226,6 +4758,14 @@ function show599(sectionId,btnId){showSec('599',sectionId,btnId);}
 
 /* Grupos colapsables */
 function toggleGrp(id){document.getElementById(id).classList.toggle('open');}
+function toggleCidh(id){
+  var el=document.getElementById(id);
+  var isOpen=el.classList.contains('open');
+  /* Cierra todos primero */
+  document.querySelectorAll('.cidh-caso').forEach(function(c){c.classList.remove('open');});
+  /* Si estaba cerrado, ábrelo */
+  if(!isOpen){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'nearest'});}
+}
 
 /* Colapsar/expandir sub-ítems de una ley SIN navegar a ella */
 function toggleSubLey(ley,e){
