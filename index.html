@@ -931,7 +931,7 @@ body.on-home #sb-toggle{display:none!important}
 .mag .hb-wordmark em{font-style:italic;color:rgba(255,255,255,.38);font-weight:600}
 .mag .hb-tagline{font-family:"Lora",serif;font-size:clamp(15px,1.9vw,20px);font-weight:600;color:rgba(255,255,255,.78);letter-spacing:-.01em;margin:0 0 11px}
 .mag .hb-purpose{font-size:clamp(13px,1.35vw,15px);line-height:1.55;color:rgba(255,255,255,.58);max-width:520px;font-weight:300;margin:0 0 18px}
-.mag .hb-paths{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.mag .hb-paths{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:16px}
 .mag .hb-path{display:flex;align-items:center;gap:11px;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.1);border-radius:11px;padding:12px 13px;transition:transform .2s,background .2s,border-color .2s;position:relative;overflow:hidden}
 .mag .hb-path::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);opacity:0;transition:opacity .2s}
 .mag .hb-path:hover{background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.22);transform:translateY(-3px)}
@@ -948,6 +948,8 @@ body.on-home #sb-toggle{display:none!important}
 .mag .hb-path.p-proc{--accent:#8aa9d9;--accdim:rgba(40,60,140,.22)}
 .mag .hb-path.p-juris{--accent:#d9c47a;--accdim:rgba(122,92,30,.22)}
 .mag .hb-path.p-tools{--accent:#7ac9c9;--accdim:rgba(28,120,120,.22)}
+.mag .hb-path.p-cidh{--accent:#6aaee8;--accdim:rgba(26,100,180,.22)}
+@media(max-width:980px){.mag .hb-paths{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:780px){.mag .hb-paths{grid-template-columns:1fr 1fr}}
 @media(max-width:430px){.mag .hb-paths{grid-template-columns:1fr}}
 /* Franja de metricas reales que cierra el hero */
@@ -1476,10 +1478,13 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
       <a href="#" onclick="showPanel('ptools');return false;" class="hb-path p-tools">
         <span class="hb-path-ico"><svg viewBox="0 0 18 18" fill="none"><path d="M12.4 2.4a3.4 3.4 0 00-3.1 4.6L2.8 13.5a1.5 1.5 0 002.1 2.1l6.5-6.5a3.4 3.4 0 004.2-4.4l-2.1 2.1-1.9-.5-.5-1.9 2.1-2.1a3.4 3.4 0 00-.8-.0z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg></span><span class="hb-path-txt"><span class="hb-path-name">Herramientas</span><span class="hb-path-desc">Calculadora &middot; Glosario</span></span><span class="hb-path-arr">&#8594;</span>
       </a>
+      <a href="/cidh" onclick="showPanel('pcidh');return false;" class="hb-path p-cidh">
+        <span class="hb-path-ico"><svg viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.25" fill="none"/><ellipse cx="9" cy="9" rx="3" ry="6.5" stroke="currentColor" stroke-width="1" fill="none"/><line x1="2.5" y1="9" x2="15.5" y2="9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="4" y1="5.5" x2="14" y2="5.5" stroke="currentColor" stroke-width=".8" stroke-linecap="round"/><line x1="4" y1="12.5" x2="14" y2="12.5" stroke="currentColor" stroke-width=".8" stroke-linecap="round"/></svg></span><span class="hb-path-txt"><span class="hb-path-name">Corte IDH</span><span class="hb-path-desc">Sistema Interamericano</span></span><span class="hb-path-arr">&#8594;</span>
+      </a>
     </div>
     <div class="hb-metrics">
-      <div class="hb-metric m1"><span class="hb-m-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="2.5" y="1.8" width="11" height="12.4" rx="1.4" stroke="currentColor" stroke-width="1.2"/><line x1="5" y1="5" x2="11" y2="5" stroke="currentColor" stroke-width="1"/><line x1="5" y1="7.6" x2="11" y2="7.6" stroke="currentColor" stroke-width="1"/><line x1="5" y1="10.2" x2="8.5" y2="10.2" stroke="currentColor" stroke-width="1"/></svg></span><div><div class="hb-m-num">5 leyes</div><div class="hb-m-lbl">comentadas art&iacute;culo por art&iacute;culo</div></div></div>
-      <div class="hb-metric m2"><span class="hb-m-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.2"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><div><div class="hb-m-num">56 providencias</div><div class="hb-m-lbl">verificadas con ratio decidendi</div></div></div>
+      <div class="hb-metric m1"><span class="hb-m-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="2.5" y="1.8" width="11" height="12.4" rx="1.4" stroke="currentColor" stroke-width="1.2"/><line x1="5" y1="5" x2="11" y2="5" stroke="currentColor" stroke-width="1"/><line x1="5" y1="7.6" x2="11" y2="7.6" stroke="currentColor" stroke-width="1"/><line x1="5" y1="10.2" x2="8.5" y2="10.2" stroke="currentColor" stroke-width="1"/></svg></span><div><div class="hb-m-num">5 leyes</div><div class="hb-m-lbl">con an&aacute;lisis tem&aacute;tico interactivo</div></div></div>
+      <div class="hb-metric m2"><span class="hb-m-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.2"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><div><div class="hb-m-num">79 decisiones</div><div class="hb-m-lbl">CSJ Sala Penal y Corte IDH</div></div></div>
       <div class="hb-metric m3"><span class="hb-m-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2.5 13V9.5M6.2 13V6.5M9.9 13V8M13.6 13V3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><div><div class="hb-m-num">5 l&iacute;neas</div><div class="hb-m-lbl">jurisprudenciales completas</div></div></div>
     </div>
   </div>
@@ -1697,6 +1702,89 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
       <div class="inc-all"><a href="#noticias" onclick="showPanel('noticias');return false;">Ver todas las incorporaciones <span style="font-size:12px">&#8594;</span></a></div>
     </div>
   </section>
+
+<!-- ══ SECCIÓN CORTE IDH EN PORTADA ══ -->
+<div class="wrap">
+  <section class="section">
+    <div class="sec-eyebrow">Sistema Interamericano de DDHH</div>
+    <div class="sec-title">Corte IDH &mdash; Sentencias clave</div>
+    <div class="sec-sub">Fallos estructurales del Sistema Interamericano con an&aacute;lisis de ratio decidendi y relevancia directa para el ordenamiento colombiano.</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:8px">
+
+      <!-- Velásquez Rodríguez -->
+      <a href="/cidh/velasquez-rodriguez" onclick="showPanel('pcaso-velasquez');return false;" style="display:flex;flex-direction:column;gap:8px;padding:18px 20px;border-radius:12px;border:1px solid var(--borde);background:var(--fondo2);text-decoration:none;transition:border-color .18s,transform .18s" onmouseover="this.style.borderColor='rgba(26,100,180,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--borde)';this.style.transform='none'">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,100,180,.6)">Serie C No. 4 &middot; 1988 &middot; Honduras</div>
+        <div style="font-family:'Lora',serif;font-size:14px;font-weight:700;color:var(--texto);line-height:1.3">Vel&aacute;squez Rodr&iacute;guez</div>
+        <div style="font-size:12px;color:var(--texto3);line-height:1.5">Responsabilidad internacional del Estado. Desaparici&oacute;n forzada y deber de investigar.</div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:2px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Desap. forzada</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Deber de investigar</span>
+        </div>
+      </a>
+
+      <!-- Barrios Altos -->
+      <a href="/cidh/barrios-altos" onclick="showPanel('pcaso-barrios');return false;" style="display:flex;flex-direction:column;gap:8px;padding:18px 20px;border-radius:12px;border:1px solid var(--borde);background:var(--fondo2);text-decoration:none;transition:border-color .18s,transform .18s" onmouseover="this.style.borderColor='rgba(26,100,180,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--borde)';this.style.transform='none'">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,100,180,.6)">Serie C No. 75 &middot; 2001 &middot; Per&uacute;</div>
+        <div style="font-family:'Lora',serif;font-size:14px;font-weight:700;color:var(--texto);line-height:1.3">Barrios Altos</div>
+        <div style="font-size:12px;color:var(--texto3);line-height:1.5">Leyes de amnist&iacute;a incompatibles con la CADH. Crímenes de lesa humanidad inalterables por el derecho interno.</div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:2px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Amnistía</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Lesa humanidad</span>
+        </div>
+      </a>
+
+      <!-- Almonacid Arellano -->
+      <a href="/cidh/almonacid-arellano" onclick="showPanel('pcaso-almonacid');return false;" style="display:flex;flex-direction:column;gap:8px;padding:18px 20px;border-radius:12px;border:1px solid var(--borde);background:var(--fondo2);text-decoration:none;transition:border-color .18s,transform .18s" onmouseover="this.style.borderColor='rgba(26,100,180,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--borde)';this.style.transform='none'">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,100,180,.6)">Serie C No. 154 &middot; 2006 &middot; Chile</div>
+        <div style="font-family:'Lora',serif;font-size:14px;font-weight:700;color:var(--texto);line-height:1.3">Almonacid Arellano</div>
+        <div style="font-size:12px;color:var(--texto3);line-height:1.5">Origen del control de convencionalidad. Imprescriptibilidad de crímenes de lesa humanidad.</div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:2px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Control convencionalidad</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Ius cogens</span>
+        </div>
+      </a>
+
+      <!-- Gelman -->
+      <a href="/cidh/gelman" onclick="showPanel('pcaso-gelman');return false;" style="display:flex;flex-direction:column;gap:8px;padding:18px 20px;border-radius:12px;border:1px solid var(--borde);background:var(--fondo2);text-decoration:none;transition:border-color .18s,transform .18s" onmouseover="this.style.borderColor='rgba(26,100,180,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--borde)';this.style.transform='none'">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,100,180,.6)">Serie C No. 221 &middot; 2011 &middot; Uruguay</div>
+        <div style="font-family:'Lora',serif;font-size:14px;font-weight:700;color:var(--texto);line-height:1.3">Gelman</div>
+        <div style="font-size:12px;color:var(--texto3);line-height:1.5">La democracia no puede amnistiar crímenes de lesa humanidad. Control de convencionalidad vincula a todos los poderes.</div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:2px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Democracia y DDHH</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Desap. forzada</span>
+        </div>
+      </a>
+
+      <!-- Rosendo Cantú -->
+      <a href="/cidh/rosendo-cantu" onclick="showPanel('pcaso-rosendo');return false;" style="display:flex;flex-direction:column;gap:8px;padding:18px 20px;border-radius:12px;border:1px solid var(--borde);background:var(--fondo2);text-decoration:none;transition:border-color .18s,transform .18s" onmouseover="this.style.borderColor='rgba(26,100,180,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--borde)';this.style.transform='none'">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,100,180,.6)">Serie C No. 216 &middot; 2010 &middot; M&eacute;xico</div>
+        <div style="font-family:'Lora',serif;font-size:14px;font-weight:700;color:var(--texto);line-height:1.3">Rosendo Cant&uacute;</div>
+        <div style="font-size:12px;color:var(--texto3);line-height:1.5">Violaci&oacute;n sexual a mujer ind&iacute;gena. Debida diligencia, revictimizaci&oacute;n, c&aacute;mara Gesell e incompetencia del fuero militar.</div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:2px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Violencia sexual</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Fuero militar</span>
+        </div>
+      </a>
+
+      <!-- Atala Riffo -->
+      <a href="/cidh/atala-riffo" onclick="showPanel('pcaso-atala');return false;" style="display:flex;flex-direction:column;gap:8px;padding:18px 20px;border-radius:12px;border:1px solid var(--borde);background:var(--fondo2);text-decoration:none;transition:border-color .18s,transform .18s" onmouseover="this.style.borderColor='rgba(26,100,180,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--borde)';this.style.transform='none'">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,100,180,.6)">Serie C No. 239 &middot; 2012 &middot; Chile</div>
+        <div style="font-family:'Lora',serif;font-size:14px;font-weight:700;color:var(--texto);line-height:1.3">Atala Riffo y ni&ntilde;as</div>
+        <div style="font-size:12px;color:var(--texto3);line-height:1.5">La orientaci&oacute;n sexual es categor&iacute;a protegida por el art. 1.1 CADH. Proh&iacute;be estereotipos en decisiones de custodia.</div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:2px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Orientaci&oacute;n sexual</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">No discriminaci&oacute;n</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div style="margin-top:18px;text-align:right">
+      <a href="/cidh" onclick="showPanel('pcidh');return false;" style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.7);text-decoration:none;display:inline-flex;align-items:center;gap:6px" onmouseover="this.style.color='rgba(26,100,180,1)'" onmouseout="this.style.color='rgba(26,100,180,.7)'">Ver todos los fallos Corte IDH <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="2" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="7,3 10.5,6.5 7,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></a>
+    </div>
+  </section>
+</div>
 
 <footer class="footer">
   <div class="footer-inner">
@@ -3775,14 +3863,14 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
       <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Leer</div><div class="cidh-card-cta-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="2" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="7,3 10.5,6.5 7,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></div>
     </div>
 
-    <div class="cidh-card prep">
+    <div class="cidh-card" onclick="showPanel('pcaso-gelman')">
       <div>
         <div class="cidh-card-meta">Serie C No. 221 &middot; 24 feb 2011 &middot; Uruguay</div>
         <div class="cidh-card-titulo">Gelman <em style="font-style:italic;color:var(--texto4)">vs.</em> Uruguay</div>
-        <div class="cidh-card-desc">Precisa que la legitimidad democrática de una ley (incluso validada por plebiscito) está limitada por los compromisos internacionales. Profundiza el derecho a la verdad.</div>
-        <div class="cidh-card-tags"><span class="cidh-tag prep">Democracia</span><span class="cidh-tag prep">Derecho a la verdad</span><span class="cidh-tag prep">En preparación</span></div>
+        <div class="cidh-card-desc">Precisa que la legitimidad democrática de una ley (incluso validada por plebiscito) está limitada por los compromisos internacionales. Amnistía, desaparición forzada, identidad de niños y control de convencionalidad.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag">Desaparición forzada</span><span class="cidh-tag">Amnistía</span><span class="cidh-tag">Identidad de niños</span><span class="cidh-tag">6 estándares</span></div>
       </div>
-      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Leer</div><div class="cidh-card-cta-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="2" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="7,3 10.5,6.5 7,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></div>
     </div>
 
   </div>
@@ -3793,14 +3881,14 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
   <div class="cidh-bloque-hdr">III &middot; Violencia de g&eacute;nero, grupos vulnerables y NNA</div>
   <div class="cidh-lista">
 
-    <div class="cidh-card prep">
+    <div class="cidh-card" onclick="showPanel('pcaso-campo')">
       <div>
         <div class="cidh-card-meta">Serie C No. 205 &middot; 16 nov 2009 &middot; M&eacute;xico</div>
-        <div class="cidh-card-titulo">Gonz&aacute;lez y otras (&ldquo;Campo Algodonero&rdquo;) <em style="font-style:italic;color:var(--texto4)">vs.</em> M&eacute;xico</div>
-        <div class="cidh-card-desc">Vincula la violencia contra la mujer con discriminación de Estado. Establece la debida diligencia reforzada ante contextos de feminicidio estructural: investigación con perspectiva de género, de oficio e inmediata.</div>
-        <div class="cidh-card-tags"><span class="cidh-tag prep">Feminicidio</span><span class="cidh-tag prep">Debida diligencia</span><span class="cidh-tag prep">En preparación</span></div>
+        <div class="cidh-card-titulo">Gonz&aacute;lez y otras (&ldquo;Campo Algodonero&rdquo;) <em style="font-style:italic;color:var(--texto3)">vs.</em> M&eacute;xico</div>
+        <div class="cidh-card-desc">Vincula la violencia contra la mujer con discriminaci&oacute;n de Estado. Establece la debida diligencia reforzada ante contextos de feminicidio estructural: investigaci&oacute;n con perspectiva de g&eacute;nero, de oficio e inmediata.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag">Feminicidio estructural</span><span class="cidh-tag">Debida diligencia</span><span class="cidh-tag">Perspectiva de g&eacute;nero</span><span class="cidh-tag">Bel&eacute;m do Par&aacute;</span></div>
       </div>
-      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Leer</div><div class="cidh-card-cta-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="2" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="7,3 10.5,6.5 7,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></div>
     </div>
 
     <div class="cidh-card" onclick="showPanel('pcaso-rosendo')">
@@ -3823,14 +3911,14 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
       <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Leer</div><div class="cidh-card-cta-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="2" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="7,3 10.5,6.5 7,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></div>
     </div>
 
-    <div class="cidh-card prep">
+    <div class="cidh-card" onclick="showPanel('pcaso-atala')">
       <div>
         <div class="cidh-card-meta">Serie C No. 239 &middot; 24 feb 2012 &middot; Chile</div>
         <div class="cidh-card-titulo">Atala Riffo y ni&ntilde;as <em style="font-style:italic;color:var(--texto4)">vs.</em> Chile</div>
-        <div class="cidh-card-desc">Primer caso donde la Corte declara que la orientación sexual y la identidad de género son categorías protegidas por el art. 1.1. Prohíbe estereotipos sexuales para decidir custodia de menores.</div>
-        <div class="cidh-card-tags"><span class="cidh-tag prep">LGTBI</span><span class="cidh-tag prep">No discriminaci&oacute;n</span><span class="cidh-tag prep">En preparación</span></div>
+        <div class="cidh-card-desc">Primer caso donde la Corte IDH declara que la orientaci&oacute;n sexual y la identidad de g&eacute;nero son categor&iacute;as protegidas por el art. 1.1. Proh&iacute;be usar estereotipos discriminatorios en decisiones de custodia de NNA.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag">Orientaci&oacute;n sexual</span><span class="cidh-tag">No discriminaci&oacute;n</span><span class="cidh-tag">Inter&eacute;s superior NNA</span><span class="cidh-tag">6 est&aacute;ndares</span></div>
       </div>
-      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Leer</div><div class="cidh-card-cta-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="2" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="7,3 10.5,6.5 7,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></div>
     </div>
 
   </div>
@@ -3841,14 +3929,14 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
   <div class="cidh-bloque-hdr">IV &middot; Pueblos ind&iacute;genas y derechos colectivos</div>
   <div class="cidh-lista">
 
-    <div class="cidh-card prep">
+    <div class="cidh-card" onclick="showPanel('pcaso-awas')">
       <div>
         <div class="cidh-card-meta">Serie C No. 79 &middot; 31 ago 2001 &middot; Nicaragua</div>
-        <div class="cidh-card-titulo">Comunidad Mayagna (Sumo) Awas Tingni <em style="font-style:italic;color:var(--texto4)">vs.</em> Nicaragua</div>
-        <div class="cidh-card-desc">Interpretación evolutiva del art. 21 para amparar la propiedad colectiva de pueblos indígenas sobre sus tierras ancestrales conforme a sus usos, costumbres y esquemas consuetudinarios.</div>
-        <div class="cidh-card-tags"><span class="cidh-tag prep">Propiedad comunal</span><span class="cidh-tag prep">Tierras ancestrales</span><span class="cidh-tag prep">En preparación</span></div>
+        <div class="cidh-card-titulo">Comunidad Mayagna (Sumo) Awas Tingni <em style="font-style:italic;color:var(--texto3)">vs.</em> Nicaragua</div>
+        <div class="cidh-card-desc">Interpretaci&oacute;n evolutiva del art. 21 para amparar la propiedad colectiva de pueblos ind&iacute;genas sobre sus tierras ancestrales conforme a sus usos, costumbres y esquemas consuetudinarios.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag">Propiedad comunal</span><span class="cidh-tag">Tierras ancestrales</span><span class="cidh-tag">Interpretaci&oacute;n evolutiva</span><span class="cidh-tag">Demarcaci&oacute;n</span></div>
       </div>
-      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Leer</div><div class="cidh-card-cta-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="2" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="7,3 10.5,6.5 7,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></div>
     </div>
 
   </div>
@@ -3859,14 +3947,14 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
   <div class="cidh-bloque-hdr">V &middot; Derechos biom&eacute;dicos y reproductivos</div>
   <div class="cidh-lista">
 
-    <div class="cidh-card prep">
+    <div class="cidh-card" onclick="showPanel('pcaso-artavia')">
       <div>
         <div class="cidh-card-meta">Serie C No. 257 &middot; 28 nov 2012 &middot; Costa Rica</div>
-        <div class="cidh-card-titulo">Artavia Murillo y otros (&ldquo;Fecundaci&oacute;n in vitro&rdquo;) <em style="font-style:italic;color:var(--texto4)">vs.</em> Costa Rica</div>
-        <div class="cidh-card-desc">Determina que la "concepción" del art. 4.1 ocurre con la implantación en el útero, no con la fecundación. El embrión no implantado no es persona bajo la Convención; valida las técnicas de reproducción asistida.</div>
-        <div class="cidh-card-tags"><span class="cidh-tag prep">Derechos reproductivos</span><span class="cidh-tag prep">Art. 4 CADH</span><span class="cidh-tag prep">En preparación</span></div>
+        <div class="cidh-card-titulo">Artavia Murillo y otros (&ldquo;Fecundaci&oacute;n in vitro&rdquo;) <em style="font-style:italic;color:var(--texto3)">vs.</em> Costa Rica</div>
+        <div class="cidh-card-desc">Determina que la &ldquo;concepci&oacute;n&rdquo; del art. 4.1 ocurre con la implantaci&oacute;n en el &uacute;tero, no con la fecundaci&oacute;n. El embri&oacute;n no implantado no es persona bajo la Convenci&oacute;n; valida las t&eacute;cnicas de reproducci&oacute;n asistida.</div>
+        <div class="cidh-card-tags"><span class="cidh-tag">Derechos reproductivos</span><span class="cidh-tag">Art. 4.1 CADH</span><span class="cidh-tag">Discriminaci&oacute;n indirecta</span><span class="cidh-tag">FIV</span></div>
       </div>
-      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Próxim.</div><div class="cidh-card-cta-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="3.5" x2="6" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6" cy="8.2" r=".7" fill="currentColor"/></svg></div></div>
+      <div class="cidh-card-cta"><div class="cidh-card-cta-lbl">Leer</div><div class="cidh-card-cta-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="2" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="7,3 10.5,6.5 7,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></div>
     </div>
 
   </div>
@@ -4438,51 +4526,383 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 </div></div>
 
 <div class="panel" id="pcaso-campo"><div class="panel-inner">
-<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+
+<div style="margin-bottom:24px">
+  <button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0;transition:color .16s" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button>
+</div>
+
 <div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
   <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 205 &middot; 16 de noviembre de 2009</div>
+  <span class="ley-num" style="color:rgba(26,100,180,.8)">Excepci&oacute;n Preliminar, Fondo, Reparaciones y Costas</span>
   <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Gonz&aacute;lez y otras (&ldquo;Campo Algodonero&rdquo;) <em style="color:rgba(26,100,180,.35)">vs.</em> M&eacute;xico</h1>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Feminicidio estructural</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Debida diligencia reforzada</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Violencia de g&eacute;nero</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Perspectiva de g&eacute;nero</span>
+  </div>
 </div>
-<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
-  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
-  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+
+<!-- ① HECHOS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9312; Hechos jur&iacute;dicamente relevantes</div>
+  <p style="font-size:13.5px;color:var(--texto2);line-height:1.7;text-align:justify">Ciudad Ju&aacute;rez, Chihuahua, M&eacute;xico, concentraba desde 1993 un patr&oacute;n sistem&aacute;tico de desapariciones y homicidios de mujeres y ni&ntilde;as, reconocido por organismos nacionales e internacionales como expresi&oacute;n de violencia de g&eacute;nero vinculada a una cultura de discriminaci&oacute;n estructural. Entre septiembre y octubre de 2001 desaparecieron tres j&oacute;venes de origen humilde: Laura Berenice Ramos Mon&aacute;rrez, 17 a&ntilde;os, estudiante de preparatoria, cuya desaparici&oacute;n fue reportada el 25 de septiembre; Claudia Ivette Gonz&aacute;lez, 20 a&ntilde;os, trabajadora de maquiladora, que desapareci&oacute; el 10 de octubre luego de que le fuera impedida la entrada a su lugar de trabajo por llegar dos minutos tarde; y Esmeralda Herrera Monreal, 15 a&ntilde;os, empleada dom&eacute;stica, desaparecida el 29 de octubre. El 6 de noviembre de 2001 sus cuerpos fueron encontrados en un campo algodonero de Ciudad Ju&aacute;rez junto con los cuerpos de cinco mujeres m&aacute;s. Las autopsias revelaron indicios de agresiones f&iacute;sicas graves, ataduras y muy probable violencia sexual, con causa de muerte indeterminada dado el avanzado estado de descomposici&oacute;n. Pese a las denuncias de desaparici&oacute;n, las autoridades no iniciaron b&uacute;squedas efectivas: limitaron su actuaci&oacute;n a registros de desaparici&oacute;n y carteles, no investigaron pistas disponibles, y funcionarios estatales minimizaron las denuncias mediante estereotipos de g&eacute;nero, diciendoles a las madres que sus hijas &ldquo;andaban con el novio&rdquo; o que &ldquo;una ni&ntilde;a buena est&aacute; en su casa&rdquo;. Las investigaciones posteriores al hallazgo estuvieron plagadas de irregularidades, extravi&oacute; de piezas, y falta de perspectiva de g&eacute;nero, manteni&eacute;ndose los casos en total impunidad m&aacute;s de seis a&ntilde;os despu&eacute;s. La CIDH someti&oacute; el caso ante la Corte en noviembre de 2007 acumulando las peticiones relativas a las tres v&iacute;ctimas y sus familias.</p>
 </div>
+
+<!-- ② NORMAS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9313; Normas convencionales aplicadas</div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 4.1 CADH &mdash; Derecho a la vida</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 5.1 y 5.2 CADH &mdash; Integridad personal</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 7.1 CADH &mdash; Libertad personal</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 8.1 CADH &mdash; Garant&iacute;as judiciales</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 19 CADH &mdash; Derechos del ni&ntilde;o</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 25.1 CADH &mdash; Protecci&oacute;n judicial</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 1.1 CADH &mdash; Obligaci&oacute;n de garantizar / no discriminar</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 2 CADH &mdash; Deber de adoptar disposiciones internas</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(255,140,0,.07);color:rgba(180,100,26,.85);border:1px solid rgba(180,100,26,.18)">Art. 7.b y 7.c Bel&eacute;m do Par&aacute; &mdash; Debida diligencia / prevenci&oacute;n</span>
+  </div>
+</div>
+
+<!-- ③ RATIO -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:12px">&#9314; Ratio decidendi &mdash; Est&aacute;ndares fijados</div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">1 &mdash; Responsabilidad estatal por omisi&oacute;n ante violencia de g&eacute;nero de terceros</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">El Estado puede comprometer su responsabilidad internacional por actos de particulares cuando tiene conocimiento de un contexto de riesgo real e inmediato y no adopta medidas razonables para prevenirlo. La impunidad de los perpetradores no exonera al Estado: la Corte concluy&oacute; que M&eacute;xico no pod&iacute;a ser responsable por el deber de respeto &mdash;pues no qued&oacute; demostrada participaci&oacute;n de agentes estatales en los homicidios&mdash;, pero s&iacute; viol&oacute; el deber de garant&iacute;a de los arts. 4.1, 5.1, 5.2 y 7.1 CADH por no haber prevenido ni investigado con debida diligencia, conforme lo exigen el art. 1.1 CADH y el art. 7.b y 7.c de la Convenci&oacute;n Bel&eacute;m do Par&aacute; (p&aacute;rrs. 242&ndash;286).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">2 &mdash; Debida diligencia reforzada ante contextos de feminicidio estructural</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">Cuando el Estado tiene conocimiento de un patr&oacute;n de violencia sistem&aacute;tica contra mujeres, su deber de diligencia se eleva: la obligaci&oacute;n de prevenir no se agota en la abstenci&oacute;n sino que requiere medidas positivas, integrales y efectivas. La Corte estableci&oacute; que la debida diligencia en violencia de g&eacute;nero exige, como m&iacute;nimo: b&uacute;squeda inmediata y de oficio ante la denuncia de desaparici&oacute;n, sin esperar confirmaci&oacute;n del delito; protocolo de b&uacute;squeda diferenciado para contextos de alto riesgo; e investigaci&oacute;n con perspectiva de g&eacute;nero, incluyendo l&iacute;neas sobre violencia sexual y patrones similares (p&aacute;rrs. 252&ndash;286).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">3 &mdash; Estereotipos de g&eacute;nero en la respuesta institucional como violaci&oacute;n aut&oacute;noma</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">La Corte determin&oacute; que las actitudes de los funcionarios que minimizaron las denuncias mediante estereotipos &mdash;atribuyendo la desaparici&oacute;n a conductas &ldquo;indebidas&rdquo; de las v&iacute;ctimas o condicionando la b&uacute;squeda al rol social femenino&mdash; constituyen violaci&oacute;n aut&oacute;noma del deber de no discriminaci&oacute;n del art. 1.1 CADH, en relaci&oacute;n con los derechos a la vida, integridad y libertad, y con el acceso a la justicia. Las respuestas ineficientes y actitudes indiferentes forman parte de la &ldquo;cultura de discriminaci&oacute;n&rdquo; que permiti&oacute; el feminicidio estructural (p&aacute;rrs. 390&ndash;402).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">4 &mdash; Protecci&oacute;n reforzada de ni&ntilde;as v&iacute;ctimas de violencia de g&eacute;nero</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">Dos de las v&iacute;ctimas &mdash;Esmeralda Herrera Monreal, 15 a&ntilde;os, y Laura Berenice Ramos Mon&aacute;rrez, 17 a&ntilde;os&mdash; eran menores de edad, lo que activa protecciones adicionales del art. 19 CADH. La Corte declar&oacute; que M&eacute;xico viol&oacute; los derechos de la ni&ntilde;ez al no adoptar medidas de protecci&oacute;n diferenciadas que su condici&oacute;n requer&iacute;a, y que el deber de b&uacute;squeda debe ser a&uacute;n m&aacute;s urgente y riguroso cuando la desaparecida es una ni&ntilde;a (p&aacute;rrs. 403&ndash;411).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">5 &mdash; Reparaciones transform adoras con perspectiva de g&eacute;nero</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">La Corte dise&ntilde;&oacute; reparaciones de alcance estructural destinadas a transformar el contexto que posibilit&oacute; el feminicidio: estandarizaci&oacute;n de protocolos con perspectiva de g&eacute;nero conforme al Protocolo de Estambul, adecuaci&oacute;n del Protocolo Alba para b&uacute;squeda inmediata de mujeres desaparecidas, creaci&oacute;n de base de datos gen&eacute;ticos de mujeres desaparecidas en Chihuahua, acto p&uacute;blico de reconocimiento de responsabilidad, erigir un monumento en memoria de las v&iacute;ctimas del feminicidio en Ciudad Ju&aacute;rez, y programas permanentes de capacitaci&oacute;n en g&eacute;nero para funcionarios p&uacute;blicos. Este cat&aacute;logo de reparaciones transform adoras es referente obligado en el DIDH (p&aacute;rrs. 450 y ss.).</p>
+  </div>
+</div>
+
+<!-- ④ PUNTOS RESOLUTIVOS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:12px">&#9315; Puntos resolutivos</div>
+  <ol style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:9px">
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Excepci&oacute;n preliminar parcialmente aceptada:</strong> la Corte declar&oacute; tener competencia contenciosa para conocer del art. 7 Bel&eacute;m do Par&aacute;, pero no de sus arts. 8 y 9.</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Violaci&oacute;n arts. 4.1, 5.1, 5.2 y 7.1 CADH</strong> en relaci&oacute;n con arts. 1.1, 2 y art. 7.b/c Bel&eacute;m do Par&aacute;, en perjuicio de Claudia Ivette Gonz&aacute;lez, Laura Berenice Ramos Mon&aacute;rrez y Esmeralda Herrera Monreal: el Estado no previno su desaparici&oacute;n, vejaciones y muerte pese a conocer el patr&oacute;n de violencia.</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Violaci&oacute;n arts. 8.1 y 25.1 CADH</strong> en relaci&oacute;n con arts. 1.1, 2 y 7.b/c Bel&eacute;m do Par&aacute;, en perjuicio de los familiares de las tres v&iacute;ctimas: impunidad total m&aacute;s de seis a&ntilde;os despu&eacute;s, irregularidades graves en la investigaci&oacute;n forense, y denegaci&oacute;n del acceso a la justicia.</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Violaci&oacute;n del deber de no discriminaci&oacute;n (art. 1.1 CADH)</strong> en relaci&oacute;n con los derechos a la vida, integridad, libertad y acceso a la justicia, por los estereotipos de g&eacute;nero proyectados por funcionarios durante las investigaciones.</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Violaci&oacute;n art. 19 CADH</strong> en perjuicio de las ni&ntilde;as Esmeralda Herrera Monreal y Laura Berenice Ramos Mon&aacute;rrez, por falta de medidas de protecci&oacute;n diferenciada.</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>No violaci&oacute;n art. 11 CADH</strong> (honra y dignidad): las consecuencias del maltrato institucional ya fueron absorbidas por las violaciones al art. 5 CADH.</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Reparaciones transform adoras:</strong> investigaci&oacute;n penal con perspectiva de g&eacute;nero; sanciones a funcionarios responsables de irregularidades; adecuaci&oacute;n del Protocolo Alba; base de datos gen&eacute;ticos de mujeres desaparecidas en Chihuahua; acto p&uacute;blico de reconocimiento de responsabilidad; monumento conmemorativo; capacitaci&oacute;n permanente a servidores p&uacute;blicos; atenci&oacute;n m&eacute;dica, psicol&oacute;gica y psiqui&aacute;trica gratuita para familiares; indemnizaciones y costas.</li>
+  </ol>
+</div>
+
+<!-- ⑤ RELEVANCIA COLOMBIA -->
+<div style="background:rgba(26,100,180,.04);border-radius:10px;padding:18px 20px;border:1px solid rgba(26,100,180,.11)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9316; Relevancia para Colombia</div>
+  <p style="font-size:13px;color:var(--texto2);line-height:1.68;margin:0;text-align:justify">Campo Algodonero es hoy el referente universal en materia de feminicidio estructural y debida diligencia reforzada. En Colombia, su influencia es directa: la Corte Suprema de Justicia y el Consejo de Estado invocan sus est&aacute;ndares cuando analizan la responsabilidad del Estado por omisi&oacute;n ante contextos de violencia de g&eacute;nero, especialmente en escenarios de conflicto armado donde la violencia contra la mujer fue sistem&aacute;tica. El est&aacute;ndar de &ldquo;riesgo real e inmediato&rdquo; que activa el deber de prevenci&oacute;n, desarrollado aqui a partir de Vel&aacute;squez Rodr&iacute;guez, es el mismo que emplea la CSJ Sala Penal para evaluar la responsabilidad penal de agentes estatales por omisi&oacute;n (comisi&oacute;n por omisi&oacute;n, art. 25 C.P.). La Ley 1761 de 2015 &mdash;tipificaci&oacute;n del feminicidio en Colombia&mdash; adopt&oacute; la categor&iacute;a de &ldquo;razones de g&eacute;nero&rdquo; que esta sentencia consolid&oacute; en el DIDH. Asimismo, la JEP y la CEV han utilizado los est&aacute;ndares de Campo Algodonero para documentar y calificar la violencia sexual como cr&iacute;men de guerra y de lesa humanidad en el marco del conflicto armado colombiano.</p>
+</div>
+
 </div></div>
 
 <div class="panel" id="pcaso-atala"><div class="panel-inner">
-<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+
+<div style="margin-bottom:24px">
+  <button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0;transition:color .16s" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button>
+</div>
+
 <div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
   <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 239 &middot; 24 de febrero de 2012</div>
+  <span class="ley-num" style="color:rgba(26,100,180,.8)">Fondo, Reparaciones y Costas</span>
   <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Atala Riffo y ni&ntilde;as <em style="color:rgba(26,100,180,.35)">vs.</em> Chile</h1>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Orientaci&oacute;n sexual</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">No discriminaci&oacute;n</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Vida privada y familiar</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Inter&eacute;s superior NNA</span>
+  </div>
 </div>
-<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
-  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
-  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+
+<!-- ① HECHOS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9312; Hechos jur&iacute;dicamente relevantes</div>
+  <p style="font-size:13.5px;color:var(--texto2);line-height:1.7;text-align:justify">Karen Atala Riffo era jueza en Villarrica, Chile. Tras su separaci&oacute;n del se&ntilde;or Ricardo L&oacute;pez, qued&oacute; a cargo de sus tres hijas menores M., V. y R. En 2002 inici&oacute; una relaci&oacute;n afectiva con una mujer, Emma de Ram&oacute;n, quien pas&oacute; a convivir en el hogar familiar. En enero de 2003 el padre interpuso demanda de tuici&oacute;n alegando que la orientaci&oacute;n sexual de la madre represent&aba; un &ldquo;serio peligro&rdquo; para el desarrollo de las ni&ntilde;as. El Juzgado de Menores de Villarrica otorg&oacute; tuici&oacute;n provisional al padre en mayo de 2003 y, en octubre de ese mismo a&ntilde;o, fall&oacute; a favor de la madre en primera instancia. Sin embargo, la Corte de Apelaciones de Temuco concedi&oacute; orden de no innovar y, el 31 de mayo de 2004, la Corte Suprema de Justicia de Chile, a trav&eacute;s de recurso de queja, revoc&oacute; la custodia y se la asign&oacute; definitivamente al padre, fundando su decisi&oacute;n en la orientaci&oacute;n sexual de la se&ntilde;ora Atala y en presunciones de da&ntilde;o social futuro para las ni&ntilde;as. Paralelo al proceso de tuici&oacute;n, la Corte de Apelaciones de Temuco orden&oacute; una visita extraordinaria al tribunal donde trabajaba la se&ntilde;ora Atala, y se abrieron actuaciones disciplinarias contra ella basadas en los mismos hechos del juicio de custodia. La CIDH someti&oacute; el caso a la Corte IDH en 2010.</p>
 </div>
+
+<!-- ② NORMAS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9313; Normas convencionales aplicadas</div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 1.1 CADH &mdash; Obligaci&oacute;n de no discriminar</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 24 CADH &mdash; Igualdad ante la ley</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 11.2 CADH &mdash; Vida privada y familiar</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 17.1 CADH &mdash; Protecci&oacute;n a la familia</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 19 CADH &mdash; Derechos del ni&ntilde;o</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 8.1 CADH &mdash; Garant&iacute;as judiciales / imparcialidad</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 25 CADH &mdash; Protecci&oacute;n judicial</span>
+  </div>
+</div>
+
+<!-- ③ RATIO -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:12px">&#9314; Ratio decidendi &mdash; Est&aacute;ndares fijados</div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">1 &mdash; Orientaci&oacute;n sexual e identidad de g&eacute;nero como categor&iacute;as protegidas</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">La orientaci&oacute;n sexual y la identidad de g&eacute;nero son categor&iacute;as protegidas por el art&iacute;culo 1.1 de la CADH bajo la cl&aacute;usula &ldquo;cualquier otra condici&oacute;n social&rdquo;. Toda norma, acto o pr&aacute;ctica discriminatoria basada en ellas est&aacute; proscrita por la Convenci&oacute;n, y ning&uacute;n derecho puede ser negado o restringido a nadie con base en su orientaci&oacute;n sexual (p&aacute;rr. 91, 93). Esta es la primera vez que la Corte IDH lo declara expresamente, consolidando la interpretaci&oacute;n evolutiva del tratado con apoyo en la jurisprudencia del TEDH y los &oacute;rganos ONU.</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">2 &mdash; La falta de consenso interno no justifica la discriminaci&oacute;n</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">El hecho de que la discriminaci&oacute;n contra las minor&iacute;as sexuales sea materia controversial en algunos pa&iacute;ses no constituye argumento v&aacute;lido para negarles derechos o perpetuar su discriminaci&oacute;n hist&oacute;rica y estructural. La Corte debe remitirse &uacute;nica y exclusivamente a las estipulaciones de las obligaciones internacionales conve...cionalmente asumidas, sin abdicar su funci&oacute;n a las corrientes mayoritarias internas (p&aacute;rr. 92).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">3 &mdash; Prohibici&oacute;n de estereotipos en decisiones de custodia</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">No es admisible sustentar una decisi&oacute;n de tuici&oacute;n en presunciones abstractas de da&ntilde;o social futuro derivadas de la orientaci&oacute;n sexual del progenitor custodio. El &ldquo;inter&eacute;s superior del ni&ntilde;o&rdquo; no puede invocarse como argumento disc...recional que encubra prejuicios discriminatorios: la Corte Suprema de Chile us&oacute; la orientaci&oacute;n sexual de la se&ntilde;ora Atala como factor &ldquo;decisivo&rdquo; para revocar la custodia sin evidencia concreta de da&ntilde;o, lo que vulnera el art. 24 en relaci&oacute;n con el art. 1.1 (p&aacute;rr. 107&ndash;146).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">4 &mdash; Derecho a la vida privada y familiar sin injerencias basadas en orientaci&oacute;n sexual</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">El art. 11.2 CADH ampara la decisi&oacute;n de la persona de compartir su vida &iacute;ntima con otra persona y de conformar una familia no tradicional. La orientaci&oacute;n sexual es un aspecto esencial de la identidad que pertenece a la esfera m&aacute;s &iacute;ntima de la persona. El Estado vulner&oacute; el derecho a la vida privada de la se&ntilde;ora Atala al permitir que los tribunales la interpelaran y sancionaran por su pr&aacute;ctica sexual dentro del proceso judicial (p&aacute;rr. 161&ndash;167).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">5 &mdash; Derecho de NNA a ser o&iacute;dos y a la identidad</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">Las ni&ntilde;as M., V. y R. fueron escuchadas en audiencia privada pero sus manifestaciones no fueron tomadas en cuenta de manera determinante. El art. 8.1 en relaci&oacute;n con el art. 19 CADH exige que las ni&ntilde;as sean o&iacute;das directamente por el juez y que sus opiniones tengan peso real en la decisi&oacute;n, seg&uacute;n su madurez y desarrollo. Adem&aacute;s, el art. 24 en relaci&oacute;n con el art. 19 fue vulnerado respecto de las ni&ntilde;as al privarlas del entorno familiar materno con base en prejuicios discriminatorios ajenos a su bienestar real (p&aacute;rr. 150&ndash;155, 196&ndash;208).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">6 &mdash; Imparcialidad en investigaciones disciplinarias por orientaci&oacute;n sexual</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">La investigaci&oacute;n disciplinaria aperturada contra la se&ntilde;ora Atala por la Corte de Apelaciones de Temuco &mdash;motivada directamente por su orientaci&oacute;n sexual y el proceso de tuici&oacute;n&mdash; viol&oacute; la garant&iacute;a de imparcialidad del art. 8.1 CADH. El tribunal que inici&oacute; la investigaci&oacute;n era el mismo que conoc&iacute;a el proceso de tuici&oacute;n en segunda instancia, lo que comprometia su objetividad (p&aacute;rr. 234&ndash;237).</p>
+  </div>
+</div>
+
+<!-- ④ PUNTOS RESOLUTIVOS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9315; Puntos resolutivos principales</div>
+  <div style="background:rgba(26,100,180,.04);border-radius:10px;padding:16px 18px;border:1px solid rgba(26,100,180,.1)">
+    <p style="font-size:13px;color:var(--texto2);line-height:1.7;margin:0 0 8px 0;text-align:justify"><strong>Declaraciones (unanimidad):</strong> Chile es responsable por violaci&oacute;n del art. 24 en relaci&oacute;n con el art. 1.1 CADH en perjuicio de Karen Atala Riffo (discriminaci&oacute;n por orientaci&oacute;n sexual en el proceso de tuici&oacute;n), y del art. 24 en relaci&oacute;n con los arts. 19 y 1.1 en perjuicio de las ni&ntilde;as M., V. y R. Asimismo, viol&oacute; el art. 11.2 en relaci&oacute;n con el art. 1.1 (vida privada), el art. 8.1 en relaci&oacute;n con los arts. 19 y 1.1 (derecho a ser o&iacute;das de las ni&ntilde;as) y el art. 8.1 en relaci&oacute;n con el art. 1.1 (imparcialidad en investigaci&oacute;n disciplinaria).</p>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.7;margin:0 0 8px 0;text-align:justify"><strong>Declaraci&oacute;n por votos divididos (3&ndash;3, prevalece el voto del Presidente):</strong> Chile viol&oacute; los arts. 11.2 y 17.1 en relaci&oacute;n con el art. 1.1 en perjuicio de Karen Atala Riffo y de las ni&ntilde;as (vida familiar).</p>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.7;margin:0;text-align:justify"><strong>Reparaciones:</strong> Atenci&oacute;n m&eacute;dica y psicol&oacute;gica gratuita a las v&iacute;ctimas; publicaci&oacute;n de la sentencia; acto p&uacute;blico de reconocimiento de responsabilidad internacional; programas permanentes de capacitaci&oacute;n a funcionarios judiciales en no discriminaci&oacute;n por orientaci&oacute;n sexual; pago de indemnizaciones por da&ntilde;o material e inmaterial y costas.</p>
+  </div>
+</div>
+
+<!-- ⑤ RELEVANCIA COLOMBIA -->
+<div style="margin-bottom:8px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:12px">&#9316; Relevancia para Colombia</div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">Control de convencionalidad y orientaci&oacute;n sexual en decisiones judiciales</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">La Corte Constitucional colombiana ha incorporado el est&aacute;ndar Atala Riffo en su l&iacute;nea jurisprudencial LGTBI+. La Sentencia SU-214 de 2016 que igualiz&oacute; el matrimonio entre parejas del mismo sexo cit&oacute; este fallo para afirmar que la orientaci&oacute;n sexual es una categor&iacute;a sospechosa de discriminaci&oacute;n que activa un escrutinio estricto de constitucionalidad. Los jueces colombianos deben, al aplicar el control de convencionalidad, abstenerse de fundar decisiones de custodia, adopci&oacute;n o familia en la orientaci&oacute;n sexual de los progenitores.</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">Inter&eacute;s superior del ni&ntilde;o sin estereotipos</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">El est&aacute;ndar fijado en Atala Riffo impacta directamente los procesos de protecci&oacute;n y restablecimiento de derechos de NNA (Ley 1098 de 2006) en Colombia. Los operadores del ICBF y los jueces de familia deben verificar, en toda decisi&oacute;n de custodia o adopci&oacute;n, que el inter&eacute;s superior del ni&ntilde;o se evalúe con evidencia concreta de bienestar &mdash;no con presunciones fundadas en la orientaci&oacute;n sexual o identidad de g&eacute;nero del adulto responsable&mdash; so pena de incurrir en responsabilidad del Estado ante el SIDH.</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">Agravante de discriminaci&oacute;n en el C&oacute;digo Penal</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">El art. 58 num. 3 del C&oacute;digo Penal (Ley 599/2000, modificado por Ley 1482 de 2011) establece como circunstancia de mayor punibilidad la motivaci&oacute;n del delito por la orientaci&oacute;n sexual de la v&iacute;ctima. El marco conceptual para identificar discriminaci&oacute;n por orientaci&oacute;n sexual proviene directamente de est&aacute;ndares como los de Atala Riffo, que exigen verificar si la conducta se fund&oacute; &ldquo;en todo o en parte&rdquo; en ese factor, sin exigir que sea el &uacute;nico m&oacute;vil.</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">Derecho a la vida privada del funcionario p&uacute;blico</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">La Corte IDH estableci&oacute; que los funcionarios p&uacute;blicos no pierden su derecho a la vida privada y familiar por el hecho de serlo. Las investigaciones disciplinarias en Colombia (Ley 734/2002, C&oacute;digo Disciplinario &Uacute;nico) no pueden incorporar como falta la orientaci&oacute;n sexual del servidor p&uacute;blico ni sustituir el juicio de culpabilidad disciplinaria por valoraciones sobre su vida &iacute;ntima, conforme al est&aacute;ndar del p&aacute;rr. 234&ndash;237 de esta sentencia.</p>
+  </div>
+</div>
+
 </div></div>
 
 <div class="panel" id="pcaso-awas"><div class="panel-inner">
-<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+
+<div style="margin-bottom:24px">
+  <button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0;transition:color .16s" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button>
+</div>
+
 <div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
   <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 79 &middot; 31 de agosto de 2001</div>
+  <span class="ley-num" style="color:rgba(26,100,180,.8)">Fondo, Reparaciones y Costas</span>
   <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Comunidad Mayagna (Sumo) Awas Tingni <em style="color:rgba(26,100,180,.35)">vs.</em> Nicaragua</h1>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Propiedad comunal ind&iacute;gena</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Interpretaci&oacute;n evolutiva</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Tierras ancestrales</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Demarcaci&oacute;n y titulaci&oacute;n</span>
+  </div>
 </div>
-<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
-  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
-  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+
+<!-- ① HECHOS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9312; Hechos jur&iacute;dicamente relevantes</div>
+  <p style="font-size:13.5px;color:var(--texto2);line-height:1.7;text-align:justify">La Comunidad Mayagna (Sumo) Awas Tingni es una comunidad ind&iacute;gena de m&aacute;s de 600 personas asentada en la Regi&oacute;n Aut&oacute;noma Atl&aacute;ntico Norte (RAAN) de Nicaragua, cuya subsistencia depende de la agricultura familiar y comunal, la caza, la pesca y la recolecta realizadas dentro de un territorio ancestral que no cuentan con t&iacute;tulo formal de propiedad. En marzo de 1996 el Estado, a trav&eacute;s del MARENA, otorg&oacute; a la empresa maderera SOLCARSA una concesi&oacute;n por 30 a&ntilde;os sobre aproximadamente 62.000 hect&aacute;reas ubicadas en la RAAN &mdash;incluyendo tierras de uso y ocupaci&oacute;n tradicional de la Comunidad&mdash; sin consultar ni obtener su consentimiento. La Comunidad interpuso varios recursos de amparo ante la Corte Suprema de Justicia de Nicaragua: el primero obtuvo en 1997 la declaratoria de inconstitucionalidad de la concesi&oacute;n por vicios formales, pero el Estado no cumpli&oacute; la sentencia y SOLCARSA continu&oacute; operando durante dos a&ntilde;os m&aacute;s; el segundo recurso, de 1997, fue rechazado en 1998 sin pronunciarse sobre el fondo territorial. Paralelo a ello, la Comunidad hizo numerosas gestiones administrativas ante el MARENA, el INRA y el Consejo Regional de la RAAN solicitando la demarcaci&oacute;n y titulaci&oacute;n de sus tierras comunales, sin obtener respuesta. Desde 1990, Nicaragua no hab&iacute;a otorgado t&iacute;tulo alguno sobre tierras ind&iacute;genas. La Comisi&oacute;n present&oacute; la demanda ante la Corte en junio de 1998, alegando violaci&oacute;n de los arts. 1, 2, 21 y 25 CADH.</p>
 </div>
+
+<!-- ② NORMAS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9313; Normas convencionales aplicadas</div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 21 CADH &mdash; Derecho al uso y goce de bienes / propiedad comunal</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 25 CADH &mdash; Protecci&oacute;n judicial / recurso efectivo</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 1.1 CADH &mdash; Obligaci&oacute;n de respetar y garantizar</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 2 CADH &mdash; Deber de adoptar medidas legislativas y administrativas</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 29.b CADH &mdash; Interpretaci&oacute;n pro persona / evolucionista</span>
+  </div>
+</div>
+
+<!-- ③ RATIO -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:12px">&#9314; Ratio decidendi &mdash; Est&aacute;ndares fijados</div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">1 &mdash; El art. 21 CADH protege la propiedad comunal ind&iacute;gena</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">Mediante interpretaci&oacute;n evolutiva &mdash;pues los tratados de derechos humanos son instrumentos vivos cuya lectura debe adecuarse a la evoluci&oacute;n de los tiempos&mdash; y con apoyo en el art. 29.b CADH, la Corte declar&oacute; que el derecho al &ldquo;uso y goce de los bienes&rdquo; del art. 21 comprende la propiedad comunal ind&iacute;gena sobre tierras ancestrales. Entre los ind&iacute;genas, la tierra es un elemento material y espiritual del que deben gozar plenamente, pues no es mera posesi&oacute;n y producci&oacute;n sino la base de su cultura, su vida espiritual y su supervivencia; la pertenencia de &eacute;sta no se centra en el individuo sino en el grupo. Esta fue la primera vez que la Corte IDH reconoci&oacute; expresamente la propiedad comunal ind&iacute;gena como derecho autogenerado por el uso y la posesi&oacute;n consuetudinaria, sin necesidad de t&iacute;tulo formal (p&aacute;rrs. 143&ndash;153).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">2 &mdash; La posesi&oacute;n consuetudinaria basta para generar t&iacute;tulo</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">El derecho consuetudinario de los pueblos ind&iacute;genas debe tenerse especialmente en cuenta: la posesi&oacute;n de la tierra por parte de una comunidad ind&iacute;gena deber&iacute;a bastar para que, aun careciendo de t&iacute;tulo real formal, obtenga el reconocimiento oficial de dicha propiedad y el consiguiente registro. No es necesaria una titulaci&oacute;n previa del Estado para que nazca el derecho: el Estado est&aacute; obligado a reconocerlo y a crear los mecanismos para hacerlo efectivo (p&aacute;rr. 151).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">3 &mdash; Obligaci&oacute;n estatal de delimitar, demarcar y titular</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">La violaci&oacute;n del art. 21 no exige prueba de da&ntilde;o material consumado: la mera falta de delimitaci&oacute;n y demarcaci&oacute;n del territorio ya vulnera el derecho al crear una incertidumbre permanente que impide a los miembros de la Comunidad conocer hasta d&oacute;nde se extiende su derecho de uso y goce. El Estado debe, adem&aacute;s, abstenerse mientras tanto de realizar o tolerar actos de terceros que afecten la existencia, el valor, el uso o el goce de los bienes ubicados en esa zona (p&aacute;rr. 153).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">4 &mdash; Deber de crear mecanismos efectivos de titulaci&oacute;n (art. 2 CADH)</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">La inexistencia en Nicaragua de un procedimiento espec&iacute;fico y efectivo de demarcaci&oacute;n y titulaci&oacute;n de tierras ind&iacute;genas constitu&iacute;a, por s&iacute; sola, una violaci&oacute;n del art. 2 CADH. El Estado no puede ampararse en la &ldquo;complejidad&rdquo; del proceso para perpetuar la impunidad tituladora. La obligaci&oacute;n de adoptar disposiciones de derecho interno comprende la creaci&oacute;n de mecanismos acordes con el derecho consuetudinario, los valores, usos y costumbres ind&iacute;genas (p&aacute;rr. 164, punto resolutivo 3).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">5 &mdash; Inefectividad del recurso de amparo como violaci&oacute;n del art. 25</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">Nicaragua viol&oacute; el art. 25 CADH en tres dimensiones: demoras injustificadas en el tr&aacute;mite de los amparos, rechazo de los recursos sin pronunciarse sobre el fondo de los derechos territoriales, e incumplimiento de la sentencia de inconstitucionalidad de 1997 &mdash;que declar&oacute; inv&aacute;lida la concesi&oacute;n a SOLCARSA&mdash; durante dos a&ntilde;os. El recurso judicial es inefectivo cuando, aunque formalmente dispuesto, no ampara al reclamante en su derecho afectado ni le provee reparaci&oacute;n adecuada (p&aacute;rr. 139).</p>
+  </div>
+</div>
+
+<!-- ④ PUNTOS RESOLUTIVOS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:12px">&#9315; Puntos resolutivos</div>
+  <ol style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:9px">
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Violaci&oacute;n art. 25 CADH</strong> en conexi&oacute;n con arts. 1.1 y 2, en perjuicio de los miembros de la Comunidad Mayagna (Sumo) Awas Tingni: los recursos de amparo interpuestos fueron inefectivos y la sentencia de inconstitucionalidad de la concesi&oacute;n SOLCARSA fue incumplida. (7 votos contra 1)</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Violaci&oacute;n art. 21 CADH</strong> en conexi&oacute;n con arts. 1.1 y 2, en perjuicio de los miembros de la Comunidad: Nicaragua no delimit&oacute; ni demarc&oacute; la propiedad comunal y otorg&oacute; concesiones sobre sus tierras a terceros. (7 votos contra 1)</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Obligaci&oacute;n de adoptar medidas (art. 2 CADH):</strong> el Estado debe crear un mecanismo efectivo de delimitaci&oacute;n, demarcaci&oacute;n y titulaci&oacute;n de propiedades ind&iacute;genas acorde con el derecho consuetudinario, los valores, usos y costumbres de las comunidades. (unanimidad)</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Reparaci&oacute;n en especie:</strong> el Estado debe delimitar, demarcar y titular las tierras de la Comunidad y abstenerse entre tanto de actos que afecten su goce. (unanimidad)</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Da&ntilde;o inmaterial:</strong> inversi&oacute;n de USD 50.000 en obras o servicios de inter&eacute;s colectivo para la Comunidad en un plazo de 12 meses. (7 votos contra 1)</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Costas y gastos:</strong> USD 30.000 pagaderos por conducto de la CIDH. (7 votos contra 1)</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Supervisi&oacute;n:</strong> informes cada seis meses sobre las medidas adoptadas para el cumplimiento. (unanimidad)</li>
+  </ol>
+</div>
+
+<!-- ⑤ RELEVANCIA COLOMBIA -->
+<div style="background:rgba(26,100,180,.04);border-radius:10px;padding:18px 20px;border:1px solid rgba(26,100,180,.11)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9316; Relevancia para Colombia</div>
+  <p style="font-size:13px;color:var(--texto2);line-height:1.68;margin:0;text-align:justify">Awas Tingni es la sentencia fundacional del DIDH en materia de derechos territoriales ind&iacute;genas: estableci&oacute; que la relaci&oacute;n espiritual y material de los pueblos ind&iacute;genas con sus tierras es un derecho protegido por el art. 21 CADH con independencia de la existencia de t&iacute;tulo formal. En Colombia, su impacto es estructural: la Corte Constitucional (CC) y el Consejo de Estado invocan sus est&aacute;ndares al examinar la consulta previa, la demarcaci&oacute;n de resguardos y los derechos de los pueblos &eacute;tnicos bajo los arts. 7, 63 y 330 de la Constituci&oacute;n y el Convenio 169 de la OIT. La CSJ Sala Penal aplica indirectamente sus par&aacute;metros cuando conoce de delitos contra la integridad cultural de grupos &eacute;tnicos (arts. 152&ndash;154 C.P.) y cuando valora la afectaci&oacute;n territorial como circunstancia de mayor punibilidad. La JEP ha utilizado la jurisprudencia derivada de Awas Tingni para caracterizar el desplazamiento forzado de comunidades ind&iacute;genas y afrocolombianas como cr&iacute;men de guerra con componente de exterminio cultural. La sentencia tambi&eacute;n es referente de la Sentencia T-025 de 2004 (desplazamiento) y sus autos de seguimiento en relaci&oacute;n con pueblos ind&iacute;genas en riesgo de exterminio f&iacute;sico y cultural.</p>
+</div>
+
 </div></div>
 
 <div class="panel" id="pcaso-artavia"><div class="panel-inner">
-<div style="margin-bottom:24px"><button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button></div>
+
+<div style="margin-bottom:24px">
+  <button onclick="showPanel('pcidh')" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,100,180,.65);background:none;border:none;cursor:pointer;padding:0;transition:color .16s" onmouseover="this.style.color='rgba(26,100,180,.95)'" onmouseout="this.style.color='rgba(26,100,180,.65)'"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="6,3 2.5,6.5 6,10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Corte IDH</button>
+</div>
+
 <div class="ley-hdr" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
   <div class="ley-hdr-eye" style="color:rgba(26,100,180,.7)">Serie C No. 257 &middot; 28 de noviembre de 2012</div>
+  <span class="ley-num" style="color:rgba(26,100,180,.8)">Excepciones Preliminares, Fondo, Reparaciones y Costas</span>
   <h1 class="ley-title" style="font-size:clamp(22px,3vw,34px)">Artavia Murillo y otros (&ldquo;Fecundaci&oacute;n in vitro&rdquo;) <em style="color:rgba(26,100,180,.35)">vs.</em> Costa Rica</h1>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Derechos reproductivos</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Concepci&oacute;n = implantaci&oacute;n</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">Vida privada y familiar</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8.5px;padding:3px 10px;border-radius:5px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8);font-weight:600">No discriminaci&oacute;n</span>
+  </div>
 </div>
-<div style="padding:48px 32px;text-align:center;border-radius:12px;background:rgba(26,100,180,.03);border:1px dashed rgba(26,100,180,.18)">
-  <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,100,180,.5);margin-bottom:12px">An&aacute;lisis en preparaci&oacute;n</div>
-  <div style="font-family:'Lora',serif;font-size:16px;color:var(--texto3);line-height:1.55">El an&aacute;lisis completo de este caso estar&aacute; disponible pr&oacute;ximamente.</div>
+
+<!-- ① HECHOS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9312; Hechos jur&iacute;dicamente relevantes</div>
+  <p style="font-size:13.5px;color:var(--texto2);line-height:1.7;text-align:justify">En Costa Rica, el Decreto Ejecutivo No. 24029-S de 1995 autorizaba la pr&aacute;ctica de la fecundaci&oacute;n in vitro (FIV) para parejas c&oacute;nyuges. El 15 de marzo de 2000, la Sala Constitucional de la Corte Suprema de Justicia declar&oacute; inconstitucional dicho decreto, con el argumento de que la FIV implicaba p&eacute;rdida de embriones y que el art. 21 de la Constituci&oacute;n y el art. 4.1 CADH proteg&iacute;an la vida &ldquo;desde la concepci&oacute;n&rdquo;, entendida como fecundaci&oacute;n. Costa Rica qued&oacute; como el &uacute;nico pa&iacute;s del mundo con prohibici&oacute;n expresa y total de la FIV. Las 18 v&iacute;ctimas del caso &mdash;entre ellas Grettel Artavia Murillo y Miguel Mej&iacute;as Carballo, cuyo caso emblem&aacute;tico incluy&oacute; ocho inseminaciones artificiales fallidas, la hipoteca de su casa y el divorcio posterior motivado en parte por la imposibilidad de concebir&mdash; eran parejas que padec&iacute;an infertilidad de origen diverso (obstrucci&oacute;n de trompas, factor masculino, endometriosis) y que la FIV era su &uacute;nica alternativa reproductiva. Al carecer de recursos para viajar al extranjero a practicarse el tratamiento, la prohibici&oacute;n les result&oacute; absoluta. El caso fue sometido por la CIDH a la Corte IDH en julio de 2011, centrado en los efectos de la sentencia de inconstitucionalidad sobre los derechos a la vida privada y familiar, la integridad personal, la igualdad y la no discriminaci&oacute;n.</p>
 </div>
+
+<!-- ② NORMAS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9313; Normas convencionales aplicadas</div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 4.1 CADH &mdash; Derecho a la vida (interpretaci&oacute;n del t&eacute;rmino &ldquo;concepci&oacute;n&rdquo;)</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 5.1 CADH &mdash; Integridad personal / autonomía reproductiva</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 7 CADH &mdash; Libertad personal / autonomía</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 11.2 CADH &mdash; Vida privada y familiar</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 17.2 CADH &mdash; Derecho a fundar una familia</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 1.1 CADH &mdash; No discriminaci&oacute;n (discapacidad, g&eacute;nero, situaci&oacute;n econ&oacute;mica)</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:8px;padding:4px 11px;border-radius:5px;background:rgba(26,100,180,.07);color:rgba(26,100,180,.85);border:1px solid rgba(26,100,180,.14)">Art. 29.b CADH &mdash; Interpretaci&oacute;n pro persona</span>
+  </div>
+</div>
+
+<!-- ③ RATIO -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:12px">&#9314; Ratio decidendi &mdash; Est&aacute;ndares fijados</div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">1 &mdash; &ldquo;Concepci&oacute;n&rdquo; en el art. 4.1 CADH = implantaci&oacute;n, no fecundaci&oacute;n</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">Mediante interpretaci&oacute;n literal, sist&eacute;mica, hist&oacute;rica, evolutiva y teleol&oacute;gica, la Corte determin&oacute; que el t&eacute;rmino &ldquo;concepci&oacute;n&rdquo; del art. 4.1 CADH se produce desde el momento de la implantaci&oacute;n del embri&oacute;n en el &uacute;tero, no desde la fecundaci&oacute;n. Los trabajos preparatorios de la Convenci&oacute;n, el propio Diccionario de la RAE vigente al momento de la redacci&oacute;n, y la pr&aacute;ctica ulterior de los Estados Parte &mdash;ninguno de los cuales prohibi&oacute; la FIV&mdash; confirman que antes de la implantaci&oacute;n no procede aplicar el art. 4 CADH. En consecuencia, el embri&oacute;n no implantado no es &ldquo;persona&rdquo; para efectos convencionales (p&aacute;rrs. 180&ndash;264).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">2 &mdash; Protecci&oacute;n del embri&oacute;n es gradual e incremental, no absoluta</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">La expresi&oacute;n &ldquo;en general&rdquo; del art. 4.1 no es una muletilla: permite excepciones a la protecci&oacute;n de la vida desde la concepci&oacute;n y obliga a entender dicha protecci&oacute;n como gradual e incremental seg&uacute;n el desarrollo embrionario. El objeto y fin del art. 4.1 es que el derecho a la vida no sea un derecho absoluto cuya alegada protecci&oacute;n justifique la negaci&oacute;n total de otros derechos. Ning&uacute;n Estado puede invocar una &ldquo;protecci&oacute;n m&aacute;s amplia&rdquo; interna del embri&oacute;n si ello anula derechos convencionales de personas ya nacidas (p&aacute;rrs. 258&ndash;263).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">3 &mdash; Autodeterminaci&oacute;n reproductiva como n&uacute;cleo de la vida privada y familiar</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">La decisi&oacute;n de tener hijos biol&oacute;gicos mediante t&eacute;cnicas de reproducci&oacute;n asistida forma parte del &aacute;mbito de los derechos a la integridad personal, a la libertad personal y a la vida privada y familiar (arts. 5.1, 7 y 11.2 CADH). El Estado costarricense viol&oacute; esos derechos al prohibir absolutamente la FIV sin ponderar los derechos de las personas infertiles: la prohibici&oacute;n total result&oacute; desproporcionada porque no exist&iacute;a ning&uacute;n beneficio concreto a los embriones que justificara la anulaci&oacute;n completa del derecho a fundar una familia (p&aacute;rrs. 136&ndash;147, 272&ndash;317).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">4 &mdash; Discriminaci&oacute;n indirecta por discapacidad, g&eacute;nero y situaci&oacute;n econ&oacute;mica</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">Aunque la prohibici&oacute;n era formalmente neutra, produjo un impacto desproporcionado sobre tres grupos: (i) las personas con infertilidad &mdash;reconocida como enfermedad del sistema reproductivo por la OMS&mdash;, configurando discriminaci&oacute;n indirecta por discapacidad; (ii) las mujeres, sobre quienes recaen de forma m&aacute;s intensa los procedimientos e impactos emocionales de la infertilidad; y (iii) las personas de bajos ingresos que no pod&iacute;an viajar al exterior a practicarse la t&eacute;cnica. Una norma aparentemente neutra es discriminatoria cuando produce repercusiones particularmente negativas en un grupo identificable (p&aacute;rrs. 285&ndash;316).</p>
+  </div>
+
+  <div style="border-left:2.5px solid rgba(26,100,180,.22);padding-left:14px;margin-bottom:14px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(26,100,180,.7);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em">5 &mdash; Derecho de acceso a los beneficios del progreso cient&iacute;fico</div>
+    <p style="font-size:13px;color:var(--texto2);line-height:1.65;margin:0;text-align:justify">La Corte vincul&oacute; la autodeterminaci&oacute;n reproductiva con el derecho a gozar de los beneficios del progreso cient&iacute;fico y tecnol&oacute;gico, derivado del corpus iuris interamericano y del art. 15 del Pacto DESC. La FIV es una t&eacute;cnica m&eacute;dica consolidada de la que han nacido m&aacute;s de 5 millones de personas en el mundo; su prohibici&oacute;n absoluta negaba a las v&iacute;ctimas el acceso a una soluci&oacute;n cient&iacute;ficamente disponible para su condici&oacute;n m&eacute;dica, lo que agrava la desproporci&oacute;n de la medida (p&aacute;rrs. 148&ndash;150).</p>
+  </div>
+</div>
+
+<!-- ④ PUNTOS RESOLUTIVOS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:12px">&#9315; Puntos resolutivos</div>
+  <ol style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:9px">
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Violaci&oacute;n arts. 5.1, 7, 11.2 y 17.2 CADH</strong> en relaci&oacute;n con el art. 1.1, en perjuicio de las 18 v&iacute;ctimas: Costa Rica vulnera los derechos a la vida privada y familiar, a la integridad personal y a fundar una familia al prohibir absolutamente la FIV. (5 votos a favor, 1 en contra — voto disidente del Juez Vio Grossi)</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Levantamiento inmediato de la prohibici&oacute;n:</strong> el Estado debe adoptar con la mayor celeridad las medidas para que quede sin efecto la prohibici&oacute;n y las personas puedan acceder a la FIV sin impedimentos. Informe en 6 meses.</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Regulaci&oacute;n e inspecci&oacute;n:</strong> el Estado debe regular los aspectos necesarios para la implementaci&oacute;n de la FIV conforme a los principios de la Sentencia, e instaurar sistemas de inspecci&oacute;n y control de calidad. Informes anuales.</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Inclusi&oacute;n en el sistema de salud:</strong> la FIV debe incluirse gradualmente en los programas p&uacute;blicos de atenci&oacute;n a la infertilidad, como obligaci&oacute;n derivada del principio de no discriminaci&oacute;n. Informes semestrales.</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Atenci&oacute;n psicol&oacute;gica gratuita</strong> a las v&iacute;ctimas por hasta cuatro a&ntilde;os a trav&eacute;s de instituciones estatales especializadas.</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Capacitaci&oacute;n permanente</strong> a funcionarios judiciales en derechos humanos, derechos reproductivos y no discriminaci&oacute;n.</li>
+    <li style="font-size:13px;color:var(--texto2);line-height:1.6"><strong>Indemnizaciones y costas</strong> a las v&iacute;ctimas seg&uacute;n los montos fijados en la Sentencia.</li>
+  </ol>
+</div>
+
+<!-- ⑤ RELEVANCIA COLOMBIA -->
+<div style="background:rgba(26,100,180,.04);border-radius:10px;padding:18px 20px;border:1px solid rgba(26,100,180,.11)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto3);font-weight:700;margin-bottom:10px">&#9316; Relevancia para Colombia</div>
+  <p style="font-size:13px;color:var(--texto2);line-height:1.68;margin:0;text-align:justify">Artavia Murillo es la sentencia de referencia del SIDH en materia de derechos reproductivos y de interpretaci&oacute;n del art. 4.1 CADH. En Colombia su impacto ha sido m&uacute;ltiple. La Corte Constitucional us&oacute; expl&iacute;citamente su ratio en la Sentencia C-055 de 2022 (despenalizaci&oacute;n del aborto hasta las 24 semanas), donde retom&oacute; el est&aacute;ndar de protecci&oacute;n gradual e incremental de la vida prenatal y la prohibici&oacute;n de hacer del derecho a la vida prenatal un absoluto que anule los derechos fundamentales de la mujer. En derecho penal, la CSJ Sala Penal recurre indirectamente a Artavia cuando interpreta el tipo de aborto (art. 122 C.P.) y las circunstancias en que el inter&eacute;s en proteger la vida fetal cede ante los derechos de la mujer, especialmente en casos de violencia sexual. En materia de discriminaci&oacute;n indirecta por discapacidad, el est&aacute;ndar de &ldquo;impacto desproporcionado en grupo identificable&rdquo; elaborado en esta sentencia alimenta el an&aacute;lisis de medidas de inclusi&oacute;n en salud p&uacute;blica y en la doctrina de la Corte Constitucional sobre igualdad estructural. Finalmente, la sentencia ha impulsado en Colombia el debate sobre la cobertura de t&eacute;cnicas de reproducci&oacute;n asistida en el Plan de Beneficios en Salud, al enmarcarlas como obligaci&oacute;n derivada del derecho a la igualdad y al progreso cient&iacute;fico.</p>
+</div>
+
 </div></div>
 
 
