@@ -951,7 +951,7 @@ body.on-home #sb-toggle{display:none!important}
 .mag .hb-wordmark em{font-style:italic;color:rgba(255,255,255,.38);font-weight:600}
 .mag .hb-tagline{font-family:"Lora",serif;font-size:clamp(15px,1.9vw,20px);font-weight:600;color:rgba(255,255,255,.78);letter-spacing:-.01em;margin:0 0 11px}
 .mag .hb-purpose{font-size:clamp(13px,1.35vw,15px);line-height:1.55;color:rgba(255,255,255,.58);max-width:520px;font-weight:300;margin:0 0 18px}
-.mag .hb-paths{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:16px}
+.mag .hb-paths{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
 .mag .hb-path{display:flex;align-items:center;gap:11px;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.1);border-radius:11px;padding:12px 13px;transition:transform .2s,background .2s,border-color .2s;position:relative;overflow:hidden}
 .mag .hb-path::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);opacity:0;transition:opacity .2s}
 .mag .hb-path:hover{background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.22);transform:translateY(-3px)}
@@ -968,9 +968,10 @@ body.on-home #sb-toggle{display:none!important}
 .mag .hb-path.p-proc{--accent:#8aa9d9;--accdim:rgba(40,60,140,.22)}
 .mag .hb-path.p-juris{--accent:#d9c47a;--accdim:rgba(122,92,30,.22)}
 .mag .hb-path.p-tools{--accent:#7ac9c9;--accdim:rgba(28,120,120,.22)}
+.mag .hb-path.p-news{--accent:#d9897a;--accdim:rgba(140,55,35,.22)}
 .mag .hb-path.p-cidh{--accent:#6aaee8;--accdim:rgba(26,100,180,.22)}
 @media(max-width:980px){.mag .hb-paths{grid-template-columns:1fr 1fr 1fr}}
-@media(max-width:780px){.mag .hb-paths{grid-template-columns:1fr 1fr}}
+@media(max-width:780px){.mag .hb-paths{grid-template-columns:1fr 1fr}.mag .hb-path-desc{white-space:normal}}
 @media(max-width:430px){.mag .hb-paths{grid-template-columns:1fr}}
 /* Franja de metricas reales que cierra el hero */
 .mag .hb-metrics{border-top:1px solid rgba(255,255,255,.08);padding:11px 0 12px;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
@@ -1356,19 +1357,6 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
     <!-- Navegación con mega-menús -->
     <nav class="hdr-nav">
 
-      <div class="nav-item">
-        <button class="nav-link on" onclick="showPanel('noticias')">Actualidad Jurídica <span class="nav-arr">▾</span></button>
-        <div class="mega" style="min-width:320px">
-          <div class="mega-hdr">Análisis recientes</div>
-          <div class="mega-items">
-            <a href="/noticias/cuenca-chaux-sp601-2026" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">Absuelto por duda razonable — SP601-2026</div><div class="mega-item-desc">La hipótesis alternativa plausible derrumbó una condena</div></div></a>
-            <a href="/noticias/suspension-provisional-petro-2026" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">¿Puede la Comisión de Acusación suspender al Presidente?</div><div class="mega-item-desc">Auto Rad. 7525 — suspensión provisional rectificada</div></div></a>
-            <a href="/noticias/extorsion-atipicidad-sp337-2026" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">Extorsión: el constreñimiento como elemento — SP337-2026</div><div class="mega-item-desc">Sin constreñimiento, la conducta es atípica</div></div></a>
-          </div>
-          <div class="mega-footer"><a href="/noticias" onclick="showPanel('noticias');return false;">Ver toda la actualidad →</a></div>
-        </div>
-      </div>
-
       <!-- Leyes agrupadas -->
       <div class="nav-item">
         <button class="nav-link" onclick="showPanel('p599')">Leyes <span class="nav-arr">▾</span></button>
@@ -1437,6 +1425,9 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
     <div class="hb-eyebrow"><span class="hero-eyebrow-dot"></span> Plataforma interactiva</div>
     <p class="hb-purpose">Leyes comentadas, l&iacute;neas jurisprudenciales y herramientas pr&aacute;cticas para estudiar, comprender y aplicar el derecho penal.</p>
     <div class="hb-paths">
+      <a href="/noticias" onclick="showPanel('noticias');return false;" class="hb-path p-news">
+        <span class="hb-path-ico"><svg viewBox="0 0 18 18" fill="none"><rect x="2.5" y="3" width="13" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5" y1="6.5" x2="13" y2="6.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5" y1="9" x2="10" y2="9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5" y1="11.5" x2="11.5" y2="11.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span><span class="hb-path-txt"><span class="hb-path-name">Actualidad Jur&iacute;dica</span><span class="hb-path-desc">An&aacute;lisis &middot; Noticias</span></span><span class="hb-path-arr">&#8594;</span>
+      </a>
       <a href="#" onclick="showPanel('p599');return false;" class="hb-path p-sust">
         <span class="hb-path-ico"><svg viewBox="0 0 18 18" fill="none"><path d="M9 4.2C8 3.4 6.6 3 5 3H2.4v9.6H5c1.6 0 3 .4 4 1.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M9 4.2C10 3.4 11.4 3 13 3h2.6v9.6H13c-1.6 0-3 .4-4 1.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M9 4.2v9.8" stroke="currentColor" stroke-width="1.05"/></svg></span><span class="hb-path-txt"><span class="hb-path-name">Derecho Sustancial</span><span class="hb-path-desc">Ley 599</span></span><span class="hb-path-arr">&#8594;</span>
       </a>
