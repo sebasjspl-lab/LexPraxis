@@ -2,6 +2,9 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lex Praxis — Derecho Penal Colombiano</title>
 <meta name="description" content="Plataforma de derecho penal colombiano: leyes, jurisprudencia de la CSJ Sala Penal, líneas jurisprudenciales, Corte IDH, herramientas y actualidad jurídica.">
@@ -19,7 +22,7 @@
 <meta name="twitter:description" content="Leyes, jurisprudencia, líneas jurisprudenciales, Corte IDH, herramientas y actualidad del derecho penal colombiano.">
 <meta name="twitter:image" content="https://www.lexpraxis.co/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --blanco:#FAFAF8;--papel:#F5F1EB;--papel2:#EDE8DF;--borde:#DDD8CF;--borde2:#C8C2B6;
@@ -741,12 +744,15 @@ body.on-home #sb-toggle{display:none!important}
   --s3:0 4px 16px rgba(0,0,0,.1),0 12px 36px rgba(0,0,0,.08);
 }
 .mag .hdr{background:var(--texto);position:sticky;top:0;z-index:200;border-bottom:3px solid var(--rojo)}
-.mag .hdr-top{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
-.mag .hdr-logo{font-family:"Lora",serif;font-size:24px;font-weight:700;color:white;text-decoration:none;letter-spacing:-.02em;flex-shrink:0;line-height:1}
-.mag .hdr-logo em{font-style:italic;color:rgba(255,255,255,.28)}
+.mag .hdr-top{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;height:60px;gap:20px}
+.mag .hdr-logo{flex-shrink:0;line-height:1;display:flex;align-items:center;text-decoration:none;gap:10px}
+.mag .hdr-logo-img{height:40px;width:auto;display:block}
+.mag .hdr-logo-txt{display:flex;flex-direction:column;line-height:1}
+.mag .hdr-logo-wm{font-family:'Lora',serif;font-size:28px;font-weight:700;color:#fff;letter-spacing:-.02em}
+.mag .hdr-logo-wm em{font-style:italic;color:rgba(255,255,255,.38);font-weight:600}
 .mag .hdr-logo-tag{font-family:"JetBrains Mono",monospace;font-size:7.5px;color:rgba(255,255,255,.2);letter-spacing:.18em;text-transform:uppercase;display:block;margin-top:2px}
-.mag .hdr-fecha{font-family:"JetBrains Mono",monospace;font-size:8.5px;color:rgba(255,255,255,.2);letter-spacing:.06em;flex-shrink:0}
-.mag .hdr-nav{display:flex;align-items:center;gap:0;flex:1;justify-content:center}
+.mag .hdr-fecha{font-family:"JetBrains Mono",monospace;font-size:8.5px;color:rgba(255,255,255,.2);letter-spacing:.06em;flex-shrink:0;margin-left:auto}
+.mag .hdr-nav{display:flex;align-items:center;gap:0;flex:0 0 auto;justify-content:center}
 .mag .nav-item{position:relative}
 .mag .nav-link{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.42);text-decoration:none;padding:8px 11px;display:flex;align-items:center;gap:4px;transition:color .16s;white-space:nowrap;border:none;background:none;cursor:pointer;font-family:"JetBrains Mono",monospace}
 .mag .nav-link:hover, .mag .nav-item:hover .nav-link, .mag .nav-link.on{color:white}
@@ -1344,91 +1350,44 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 
     <!-- Logo -->
     <a href="#inicio" onclick="showPanel('inicio');return false;" class="hdr-logo" style="text-decoration:none">
-      Lex <em>Praxis</em>
-      <span class="hdr-logo-tag">Derecho Penal Colombiano</span>
+      <span class="hdr-logo-txt"><span class="hdr-logo-wm">Lex <em>Praxis</em></span><span class="hdr-logo-tag">Derecho Penal Colombiano</span></span>
     </a>
 
     <!-- Navegación con mega-menús -->
     <nav class="hdr-nav">
 
       <div class="nav-item">
-        <a href="#noticias" onclick="showPanel('noticias');return false;" class="nav-link on">Actualidad Jurídica</a>
-      </div>
-
-      <div class="nav-item">
-        <button class="nav-link" onclick="showPanel('p599')">Ley 599 <span class="nav-arr">▾</span></button>
-        <div class="mega">
-          <div class="mega-hdr">Código Penal · Ley 599 de 2000</div>
+        <button class="nav-link on" onclick="showPanel('noticias')">Actualidad Jurídica <span class="nav-arr">▾</span></button>
+        <div class="mega" style="min-width:320px">
+          <div class="mega-hdr">Análisis recientes</div>
           <div class="mega-items">
-            <a href="/ley-599" onclick="showPanel('p599');return false;" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">Mapa: Teoría del delito</div><div class="mega-item-desc">Estructura completa del delito en Colombia</div></div></a>
-            <a href="/ley-599" onclick="showPanel('p599');return false;" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">Error de tipo y error de prohibición</div><div class="mega-item-desc">Distinción dogmática y efectos procesales</div></div></a>
-            <a href="/ley-599" onclick="showPanel('p599');return false;" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">Autoría y participación</div><div class="mega-item-desc">Autor, coautor, cómplice, determinador</div></div></a>
-            <a href="/ley-599" onclick="showPanel('p599');return false;" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">Iter criminis</div><div class="mega-item-desc">Tentativa, desistimiento, delito consumado</div></div></a>
-            <a href="/ley-599" onclick="showPanel('p599');return false;" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">Concurso de conductas punibles</div><div class="mega-item-desc">Concurso ideal, real y su dosificación</div></div></a>
-            <a href="/ley-599" onclick="showPanel('p599');return false;" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">Causales de ausencia de responsabilidad</div><div class="mega-item-desc">Legítima defensa, estado de necesidad, Art. 32</div></div></a>
+            <a href="/noticias/cuenca-chaux-sp601-2026" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">Absuelto por duda razonable — SP601-2026</div><div class="mega-item-desc">La hipótesis alternativa plausible derrumbó una condena</div></div></a>
+            <a href="/noticias/suspension-provisional-petro-2026" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">¿Puede la Comisión de Acusación suspender al Presidente?</div><div class="mega-item-desc">Auto Rad. 7525 — suspensión provisional rectificada</div></div></a>
+            <a href="/noticias/extorsion-atipicidad-sp337-2026" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">Extorsión: el constreñimiento como elemento — SP337-2026</div><div class="mega-item-desc">Sin constreñimiento, la conducta es atípica</div></div></a>
           </div>
-          <div class="mega-footer"><a href="/ley-599" onclick="showPanel('p599');return false;">Ver Ley 599 completa →</a></div>
+          <div class="mega-footer"><a href="/noticias" onclick="showPanel('noticias');return false;">Ver toda la actualidad →</a></div>
         </div>
       </div>
 
+      <!-- Leyes agrupadas -->
       <div class="nav-item">
-        <button class="nav-link" onclick="showPanel('p906')">Ley 906 <span class="nav-arr">▾</span></button>
-        <div class="mega">
-          <div class="mega-hdr">Sistema Acusatorio · Ley 906 de 2004</div>
+        <button class="nav-link" onclick="showPanel('p599')">Leyes <span class="nav-arr">▾</span></button>
+        <div class="mega" style="min-width:300px">
+          <div class="mega-hdr">Derecho sustancial</div>
           <div class="mega-items">
-            <a href="/ley-906" onclick="showPanel('p906');return false;" class="mega-item"><span class="mega-item-dot a"></span><div class="mega-item-txt"><div class="mega-item-name">El proceso paso a paso</div><div class="mega-item-desc">Indagación, imputación, acusación, juicio</div></div></a>
-            <a href="/ley-906" onclick="showPanel('p906');return false;" class="mega-item"><span class="mega-item-dot a"></span><div class="mega-item-txt"><div class="mega-item-name">Recursos</div><div class="mega-item-desc">Reposición, apelación, queja, casación</div></div></a>
-            <a href="/ley-906" onclick="showPanel('p906');return false;" class="mega-item"><span class="mega-item-dot a"></span><div class="mega-item-txt"><div class="mega-item-name">Nulidades y exclusión probatoria</div><div class="mega-item-desc">Art. 23 — regla de exclusión, cláusula constitucional</div></div></a>
-            <a href="/ley-906" onclick="showPanel('p906');return false;" class="mega-item"><span class="mega-item-dot a"></span><div class="mega-item-txt"><div class="mega-item-name">Derechos del imputado y acusado</div><div class="mega-item-desc">Garantías fundamentales en el proceso penal</div></div></a>
+            <a href="/ley-599" onclick="showPanel('p599');return false;" class="mega-item"><span class="mega-item-dot r"></span><div class="mega-item-txt"><div class="mega-item-name">Ley 599 de 2000 — Código Penal</div><div class="mega-item-desc">Teoría del delito, tipos penales, punibilidad</div></div></a>
           </div>
-          <div class="mega-footer"><a href="/ley-906" onclick="showPanel('p906');return false;">Ver Ley 906 completa →</a></div>
-        </div>
-      </div>
-
-      <div class="nav-item">
-        <button class="nav-link" onclick="showPanel('p1826')">Ley 1826 <span class="nav-arr">▾</span></button>
-        <div class="mega" style="min-width:280px">
-          <div class="mega-hdr">Procedimiento Abreviado · Ley 1826 de 2017</div>
+          <div class="mega-hdr" style="margin-top:10px;border-top:1px solid var(--borde);padding-top:10px">Derecho procesal</div>
           <div class="mega-items">
-            <a href="/ley-1826" onclick="showPanel('p1826');return false;" class="mega-item"><span class="mega-item-dot t"></span><div class="mega-item-txt"><div class="mega-item-name">¿Qué es el proceso abreviado?</div><div class="mega-item-desc">Naturaleza, ámbito y diferencias con la Ley 906</div></div></a>
-            <a href="/ley-1826" onclick="showPanel('p1826');return false;" class="mega-item"><span class="mega-item-dot t"></span><div class="mega-item-txt"><div class="mega-item-name">Etapas del proceso abreviado</div><div class="mega-item-desc">Acusación escrita, audiencia concentrada</div></div></a>
-            <a href="/ley-1826" onclick="showPanel('p1826');return false;" class="mega-item"><span class="mega-item-dot t"></span><div class="mega-item-txt"><div class="mega-item-name">Delitos del proceso abreviado</div><div class="mega-item-desc">Catálogo de conductas aplicables</div></div></a>
-            <a href="/ley-1826" onclick="showPanel('p1826');return false;" class="mega-item"><span class="mega-item-dot t"></span><div class="mega-item-txt"><div class="mega-item-name">Querella y querellante legítimo</div><div class="mega-item-desc">Requisitos, desistimiento, conciliación</div></div></a>
-            <a href="/ley-1826" onclick="showPanel('p1826');return false;" class="mega-item"><span class="mega-item-dot t"></span><div class="mega-item-txt"><div class="mega-item-name">El acusador privado</div><div class="mega-item-desc">Figura, facultades y limitaciones</div></div></a>
-            <a href="/ley-1826" onclick="showPanel('p1826');return false;" class="mega-item"><span class="mega-item-dot t"></span><div class="mega-item-txt"><div class="mega-item-name">Rebajas y preacuerdos</div><div class="mega-item-desc">Beneficios punitivos en el proceso abreviado</div></div></a>
-            <a href="/ley-1826" onclick="showPanel('p1826');return false;" class="mega-item"><span class="mega-item-dot t"></span><div class="mega-item-txt"><div class="mega-item-name">Términos de libertad y prescripción</div><div class="mega-item-desc">Diferencias con el sistema ordinario</div></div></a>
+            <a href="/ley-906" onclick="showPanel('p906');return false;" class="mega-item"><span class="mega-item-dot a"></span><div class="mega-item-txt"><div class="mega-item-name">Ley 906 de 2004 — Sistema Acusatorio</div><div class="mega-item-desc">Proceso penal ordinario, recursos, nulidades</div></div></a>
+            <a href="/ley-1826" onclick="showPanel('p1826');return false;" class="mega-item"><span class="mega-item-dot t"></span><div class="mega-item-txt"><div class="mega-item-name">Ley 1826 de 2017 — Proceso Abreviado</div><div class="mega-item-desc">Procedimiento especial y acusador privado</div></div></a>
+            <a href="/ley-600" onclick="showPanel('p600');return false;" class="mega-item"><span class="mega-item-dot am"></span><div class="mega-item-txt"><div class="mega-item-name">Ley 600 de 2000 — C.P.P. anterior</div><div class="mega-item-desc">Sistema inquisitivo-mixto</div></div></a>
           </div>
-          <div class="mega-footer"><a href="/ley-1826" onclick="showPanel('p1826');return false;">Ver Ley 1826 completa →</a></div>
-        </div>
-      </div>
-
-      <div class="nav-item">
-        <button class="nav-link" onclick="showPanel('p1098')">Ley 1098 <span class="nav-arr">▾</span></button>
-        <div class="mega" style="min-width:260px">
-          <div class="mega-hdr">Código de Infancia · Ley 1098 de 2006</div>
+          <div class="mega-hdr" style="margin-top:10px;border-top:1px solid var(--borde);padding-top:10px">Infancia y adolescencia</div>
           <div class="mega-items">
-            <a href="/ley-1098" onclick="showPanel('p1098');return false;" class="mega-item"><span class="mega-item-dot m"></span><div class="mega-item-txt"><div class="mega-item-name">¿A quién aplica el SRPA?</div><div class="mega-item-desc">Edad, responsabilidad penal adolescente</div></div></a>
-            <a href="/ley-1098" onclick="showPanel('p1098');return false;" class="mega-item"><span class="mega-item-dot m"></span><div class="mega-item-txt"><div class="mega-item-name">Sanciones — de menor a mayor gravosa</div><div class="mega-item-desc">Amonestación, libertad asistida, privación de libertad</div></div></a>
+            <a href="/ley-1098" onclick="showPanel('p1098');return false;" class="mega-item"><span class="mega-item-dot m"></span><div class="mega-item-txt"><div class="mega-item-name">Ley 1098 de 2006 — Código de Infancia</div><div class="mega-item-desc">Sistema de Responsabilidad Penal Adolescente</div></div></a>
           </div>
-          <div class="mega-footer"><a href="/ley-1098" onclick="showPanel('p1098');return false;">Ver Ley 1098 completa →</a></div>
-        </div>
-      </div>
-
-      <div class="nav-item">
-        <button class="nav-link" onclick="showPanel('p600')">Ley 600 <span class="nav-arr">▾</span></button>
-        <div class="mega" style="min-width:260px">
-          <div class="mega-hdr">C.P.P. anterior · Ley 600 de 2000</div>
-          <div class="mega-items">
-            <a href="/ley-600" onclick="showPanel('p600');return false;" class="mega-item"><span class="mega-item-dot am"></span><div class="mega-item-txt"><div class="mega-item-name">Sistema inquisitivo-mixto</div><div class="mega-item-desc">Estructura y etapas del proceso</div></div></a>
-            <a href="/ley-600" onclick="showPanel('p600');return false;" class="mega-item"><span class="mega-item-dot am"></span><div class="mega-item-txt"><div class="mega-item-name">Recursos e impugnación</div><div class="mega-item-desc">Reposición, apelación, casación, revisión</div></div></a>
-            <a href="/ley-600" onclick="showPanel('p600');return false;" class="mega-item"><span class="mega-item-dot am"></span><div class="mega-item-txt"><div class="mega-item-name">Nulidades y principio de trascendencia</div><div class="mega-item-desc">Causales, saneamiento y convalidación</div></div></a>
-            <a href="/ley-600" onclick="showPanel('p600');return false;" class="mega-item"><span class="mega-item-dot am"></span><div class="mega-item-txt"><div class="mega-item-name">Ley 600 vs. Ley 906</div><div class="mega-item-desc">Diferencias estructurales entre sistemas</div></div></a>
-            <a href="/ley-600" onclick="showPanel('p600');return false;" class="mega-item"><span class="mega-item-dot am"></span><div class="mega-item-txt"><div class="mega-item-name">Investigación previa e instrucción</div><div class="mega-item-desc">Etapas, términos y actos investigativos</div></div></a>
-            <a href="/ley-600" onclick="showPanel('p600');return false;" class="mega-item"><span class="mega-item-dot am"></span><div class="mega-item-txt"><div class="mega-item-name">Medidas de aseguramiento</div><div class="mega-item-desc">Detención preventiva en el sistema mixto</div></div></a>
-            <a href="/ley-600" onclick="showPanel('p600');return false;" class="mega-item"><span class="mega-item-dot am"></span><div class="mega-item-txt"><div class="mega-item-name">Prescripción en la Ley 600</div><div class="mega-item-desc">Términos, interrupción y suspensión</div></div></a>
-            <a href="/ley-600" onclick="showPanel('p600');return false;" class="mega-item"><span class="mega-item-dot am"></span><div class="mega-item-txt"><div class="mega-item-name">Prueba y libertad probatoria</div><div class="mega-item-desc">Sistema probatorio del proceso mixto</div></div></a>
-          </div>
-          <div class="mega-footer"><a href="/ley-600" onclick="showPanel('p600');return false;">Ver Ley 600 completa →</a></div>
+          <div class="mega-footer"><a href="#leyes-penales" onclick="showPanel('inicio');setTimeout(function(){document.getElementById('leyes-penales').scrollIntoView({behavior:'smooth'})},100);return false;">Ver todas las leyes →</a></div>
         </div>
       </div>
 
@@ -1438,13 +1397,13 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
           <div class="mega-hdr">CSJ Sala de Casación Penal</div>
           <div class="mega-items">
             <a href="/jurisprudencia" onclick="showPanel('pjuris');return false;" class="mega-item"><span class="mega-item-dot" style="background:var(--amarillo)"></span><div class="mega-item-txt"><div class="mega-item-name">Buscador de decisiones</div><div class="mega-item-desc">Busca por radicado, tema o palabra clave</div></div></a>
-            <a href="/jurisprudencia" onclick="showPanel('pjuris');return false;" class="mega-item"><span class="mega-item-dot" style="background:var(--amarillo)"></span><div class="mega-item-txt"><div class="mega-item-name">Líneas jurisprudenciales</div><div class="mega-item-desc">Evolución del criterio de la Corte por tema</div></div></a>
+            <a href="/lineas" class="mega-item"><span class="mega-item-dot" style="background:var(--amarillo)"></span><div class="mega-item-txt"><div class="mega-item-name">Líneas jurisprudenciales</div><div class="mega-item-desc">Evolución del criterio de la Corte por tema</div></div></a>
           </div>
           <div class="mega-hdr" style="margin-top:10px;border-top:1px solid var(--borde);padding-top:10px">Sistema Interamericano de DDHH</div>
           <div class="mega-items">
             <a href="/cidh" onclick="showPanel('pcidh');return false;" class="mega-item"><span class="mega-item-dot" style="background:#2E75B6"></span><div class="mega-item-txt"><div class="mega-item-name">Corte IDH — Sentencias clave</div><div class="mega-item-desc">Análisis con relevancia para Colombia</div></div></a>
           </div>
-          <div class="mega-footer"><a href="/jurisprudencia" onclick="showPanel('pjuris');return false;">Ir a jurisprudencia →</a></div>
+          <div class="mega-footer"><a href="/jurisprudencia" onclick="showPanel('pjuris');return false;">Ir al buscador de providencias →</a></div>
         </div>
       </div>
 
@@ -1476,8 +1435,6 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
   <div class="hero-glow-m"></div>
   <div class="wrap">
     <div class="hb-eyebrow"><span class="hero-eyebrow-dot"></span> Plataforma interactiva</div>
-    <h1 class="hb-wordmark">Lex <em>Praxis</em></h1>
-    <div class="hb-tagline">Derecho Penal Colombiano</div>
     <p class="hb-purpose">Leyes comentadas, l&iacute;neas jurisprudenciales y herramientas pr&aacute;cticas para estudiar, comprender y aplicar el derecho penal.</p>
     <div class="hb-paths">
       <a href="#" onclick="showPanel('p599');return false;" class="hb-path p-sust">
@@ -1649,7 +1606,7 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 </div>
 
 <!-- LEYES RÁPIDAS -->
-<div class="wrap">
+<div class="wrap" id="leyes-penales">
   <section class="section" style="border-bottom:none">
     <div class="sec-eyebrow">Legislación comentada</div>
     <div class="sec-title">Leyes penales</div>
