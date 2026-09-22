@@ -1456,16 +1456,16 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
     <div class="ticker-label">JURISPRUDENCIA</div>
     <div class="ticker-scroll">
       <div class="ticker-inner">
+        <span class="ticker-item">AP5290-2026 &mdash; &iquest;Qui&eacute;n define la audiencia si el procesado est&aacute; preso en otra ciudad? Conflicto de competencia Girardot-Bogot&aacute;</span>
+        <span class="ticker-item">AP4284-2026 &mdash; La retractaci&oacute;n de la v&iacute;ctima no es prueba nueva en acci&oacute;n de revisi&oacute;n</span>
         <span class="ticker-item">SP505-2026 &mdash; Corte var&iacute;a precedente: cabe concurso real en violencia intrafamiliar. Ruptura de la l&iacute;nea SP679-2019</span>
         <span class="ticker-item">SP430-2026 &mdash; Leg&iacute;tima defensa sin ataque f&iacute;sico previo: el contexto de hostigamiento y violencia de g&eacute;nero basta</span>
         <span class="ticker-item">SP780-2025 &mdash; La prueba de referencia admisible no basta para condenar, aunque el relato de la menor sea coherente</span>
-        <span class="ticker-item">SP601-2026 &mdash; Absuelto por duda razonable: la hip&oacute;tesis alternativa plausible derrumb&oacute; la condena</span>
-        <span class="ticker-item">SP337-2026 &mdash; No toda exigencia de dinero es extorsi&oacute;n. Sin constre&ntilde;imiento, la conducta es at&iacute;pica</span>
+        <span class="ticker-item">AP5290-2026 &mdash; &iquest;Qui&eacute;n define la audiencia si el procesado est&aacute; preso en otra ciudad? Conflicto de competencia Girardot-Bogot&aacute;</span>
+        <span class="ticker-item">AP4284-2026 &mdash; La retractaci&oacute;n de la v&iacute;ctima no es prueba nueva en acci&oacute;n de revisi&oacute;n</span>
         <span class="ticker-item">SP505-2026 &mdash; Corte var&iacute;a precedente: cabe concurso real en violencia intrafamiliar. Ruptura de la l&iacute;nea SP679-2019</span>
         <span class="ticker-item">SP430-2026 &mdash; Leg&iacute;tima defensa sin ataque f&iacute;sico previo: el contexto de hostigamiento y violencia de g&eacute;nero basta</span>
         <span class="ticker-item">SP780-2025 &mdash; La prueba de referencia admisible no basta para condenar, aunque el relato de la menor sea coherente</span>
-        <span class="ticker-item">SP601-2026 &mdash; Absuelto por duda razonable: la hip&oacute;tesis alternativa plausible derrumb&oacute; la condena</span>
-        <span class="ticker-item">SP337-2026 &mdash; No toda exigencia de dinero es extorsi&oacute;n. Sin constre&ntilde;imiento, la conducta es at&iacute;pica</span>
       </div>
     </div>
   </div>
@@ -6441,6 +6441,18 @@ function buildDetalleIPJ9(){
 }
 
 var JDB=[
+  {id:'jcr2',fecha:'12 ago 2026',anio:2026,dec:'AP5290-2026',rad:'CSJ AP5290-2026 · Rad. 73740',
+   tags:['Conflictos de competencia'],nuevo:true,
+   titulo:'La sede del juicio fija el juez de garantías, salvo que el procesado esté preso en otra ciudad',
+   refs:['Art. 32 núm. 3 Ley 906/2004','Art. 39 Ley 906/2004','M.P. Gerardo Barbosa Castillo','Sala Casación Penal'],
+   ratio:'Radicada la acusación, el control de garantías se tramita preferentemente en la sede del juzgamiento. Esa regla admite excepción cuando existe una circunstancia razonable y verificable — como que el procesado esté privado de la libertad en un territorio distinto o que allí se encuentren las evidencias que se buscan. Los criterios de excepción son enunciativos: exigen valorar cada caso, no responder al capricho de quien promueve la actuación.',
+   detalle:buildDetalleJCR2()},
+  {id:'jcr1',fecha:'01 jul 2026',anio:2026,dec:'AP4284-2026',rad:'CSJ AP4284-2026 · Rad. 70737',
+   tags:['Casación y recursos'],nuevo:true,
+   titulo:'La retractación de la víctima no habilita la acción de revisión: sin constancia de ejecutoria, la demanda ni se estudia',
+   refs:['Art. 192 núm. 3 Ley 906/2004','Art. 194 Ley 906/2004','M.P. Hugo Quintero Bernate','Sala Casación Penal'],
+   ratio:'La constancia de ejecutoria del fallo atacado es requisito formal obligatorio de la demanda de revisión; su ausencia basta para inadmitirla. Aun superado ese defecto, la retractación extraprocesal de un testigo no constituye hecho ni prueba nueva para la causal 3ª del art. 192: solo pretende restar credibilidad a un testimonio ya valorado en el fallo, lo que la revisión no está diseñada para reabrir.',
+   detalle:buildDetalleJCR1()},
   {id:'jia1',fecha:'19 feb 2025',anio:2025,dec:'SP1897-2025',rad:'CSJ SP1897-2025 · Rad. sin identificar',
    tags:['Inasistencia alimentaria'],nuevo:true,
    titulo:'Cotero en pobreza extrema absuelto: el Tribunal presumió capacidad económica a partir de la ocupación informal — la Fiscalía debe probarla con evidencia concreta',
@@ -7662,6 +7674,28 @@ function jdbRule(num,txt){
 }
 
 
+function buildDetalleJCR2(){
+  var d=document.createElement('div');d.className='jdb-detail';
+  d.innerHTML='<p style="margin-bottom:10px"><strong>Contexto.</strong> Procesado por acceso carnal abusivo con menor de catorce a\u00f1os agravado, con juicio radicado en Girardot. La defensa pidi\u00f3 una audiencia de control de garant\u00edas ante un juez de Bogot\u00e1 \u2014ciudad donde el procesado est\u00e1 privado de la libertad\u2014. La Fiscal\u00eda impugn\u00f3 la competencia: si el juicio ya tiene sede, ah\u00ed deb\u00eda tramitarse todo. La Corte dirime el conflicto.</p>'
+   +'<p style="margin-bottom:8px"><strong>Reglas:</strong></p>'
+   +jdbRule('\u2460','<strong>Regla general \u2014 sede del juicio:</strong> radicada la acusaci\u00f3n, las actuaciones de control de garant\u00edas deben tramitarse, preferentemente, en la misma sede donde qued\u00f3 fijado el juzgamiento.')
+   +jdbRule('\u2461','<strong>Excepci\u00f3n \u2014 privaci\u00f3n de libertad en otro territorio:</strong> si el procesado est\u00e1 recluido en un establecimiento carcelario distinto al de la sede del juicio, esa circunstancia habilita tramitar la audiencia donde \u00e9l se encuentra \u2014sobre todo si comparece y no renuncia a su derecho de asistir.')
+   +jdbRule('\u2462','<strong>Los criterios son enunciativos, no arbitrarios:</strong> la elecci\u00f3n del juez debe responder a una necesidad real de proteger garant\u00edas \u2014no a la conveniencia de quien formula la solicitud\u2014, y debe valorarse caso por caso.')
+   +'<p style="margin-top:12px;font-size:9px;color:var(--texto4)">Resultado: DEFINE competencia a favor del Juzgado 4\u00ba Penal Municipal con Funci\u00f3n de Control de Garant\u00edas de Bogot\u00e1 \u00b7 Rad. 73740 \u00b7 No proceden recursos</p>';
+  return d.outerHTML;
+}
+
+function buildDetalleJCR1(){
+  var d=document.createElement('div');d.className='jdb-detail';
+  d.innerHTML='<p style="margin-bottom:10px"><strong>Contexto.</strong> Condenado a 16 a\u00f1os por acceso carnal violento agravado, el sentenciado acude en acci\u00f3n de revisi\u00f3n casi seis a\u00f1os despu\u00e9s de los hechos, invocando la retractaci\u00f3n extraprocesal de la v\u00edctima y tres declaraciones suyas previas al juicio oral. La Corte inadmite la demanda por dos v\u00edas independientes.</p>'
+   +'<p style="margin-bottom:8px"><strong>Reglas:</strong></p>'
+   +jdbRule('\u2460','<strong>Constancia de ejecutoria \u2014 requisito insubsanable:</strong> el art. 194 exige acreditar que el fallo atacado hizo tr\u00e1nsito a cosa juzgada. El auto que declara desierta la casaci\u00f3n no la suple: certifica la improcedencia del recurso extraordinario, no la firmeza de la sentencia condenatoria.')
+   +jdbRule('\u2461','<strong>La retractaci\u00f3n no es prueba nueva:</strong> el \u00fanico efecto que persigue es afectar la credibilidad ya valorada en el fallo \u2014 algo que la revisi\u00f3n no est\u00e1 dise\u00f1ada para reexaminar. Si por otra v\u00eda se acredita qui\u00e9n minti\u00f3, ser\u00eda prueba falsa, no prueba nueva, y corresponder\u00eda otra causal.')
+   +jdbRule('\u2462','<strong>Lo preexistente al juicio no es novedoso:</strong> declaraciones extraprocesales rendidas antes del juicio oral no pueden calificarse de sobrevinientes; el demandante debe explicar, y no solo afirmar, por qu\u00e9 la defensa de entonces no pudo aportarlas oportunamente.')
+   +'<p style="margin-top:12px;font-size:9px;color:var(--texto4)">Resultado: INADMITE la demanda de revisi\u00f3n \u00b7 Rad. 70737 \u00b7 Sala Casaci\u00f3n Penal \u00b7 Procede recurso de reposici\u00f3n</p>';
+  return d.outerHTML;
+}
+
 function buildDetalleIA1(){
   var d=document.createElement('div');d.className='jdb-detail';
   d.innerHTML='<p style="margin-bottom:10px"><strong>Hechos.</strong> Un hombre que trabajaba como cotero en condiciones de pobreza extrema fue condenado por inasistencia alimentaria. El Tribunal infirió su capacidad económica de su mera ocupación informal, sin que la Fiscalía aportara certificaciones de ingresos, contratos ni evidencia patrimonial. La CSJ casa y absuelve.</p>'
@@ -8083,6 +8117,16 @@ function jdbInit(){
    ════════════════════════════════════════════ */
 
 var LP_NOTICIAS = [
+  {slug:'definicion-competencia-control-garantias-ap5290-2026',
+   titulo:'¿Quién define la audiencia si el procesado está preso en otra ciudad?',
+   eyebrow:'Conflictos de Competencia · AP5290-2026', chip:'RAD. 73740',
+   resumen:'CSJ AP5290-2026 resuelve un conflicto de competencia entre Girardot y Bogotá: aunque la acusación ya estaba radicada en Girardot, la audiencia de control de garantías se queda en Bogotá porque ahí está privado de la libertad el procesado.',
+   year:2026},
+  {slug:'retractacion-no-prueba-nueva-ap4284-2026',
+   titulo:'La retractación de la víctima no es prueba nueva: los límites de la acción de revisión',
+   eyebrow:'Acción de Revisión · AP4284-2026', chip:'RAD. 70737',
+   resumen:'CSJ AP4284-2026 inadmite una demanda de revisión sustentada en la retractación extraprocesal de la denunciante. Sin constancia de ejecutoria del fallo atacado la demanda ni se estudia, y la retractación de un testigo no constituye hecho ni prueba nueva.',
+   year:2026},
   {slug:'cuenca-chaux-sp601-2026',
    titulo:'Absuelto por duda razonable: cómo la hipótesis alternativa plausible derrumbó una condena',
    eyebrow:'Jurisprudencia · SP601-2026', chip:'RAD. 68470',
