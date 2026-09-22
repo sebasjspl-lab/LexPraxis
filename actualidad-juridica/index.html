@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://www.lexpraxis.co/og-image.png">
 <link rel="canonical" href="https://www.lexpraxis.co/actualidad-juridica">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --blanco:#FAFAF8;--papel:#F5F1EB;--papel2:#EDE8DF;--borde:#DDD8CF;--borde2:#C8C2B6;
@@ -66,6 +66,9 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
 .sb-footer{padding:12px 14px;border-top:1px solid rgba(255,255,255,.07);font-size:9px;color:rgba(255,255,255,.16);line-height:1.5;flex-shrink:0;margin-top:auto}
 
 /* Toggle */
+.art-back-float{position:fixed;bottom:22px;right:22px;z-index:250;display:inline-flex;align-items:center;gap:7px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.05em;color:white;text-decoration:none;padding:11px 18px 11px 14px;border-radius:24px;background:var(--rojo);box-shadow:0 4px 18px rgba(0,0,0,.28);transition:transform .15s,box-shadow .15s}
+.art-back-float:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.32)}
+@media (max-width:640px){.art-back-float{padding:12px;border-radius:50%}.art-back-float-lbl{display:none}}
 .sb-toggle{position:fixed;top:14px;left:14px;z-index:300;background:var(--texto);border:none;border-radius:7px;width:34px;height:34px;display:none;align-items:center;justify-content:center;cursor:pointer;color:rgba(255,255,255,.6);font-size:15px;transition:all .2s;box-shadow:0 2px 10px rgba(0,0,0,.3)}
 .sb-toggle:hover{color:white}
 .sb-toggle.show{display:flex}
@@ -120,7 +123,7 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
 .art-cat.opinion{background:var(--naranja-dim);color:var(--naranja)}
 .art-titulo{font-family:"Lora",serif;font-size:17px;font-weight:700;color:var(--texto);line-height:1.3;margin-bottom:6px;letter-spacing:-.01em;text-align:justify}
 .art-card:hover .art-titulo{color:var(--rojo)}
-.art-resumen{font-size:13px;color:var(--texto3);line-height:1.7;font-weight:300;margin-bottom:10px;text-align:justify}
+.art-resumen{font-family:"Source Serif 4",serif;font-size:13.5px;color:var(--texto3);line-height:1.65;font-weight:400;margin-bottom:10px;text-align:justify}
 .art-meta{display:flex;align-items:center;gap:12px}
 .art-leer{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;color:var(--texto4);transition:color .16s;display:inline-flex;align-items:center;gap:5px}
 .art-card:hover .art-leer{color:var(--rojo)}
@@ -168,6 +171,11 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
 <body>
 
 <div class="rbar" id="rbar"></div>
+
+<a href="https://www.lexpraxis.co" class="art-back-float">
+  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="5,3.5 2,6.5 5,9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+  <span class="art-back-float-lbl">Inicio</span>
+</a>
 
 <button class="sb-toggle show" id="sb-toggle" onclick="toggleSB()">
   <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><line x1="2.5" y1="5" x2="14.5" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2.5" y1="8.5" x2="14.5" y2="8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2.5" y1="12" x2="9.5" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -279,7 +287,7 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
     <!-- ══ ARTÍCULO — SP505-2026 ══ -->
     <a class="art-card" href="/actualidad-juridica/violencia-intrafamiliar-concurso-sp505-2026" data-cat="jurisprudencia">
       <div class="art-fecha">
-        <div class="art-fecha-dia">08</div>
+        <div class="art-fecha-dia">15</div>
         <div class="art-fecha-mes">JUL</div>
         <div class="art-fecha-ano">2026</div>
       </div>
@@ -296,30 +304,10 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
       <div class="art-arr">&rsaquo;</div>
     </a>
 
-    <!-- ══ ARTÍCULO — SP430-2026 ══ -->
-    <a class="art-card" href="/actualidad-juridica/legitima-defensa-hostigamiento-sp430-2026" data-cat="jurisprudencia">
-      <div class="art-fecha">
-        <div class="art-fecha-dia">02</div>
-        <div class="art-fecha-mes">JUL</div>
-        <div class="art-fecha-ano">2026</div>
-      </div>
-      <div class="art-sep"></div>
-      <div class="art-body">
-        <span class="art-cat jurisprudencia">Leg&iacute;tima Defensa</span>
-        <div class="art-titulo">Leg&iacute;tima defensa sin ataque f&iacute;sico previo: el contexto de hostigamiento basta</div>
-        <div class="art-resumen">La Sala de Casaci&oacute;n Penal reconoce en SP430-2026 que la leg&iacute;tima defensa se configura aunque el agresor no haya iniciado un ataque f&iacute;sico, si existe un contexto previo de hostigamiento, amenazas y violencia basada en g&eacute;nero. El juez debe analizar toda la secuencia de agresi&oacute;n, no solo el d&iacute;a del hecho.</div>
-        <div class="art-meta">
-          <span class="art-leer">LEER AN&Aacute;LISIS <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="2" y1="6" x2="9.5" y2="6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><polyline points="6.5,3 9.5,6 6.5,9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
-          <span class="art-nuevo">NUEVO</span>
-        </div>
-      </div>
-      <div class="art-arr">&rsaquo;</div>
-    </a>
-
     <!-- ══ ARTÍCULO — SP780-2025 ══ -->
     <a class="art-card" href="/actualidad-juridica/prueba-referencia-menores-sp780-2025" data-cat="jurisprudencia">
       <div class="art-fecha">
-        <div class="art-fecha-dia">02</div>
+        <div class="art-fecha-dia">08</div>
         <div class="art-fecha-mes">JUL</div>
         <div class="art-fecha-ano">2026</div>
       </div>
@@ -336,10 +324,30 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
       <div class="art-arr">&rsaquo;</div>
     </a>
 
+    <!-- ══ ARTÍCULO — SP430-2026 ══ -->
+    <a class="art-card" href="/actualidad-juridica/legitima-defensa-hostigamiento-sp430-2026" data-cat="jurisprudencia">
+      <div class="art-fecha">
+        <div class="art-fecha-dia">01</div>
+        <div class="art-fecha-mes">JUL</div>
+        <div class="art-fecha-ano">2026</div>
+      </div>
+      <div class="art-sep"></div>
+      <div class="art-body">
+        <span class="art-cat jurisprudencia">Leg&iacute;tima Defensa</span>
+        <div class="art-titulo">Leg&iacute;tima defensa sin ataque f&iacute;sico previo: el contexto de hostigamiento basta</div>
+        <div class="art-resumen">La Sala de Casaci&oacute;n Penal reconoce en SP430-2026 que la leg&iacute;tima defensa se configura aunque el agresor no haya iniciado un ataque f&iacute;sico, si existe un contexto previo de hostigamiento, amenazas y violencia basada en g&eacute;nero. El juez debe analizar toda la secuencia de agresi&oacute;n, no solo el d&iacute;a del hecho.</div>
+        <div class="art-meta">
+          <span class="art-leer">LEER AN&Aacute;LISIS <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="2" y1="6" x2="9.5" y2="6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><polyline points="6.5,3 9.5,6 6.5,9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+          <span class="art-nuevo">NUEVO</span>
+        </div>
+      </div>
+      <div class="art-arr">&rsaquo;</div>
+    </a>
+
     <!-- ══ ARTÍCULO — SP601-2026 ══ -->
     <a class="art-card" href="/actualidad-juridica/cuenca-chaux-sp601-2026" data-cat="jurisprudencia">
       <div class="art-fecha">
-        <div class="art-fecha-dia">28</div>
+        <div class="art-fecha-dia">24</div>
         <div class="art-fecha-mes">JUN</div>
         <div class="art-fecha-ano">2026</div>
       </div>
@@ -358,7 +366,7 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
     <!-- ══ ARTÍCULO 2 ══ -->
     <a class="art-card" href="/actualidad-juridica/extorsion-atipicidad-sp337-2026" data-cat="jurisprudencia">
       <div class="art-fecha">
-        <div class="art-fecha-dia">13</div>
+        <div class="art-fecha-dia">17</div>
         <div class="art-fecha-mes">JUN</div>
         <div class="art-fecha-ano">2026</div>
       </div>
@@ -377,7 +385,7 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
     <!-- ══ ARTÍCULO 2 ══ -->
     <a class="art-card" href="/actualidad-juridica/evidencia-demostrativa-ley-906" data-cat="jurisprudencia">
       <div class="art-fecha">
-        <div class="art-fecha-dia">06</div>
+        <div class="art-fecha-dia">10</div>
         <div class="art-fecha-mes">JUN</div>
         <div class="art-fecha-ano">2026</div>
       </div>
@@ -396,7 +404,7 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
     <!-- ══ ARTÍCULO 4 — Inimputabilidad SP205-2026 ══ -->
     <a class="art-card" href="/actualidad-juridica/inimputabilidad-sp205-2026" data-cat="jurisprudencia">
       <div class="art-fecha">
-        <div class="art-fecha-dia">02</div>
+        <div class="art-fecha-dia">03</div>
         <div class="art-fecha-mes">JUN</div>
         <div class="art-fecha-ano">2026</div>
       </div>

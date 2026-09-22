@@ -21,7 +21,7 @@
 <meta property="article:section" content="Jurisprudencia">
 <link rel="canonical" href="https://www.lexpraxis.co/actualidad-juridica/violencia-intrafamiliar-concurso-sp505-2026">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --blanco:#FAFAF8;--papel:#F5F1EB;--papel2:#EDE8DF;--borde:#DDD8CF;--borde2:#C8C2B6;
@@ -67,6 +67,11 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
 .art-hero{background:var(--texto);padding:52px 48px 44px;position:relative;overflow:hidden;border-bottom:3px solid var(--rojo)}
 .art-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(122,40,40,.18) 0%,transparent 65%);pointer-events:none}
 .art-hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.art-back-float{position:fixed;bottom:22px;right:22px;z-index:250;display:inline-flex;align-items:center;gap:7px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.05em;color:white;text-decoration:none;padding:11px 18px 11px 14px;border-radius:24px;background:var(--rojo);box-shadow:0 4px 18px rgba(0,0,0,.28);transition:transform .15s,box-shadow .15s}
+.art-back-float:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.32)}
+@media (max-width:640px){.art-back-float{padding:12px;border-radius:50%}.art-back-float-lbl{display:none}}
+.art-back-top{display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.07em;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:14px;transition:color .16s}
+.art-back-top:hover{color:#e8a0a0}
 .art-breadcrumb{display:flex;align-items:center;gap:8px;font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.3);margin-bottom:20px;flex-wrap:wrap}
 .art-breadcrumb a{color:rgba(255,255,255,.3);text-decoration:none;transition:color .16s}
 .art-breadcrumb a:hover{color:rgba(255,255,255,.7)}
@@ -74,7 +79,7 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
 .art-hero-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
 .art-cat{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:4px;font-weight:700;background:var(--rojo-dim2);color:#e8a0a0}
 .art-meta-txt{font-family:"JetBrains Mono",monospace;font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.06em}
-.art-h1{font-family:"Cormorant Garamond",serif;font-size:clamp(24px,3.7vw,38px);font-weight:600;line-height:1.14;letter-spacing:-.015em;color:white;margin-bottom:14px}
+.art-h1{font-family:"Lora",serif;font-size:clamp(22px,3.5vw,34px);font-weight:700;line-height:1.12;letter-spacing:-.025em;color:white;margin-bottom:14px}
 .art-subtitulo{font-size:14px;color:rgba(255,255,255,.5);line-height:1.75;font-weight:300;font-style:italic;max-width:620px;margin-bottom:20px}
 .art-autor{display:flex;align-items:center;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)}
 .art-autor-avatar{width:32px;height:32px;border-radius:50%;background:var(--rojo);display:flex;align-items:center;justify-content:center;font-family:"Lora",serif;font-size:12px;font-weight:700;color:white;flex-shrink:0}
@@ -82,11 +87,9 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
 .art-autor-cargo{font-family:"JetBrains Mono",monospace;font-size:8px;color:rgba(255,255,255,.3);letter-spacing:.06em;margin-top:1px}
 
 .art-wrap{max-width:760px;padding:44px 48px 80px;margin:0 auto;width:100%}
-.art-body{font-family:"Lora",serif;font-size:14.5px;color:var(--texto2);line-height:1.8}
-.art-body > p:first-of-type::first-letter,
-.art-body h2 + p::first-letter{font-family:"Cormorant Garamond",serif;font-size:52px;font-weight:700;float:left;line-height:.9;margin:6px 10px 0 0;color:var(--rojo)}
+.art-body{font-family:"Source Serif 4",serif;font-size:15.5px;color:var(--texto2);line-height:1.8}
 .art-body p{margin-bottom:18px;text-align:justify}
-.art-body h2{font-family:"Cormorant Garamond",serif;font-size:23px;font-weight:600;color:var(--texto);margin:36px 0 12px;letter-spacing:-.01em;padding-bottom:8px;border-bottom:1px solid var(--borde)}
+.art-body h2{font-family:"Lora",serif;font-size:20px;font-weight:700;color:var(--texto);margin:36px 0 12px;letter-spacing:-.02em;padding-bottom:8px;border-bottom:1px solid var(--borde)}
 .art-body strong{color:var(--texto);font-weight:600}
 .art-body em{font-style:italic}
 .art-body ul{padding-left:22px;margin-bottom:18px}
@@ -156,6 +159,10 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
 </head>
 <body>
 <div class="rbar" id="rbar"></div>
+<a href="https://www.lexpraxis.co/actualidad-juridica" class="art-back-float">
+  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><polyline points="5,3.5 2,6.5 5,9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+  <span class="art-back-float-lbl">Actualidad Jur&iacute;dica</span>
+</a>
 <button class="sb-toggle show" id="sb-toggle" onclick="toggleSB()">
   <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><line x1="2.5" y1="5" x2="14.5" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2.5" y1="8.5" x2="14.5" y2="8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2.5" y1="12" x2="9.5" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </button>
@@ -211,6 +218,10 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
 <main class="main" id="main">
   <div class="art-hero">
     <div class="art-hero-inner">
+      <a href="https://www.lexpraxis.co/actualidad-juridica" class="art-back-top">
+        <svg width="12" height="12" viewBox="0 0 13 13" fill="none"><line x1="11" y1="6.5" x2="2" y2="6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><polyline points="5,3.5 2,6.5 5,9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        VOLVER A ACTUALIDAD JUR&Iacute;DICA
+      </a>
       <nav class="art-breadcrumb">
         <a href="https://www.lexpraxis.co">Lex Praxis</a>
         <span>&rsaquo;</span>
@@ -220,8 +231,8 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
       </nav>
       <div class="art-hero-top">
         <span class="art-cat">Jurisprudencia</span>
-        <span class="art-meta-txt">8 de julio de 2026</span>
-        <span class="art-meta-txt">&middot; 8 min de lectura</span>
+        <span class="art-meta-txt">15 de julio de 2026</span>
+        <span class="art-meta-txt">&middot; 9 min de lectura</span>
       </div>
       <h1 class="art-h1">Corte var&iacute;a precedente: cabe concurso real en violencia intrafamiliar</h1>
       <p class="art-subtitulo">La Sala de Casaci&oacute;n Penal, en casaci&oacute;n oficiosa y por violaci&oacute;n al principio de legalidad, modific&oacute; la l&iacute;nea sostenida desde la SP679-2019: la unidad de acci&oacute;n en violencia intrafamiliar deja de operar como obst&aacute;culo absoluto al concurso real. Excepcionalmente cabe concurso homog&eacute;neo y sucesivo cuando cada delito concurrente proviene de su propia unidad de acci&oacute;n, aut&oacute;noma y escindible en tiempo, espacio y modo.</p>
@@ -246,26 +257,24 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
 
         <h2>1. Los hechos: cuatro episodios, una v&iacute;ctima, contornos escindibles</h2>
 
-        <p>Entre 2018 y 2019, en Cali (Valle del Cauca), JHON HELBER ORTIZ SU&Aacute;REZ sostuvo una relaci&oacute;n sentimental y de convivencia intermitente con K.B.L. (identidad reservada por el literal f del art&iacute;culo 4 de la Ley 1257 de 2008), quien esperaba un hijo suyo. Durante el v&iacute;nculo se registraron <strong>cuatro episodios</strong> de agresi&oacute;n, cada uno con coordenadas f&aacute;cticas propias:</p>
+        <p>Entre 2018 y 2019, en Cali (Valle del Cauca), JHON HELBER ORTIZ SU&Aacute;REZ sostuvo una relaci&oacute;n intermitente con K.B.L. (identidad reservada, art. 4 lit. f, Ley 1257/2008), quien esperaba un hijo suyo. Durante el v&iacute;nculo se registraron <strong>cuatro episodios</strong> de agresi&oacute;n, cada uno con coordenadas f&aacute;cticas propias:</p>
 
         <ul>
-          <li><strong>26 de noviembre de 2018 &mdash; barrio El Pondaje.</strong> K.B.L. acudi&oacute; al SENA a requerir al procesado sobre el cumplimiento de sus deberes por el hijo que esperaban. ORTIZ SU&Aacute;REZ la tom&oacute; del cuello, la arroj&oacute; al piso, la pate&oacute; en el abdomen y le advirti&oacute; que le sacar&iacute;a al hijo "a punta de golpes". D&iacute;as despu&eacute;s, refugiada en Buenaventura, sobrevino el aborto.</li>
-          <li><strong>13 de marzo de 2019 &mdash; barrio Alirio Mora.</strong> En un altercado ocurrido en la vivienda de la madre del procesado, este pate&oacute; la reja del inmueble, cuyo impacto golpe&oacute; a la v&iacute;ctima en la boca y le aflojo los dientes; adicionalmente, la cort&oacute; con arma blanca en el dedo me&ntilde;ique derecho. Incapacidad m&eacute;dico-legal de 10 d&iacute;as.</li>
-          <li><strong>15 de junio de 2019 &mdash; barrio San Marino.</strong> En una v&iacute;a p&uacute;blica, el procesado le reclam&oacute; por su forma de vestir, compar&aacute;ndola con una trabajadora sexual; ante la manifestaci&oacute;n de terminar el v&iacute;nculo, la agredi&oacute; con pu&ntilde;os en la cara. Incapacidad de 18 d&iacute;as.</li>
-          <li><strong>20 de julio de 2019 &mdash; barrio Manuela Beltr&aacute;n.</strong> Ya separada la pareja, ORTIZ SU&Aacute;REZ esper&oacute; a K.B.L. en un parque, la sorprendi&oacute; con puntapi&eacute;s y cachetadas, y la amenaz&oacute; de muerte y con ataque de &aacute;cido. Incapacidad de 12 d&iacute;as.</li>
+          <li><strong>26 de noviembre de 2018 &mdash; barrio El Pondaje.</strong> K.B.L. fue al SENA a exigirle que cumpliera sus deberes por el hijo que esperaban. ORTIZ SU&Aacute;REZ la tom&oacute; del cuello, la arroj&oacute; al piso, la pate&oacute; en el abdomen y amenaz&oacute; con quitarle al hijo "a punta de golpes". D&iacute;as despu&eacute;s, refugiada en Buenaventura, sobrevino el aborto.</li>
+          <li><strong>13 de marzo de 2019 &mdash; barrio Alirio Mora.</strong> En un altercado en casa de la madre del procesado, este pate&oacute; la reja, golpe&aacute;ndole la boca y aflojando dientes, y la cort&oacute; con arma blanca en el me&ntilde;ique. Incapacidad de 10 d&iacute;as.</li>
+          <li><strong>15 de junio de 2019 &mdash; barrio San Marino.</strong> En la v&iacute;a p&uacute;blica, tras compararla con una trabajadora sexual y ante su intenci&oacute;n de terminar, la golpe&oacute; con pu&ntilde;os en la cara. Incapacidad de 18 d&iacute;as.</li>
+          <li><strong>20 de julio de 2019 &mdash; barrio Manuela Beltr&aacute;n.</strong> Ya separados, la esper&oacute; en un parque, la agredi&oacute; con puntapi&eacute;s y cachetadas, y la amenaz&oacute; de muerte y con ataque de &aacute;cido. Incapacidad de 12 d&iacute;as.</li>
         </ul>
 
-        <p>La Fiscal&iacute;a imput&oacute; los tres primeros episodios como <strong>violencia intrafamiliar agravada en concurso homog&eacute;neo</strong> y el cuarto, posterior a la separaci&oacute;n efectiva, como <strong>lesiones personales agravadas</strong>, en aplicaci&oacute;n de la l&iacute;nea sobre convivencia entonces vigente. El Juzgado 23 Penal Municipal de Cali conden&oacute; el 18 de diciembre de 2020 a 86 meses de prisi&oacute;n; el Tribunal Superior de Cali confirm&oacute; el 11 de julio de 2021.</p>
+        <p>La Fiscal&iacute;a imput&oacute; los tres primeros episodios como <strong>violencia intrafamiliar agravada en concurso homog&eacute;neo</strong> y el cuarto, ya separada la pareja, como <strong>lesiones personales agravadas</strong>. El Juzgado 23 Penal Municipal de Cali conden&oacute; el 18 de diciembre de 2020 a 86 meses; el Tribunal Superior de Cali confirm&oacute; el 11 de julio de 2021.</p>
 
         <h2>2. El itinerario procesal: la casaci&oacute;n oficiosa como veh&iacute;culo del cambio</h2>
 
-        <p>La defensa formul&oacute; casaci&oacute;n con dos cargos: violaci&oacute;n directa de la ley sustancial (por la inaplicaci&oacute;n de la Ley 1959 de 2019 y la falta de vida marital) y desconocimiento de las reglas de apreciaci&oacute;n probatoria. Mediante el auto <strong>AP6386-2025</strong> del 17 de septiembre de 2025, la Sala <em>inadmiti&oacute;</em> la demanda por defectos t&eacute;cnicos, pero adopt&oacute; una decisi&oacute;n procesalmente decisiva: dispuso el retorno del expediente para verificar de oficio la eventual violaci&oacute;n al principio de legalidad derivada de la atribuci&oacute;n del concurso homog&eacute;neo y la dosificaci&oacute;n.</p>
-
-        <p>Ese giro procesal merece subrayarse. La Corte convierte una demanda t&eacute;cnicamente fallida en el veh&iacute;culo de una <em>ruptura de precedente</em> a trav&eacute;s de la <strong>casaci&oacute;n oficiosa</strong> (art. 184 inc. 3&ordm; Ley 906/2004) y de los fines materiales del recurso extraordinario: eficacia del derecho material, garant&iacute;as, reparaci&oacute;n y <em>unificaci&oacute;n de la jurisprudencia</em> (art. 180 <em>ibidem</em>). La sentencia hito no nace, entonces, de un cargo bien formulado, sino de la propia toma de posici&oacute;n institucional de la Sala sobre un problema que ven&iacute;a madurando.</p>
+        <p>La defensa formul&oacute; casaci&oacute;n con dos cargos: violaci&oacute;n directa de la ley sustancial (por la inaplicaci&oacute;n de la Ley 1959 de 2019 y la falta de vida marital) y desconocimiento de las reglas de apreciaci&oacute;n probatoria. Mediante el auto <strong>AP6386-2025</strong> del 17 de septiembre de 2025, la Sala <em>inadmiti&oacute;</em> la demanda por defectos t&eacute;cnicos, pero dispuso el retorno del expediente para verificar de oficio la eventual violaci&oacute;n al principio de legalidad derivada de la atribuci&oacute;n del concurso homog&eacute;neo y la dosificaci&oacute;n &mdash;activando la <strong>casaci&oacute;n oficiosa</strong> (art. 184 inc. 3&ordm; Ley 906/2004) para los fines materiales del recurso: eficacia del derecho material, garant&iacute;as y <em>unificaci&oacute;n de la jurisprudencia</em> (art. 180 <em>ibidem</em>). La sentencia hito nace, as&iacute;, de una toma de posici&oacute;n institucional de la Sala, no de un cargo bien formulado.</p>
 
         <h2>3. La l&iacute;nea que se abandona: SP679-2019 y la unidad de acci&oacute;n excluyente</h2>
 
-        <p>La providencia dedica largos apartados a reconstruir la l&iacute;nea que ahora modifica. Desde la <strong>SP679-2019 (rad. 51951)</strong>, y en reiteraciones sucesivas (<em>SP3274-2020</em>, rad. 50587; <em>SP5414-2021</em>, rad. 51015, y <em>SP1886-2025</em>, rad. 67901), la Corte hab&iacute;a sostenido que cuando el agente maltrata f&iacute;sica o psicol&oacute;gicamente a varios miembros del n&uacute;cleo familiar, o al mismo miembro en pluralidad de actos, no se estructura concurso material de delitos. La raz&oacute;n dogm&aacute;tica invocada era triple: la naturaleza no personal&iacute;sima del bien jur&iacute;dico protegido (la unidad y armon&iacute;a familiar); su titularidad relacional; y la forma de realizaci&oacute;n del verbo rector "maltratar", que integrar&iacute;a los distintos actos bajo un &uacute;nico curso de conducta.</p>
+        <p>Desde la <strong>SP679-2019 (rad. 51951)</strong>, reiterada en <em>SP3274-2020</em>, <em>SP5414-2021</em> y <em>SP1886-2025</em>, la Corte sostuvo que cuando el agente maltrata a varios miembros del n&uacute;cleo familiar, o al mismo en pluralidad de actos, no se estructura concurso material: el bien jur&iacute;dico (la unidad y armon&iacute;a familiar) no es personal&iacute;simo sino relacional, y el verbo rector "maltratar" integra los distintos actos en un &uacute;nico curso de conducta.</p>
 
         <div class="art-sent">
           <div class="art-sent-ref">CSJ SP679-2019 &middot; Rad. 51951 &middot; L&iacute;nea modificada</div>
@@ -273,13 +282,11 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
           <div class="art-sent-pie">Cita textual reproducida por la SP505-2026 en el numeral 15 al rese&ntilde;ar la l&iacute;nea que se modifica.</div>
         </div>
 
-        <p>La consecuencia pr&aacute;ctica era contundente: la <em>unidad de acci&oacute;n</em>, as&iacute; entendida, resultaba compatible &uacute;nicamente con concursos <strong>aparentes o ideales</strong>, y descartaba de plano el concurso real. La Sala misma lo reconoce ahora como un <em>equ&iacute;voco</em> (numeral 28): "surgi&oacute; el equ&iacute;voco consistente en que, en trat&aacute;ndose de violencia intrafamiliar agravada, la predicada unidad de acci&oacute;n imped&iacute;a erigir a la categor&iacute;a de delito aut&oacute;nomo otros episodios de violencia al interior del mismo n&uacute;cleo".</p>
+        <p>La consecuencia era contundente: la <em>unidad de acci&oacute;n</em>, as&iacute; entendida, solo era compatible con concursos <strong>aparentes o ideales</strong>, y descartaba de plano el concurso real. La Sala misma lo reconoce ahora como un <em>equ&iacute;voco</em> (num. 28): "surgi&oacute; el equ&iacute;voco consistente en que, en trat&aacute;ndose de violencia intrafamiliar agravada, la predicada unidad de acci&oacute;n imped&iacute;a erigir a la categor&iacute;a de delito aut&oacute;nomo otros episodios de violencia al interior del mismo n&uacute;cleo".</p>
 
         <h2>4. La nueva regla y sus cuatro presupuestos</h2>
 
-        <p>Antes de trazar la ruptura, la Sala rescata el concepto dogm&aacute;tico de <em>unidad de acci&oacute;n</em>: no equivale al comportamiento natural &uacute;nico, sino que puede comprender tambi&eacute;n plurales acciones f&iacute;sicamente diferenciables que integran una sola conducta t&iacute;pica cuando existe conexidad objetiva y subjetiva (dolo unitario, identidad razonable en tiempo, contexto, espacio y modalidad de ataque). El ejemplo con el que la Corte ilustra el punto es did&aacute;ctico: en las lesiones personales en ri&ntilde;a, los m&uacute;ltiples pu&ntilde;os, rasgu&ntilde;os y empujones no dan lugar a concurso homog&eacute;neo y sucesivo sino a un solo delito, porque el conjunto se explica desde una unidad de designio.</p>
-
-        <p>El giro se produce en el numeral 18.6 y se consolida en el 29. La f&oacute;rmula t&eacute;cnica es fina: la Sala no abandona la unidad de acci&oacute;n, la pluraliza. Lo que la sentencia autoriza no es el troceo de una sola conducta, sino el reconocimiento de <em>varias</em> unidades de acci&oacute;n aut&oacute;nomas y escindibles.</p>
+        <p>La Sala rescata el concepto de <em>unidad de acci&oacute;n</em>: no equivale al comportamiento natural &uacute;nico, sino que comprende plurales acciones diferenciables que integran una sola conducta t&iacute;pica cuando hay conexidad objetiva y subjetiva (dolo unitario, identidad razonable en tiempo, contexto, espacio y modalidad). El giro (num. 18.6 y 29) es fino: la Sala no abandona la unidad de acci&oacute;n, la <strong>pluraliza</strong> &mdash;reconoce <em>varias</em> unidades aut&oacute;nomas y escindibles, no el troceo de una sola conducta.</p>
 
         <div class="art-sent">
           <div class="art-sent-ref">CSJ SP505-2026 &middot; Rad. 61519 &middot; Ratio decidendi (num. 29)</div>
@@ -287,36 +294,26 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
           <div class="art-sent-pie">Ratio de la ruptura de precedente. Se articula con el numeral 30, que fija el l&iacute;mite: "No es jur&iacute;dicamente viable utilizar los mismos comportamientos unitarios que tipifican un solo delito, para valerse de ellos otra vez en la supuesta imputaci&oacute;n de un delito nuevo y distinto".</div>
         </div>
 
-        <p>Del cuerpo de la providencia se decantan cuatro presupuestos acumulativos que condicionan la procedencia del concurso real excepcional. <strong>Primero, autonom&iacute;a y escindibilidad</strong>: cada delito concurrente debe provenir de su propia unidad de acci&oacute;n, diferenciable en tiempo, espacio y modo. La Sala lo formula con prudencia: no se trata de una lista de chequeo r&iacute;gida ni de imponerle a la Fiscal&iacute;a cargas mec&aacute;nicas.</p>
-
-        <p><strong>Segundo, prohibici&oacute;n del doble c&oacute;mputo del elemento conductual</strong>. A mi juicio, el aporte m&aacute;s fino de la providencia. El numeral 18.6 lo advierte y el 30 lo reitera: no puede reutilizarse el mismo elemento conductual que ya integr&oacute; una unidad de acci&oacute;n para fundar otra. La regla opera como cl&aacute;usula anti-fragmentaci&oacute;n: protege al procesado frente al riesgo real de que la nueva excepci&oacute;n se use como excusa para <em>partir</em> una &uacute;nica conducta en varias.</p>
-
-        <p><strong>Tercero, carga probatoria aut&oacute;noma y misma cuerda procesal</strong>. El numeral 25 exige que la Fiscal&iacute;a asuma la carga probatoria de cada evento y que el asunto se tramite bajo una misma cuerda. Doble filo: obliga al ente acusador a construir bases probatorias individuales por episodio (no bastan generalizaciones sobre un "patr&oacute;n de maltrato") e impide fragmentar el asunto en varias cuerdas procesales, en l&iacute;nea con el principio de unidad procesal del art. 51 de la Ley 906/2004.</p>
-
-        <p><strong>Cuarto, excepcionalidad y &uacute;ltima ratio</strong>. La Sala insiste en el numeral 38: el derecho penal no puede ser expansivo, sino restrictivo, particularmente frente a un bien jur&iacute;dico tan relevante como la familia, y m&aacute;xime que la pena privativa de la libertad genera "incalculables da&ntilde;os colaterales, impredecibles e inevitables, sobre otros miembros de la misma familia". La advertencia no es cosm&eacute;tica: opera como est&aacute;ndar reforzado de motivaci&oacute;n para el fiscal que impute concurso y para el juez que lo confirme.</p>
+        <p>Del cuerpo de la providencia se decantan cuatro presupuestos acumulativos. <strong>Primero, autonom&iacute;a y escindibilidad</strong>: cada delito concurrente debe provenir de su propia unidad de acci&oacute;n, diferenciable en tiempo, espacio y modo &mdash;sin lista de chequeo r&iacute;gida ni cargas mec&aacute;nicas para la Fiscal&iacute;a. <strong>Segundo, prohibici&oacute;n del doble c&oacute;mputo</strong>: el aporte m&aacute;s fino de la providencia (num. 18.6 y 30). No puede reutilizarse el mismo elemento conductual que ya integr&oacute; una unidad de acci&oacute;n para fundar otra; opera como cl&aacute;usula anti-fragmentaci&oacute;n. <strong>Tercero, carga probatoria aut&oacute;noma y misma cuerda procesal</strong> (num. 25): la Fiscal&iacute;a debe construir bases probatorias individuales por episodio &mdash;no bastan generalizaciones sobre un "patr&oacute;n de maltrato"&mdash; y tramitarlas bajo una misma cuerda (art. 51 Ley 906/2004). <strong>Cuarto, excepcionalidad y &uacute;ltima ratio</strong> (num. 38): el derecho penal no puede ser expansivo frente a un bien jur&iacute;dico como la familia, m&aacute;xime cuando la privaci&oacute;n de libertad genera "incalculables da&ntilde;os colaterales" sobre otros miembros del mismo n&uacute;cleo.</p>
 
         <h2>5. La aplicaci&oacute;n al caso: por qu&eacute; el concurso sobrevive y por qu&eacute; la pena baja</h2>
 
-        <p>En el numeral 32 la Corte identifica los rasgos que hac&iacute;an del caso ORTIZ SU&Aacute;REZ un supuesto genuino de la nueva regla: los tres episodios calificados como violencia intrafamiliar ocurrieron "en escenarios temporales, espaciales y modales claramente diferenciables", contra la misma v&iacute;ctima, cada uno con sustento probatorio propio (dict&aacute;menes de incapacidad m&eacute;dico-legal espec&iacute;ficos por evento) y con motivos desencadenantes distintos. Entre uno y otro hubo, incluso, momentos de reconciliaci&oacute;n durante los cuales el procesado tuvo "la oportunidad de actualizar su consciencia de antijuridicidad" (num. 35). Cada nuevo episodio se erigi&oacute;, entonces, en un despliegue delictual aut&oacute;nomo.</p>
+        <p>En el numeral 32 la Corte identifica los rasgos que hac&iacute;an del caso ORTIZ SU&Aacute;REZ un supuesto genuino de la nueva regla: los tres episodios de violencia intrafamiliar ocurrieron "en escenarios temporales, espaciales y modales claramente diferenciables", con sustento probatorio propio por evento (incapacidades m&eacute;dico-legales espec&iacute;ficas) y motivos desencadenantes distintos, con momentos de reconciliaci&oacute;n intermedios que le dieron al procesado "la oportunidad de actualizar su consciencia de antijuridicidad" (num. 35).</p>
 
-        <p>Merece atenci&oacute;n especial el an&aacute;lisis del cuarto episodio (20 de julio de 2019). La Sala reconoce con nitidez que, materialmente, esa agresi&oacute;n era violencia intrafamiliar agravada y no lesiones personales: pese a la separaci&oacute;n formal, ORTIZ SU&Aacute;REZ persist&iacute;a en el entorno de la v&iacute;ctima mediante actos de dominaci&oacute;n, acoso y control, y conforme a los precedentes SP468-2020 (rad. 53037) y SP919-2020 (rad. 47370), la ruptura de la convivencia no torna at&iacute;pica la violencia intrafamiliar cuando el v&iacute;nculo no est&aacute; efectivamente disuelto. Sin embargo, la Corte no puede recalificar: como apel&oacute; &uacute;nicamente la defensa, la garant&iacute;a superior de <em>non reformatio in pejus</em> impide agravar la calificaci&oacute;n jur&iacute;dica en perjuicio del &uacute;nico impugnante (num. 39.4).</p>
+        <p>El cuarto episodio (20 de julio de 2019) merece nota aparte: la Sala reconoce que, materialmente, esa agresi&oacute;n tambi&eacute;n era violencia intrafamiliar &mdash;pese a la separaci&oacute;n formal, ORTIZ SU&Aacute;REZ persist&iacute;a en el entorno de la v&iacute;ctima mediante actos de dominaci&oacute;n y control (SP468-2020, SP919-2020)&mdash; pero no puede recalificarlo: como apel&oacute; &uacute;nicamente la defensa, la <em>non reformatio in pejus</em> lo impide (num. 39.4).</p>
 
         <div class="art-alerta">
           <div class="art-alerta-icon">&sect;</div>
-          <div class="art-alerta-text">La <em>non reformatio in pejus</em> impide agravar la calificaci&oacute;n en perjuicio del &uacute;nico impugnante, pero <strong>no obsta</strong> a que la Corte corrija de oficio, por legalidad, los errores de motivaci&oacute;n y aritm&eacute;ticos de la dosificaci&oacute;n. Es un uso preciso del principio: distingue lo que la garant&iacute;a protege (el estatus punitivo del procesado) de lo que la casaci&oacute;n puede sanear (la construcci&oacute;n t&eacute;cnica de la pena).</div>
+          <div class="art-alerta-text">La <em>non reformatio in pejus</em> impide agravar la calificaci&oacute;n en perjuicio del &uacute;nico impugnante, pero <strong>no obsta</strong> a que la Corte corrija de oficio, por legalidad, los errores de motivaci&oacute;n y aritm&eacute;ticos de la dosificaci&oacute;n: distingue lo que la garant&iacute;a protege (el estatus punitivo) de lo que la casaci&oacute;n puede sanear (la t&eacute;cnica de la pena).</div>
         </div>
 
-        <p>La correcci&oacute;n de dosificaci&oacute;n revela dos vicios en primera instancia. El primero, un error de motivaci&oacute;n: el juez igual&oacute; el desvalor de las lesiones personales con el de las violencias intrafamiliares al incrementar gen&eacute;ricamente 12 meses por tres conductas, sin distinguir la menor entidad objetiva del delito contra la integridad personal. El segundo, un error aritm&eacute;tico: de 76 meses base m&aacute;s 12 de incremento deb&iacute;a resultar 88, no 86. La Sala reconstruye la l&oacute;gica del <em>a quo</em>, deduce que cada conducta concurrente aportaba 4 meses y racionaliza: por las lesiones personales agravadas, de menor entidad objetiva, solo deb&iacute;a sumarse 1 mes. Resultado: <strong>85 meses de prisi&oacute;n</strong>. La rebaja no es un beneficio, es una reconstrucci&oacute;n de la legalidad.</p>
+        <p>La correcci&oacute;n revela dos vicios de primera instancia: un error de motivaci&oacute;n (el juez increment&oacute; gen&eacute;ricamente 12 meses por tres conductas, sin distinguir la menor entidad de las lesiones personales) y un error aritm&eacute;tico (76 meses base m&aacute;s 12 daba 88, no 86). La Sala reconstruye la l&oacute;gica del <em>a quo</em> &mdash;4 meses por conducta concurrente, solo 1 por las lesiones personales, de menor entidad&mdash; y fija la pena en <strong>85 meses</strong>. La rebaja no es un beneficio: es una reconstrucci&oacute;n de la legalidad.</p>
 
         <h2>6. An&aacute;lisis cr&iacute;tico: dos tensiones y un obiter expansivo</h2>
 
-        <p>La sentencia es s&oacute;lida, pero deja abiertas al menos dos discusiones dogm&aacute;ticas que conviene poner sobre la mesa antes de que la pr&aacute;ctica forense las decida sin debate.</p>
+        <p>La sentencia es s&oacute;lida, pero deja dos discusiones abiertas. <strong>La primera</strong>: si el bien jur&iacute;dico es unitario y relacional, &iquest;c&oacute;mo puede lesionarse "varias veces" por el mismo agente contra el mismo grupo? La SP505-2026 esquiva esa premisa, desplazando el foco al n&uacute;mero de acciones y no al bien jur&iacute;dico &mdash;una anomal&iacute;a frente a la doctrina general del concurso homog&eacute;neo. <strong>La segunda</strong>: la Sala misma advirti&oacute; que restringir el concurso ten&iacute;a fines garantistas para la familia; al abrirlo, ese costo colateral resurge, pues m&aacute;s pena puede desincentivar la denuncia y revictimizar a v&iacute;ctima e hijos. La regla servir&aacute; bien en agresores seriales; el riesgo est&aacute; en su aplicaci&oacute;n mec&aacute;nica a conflictos ordinarios.</p>
 
-        <p><strong>Primera tensi&oacute;n: bien jur&iacute;dico no personal&iacute;simo y concurso material.</strong> El coraz&oacute;n de la l&iacute;nea anterior era una premisa dogm&aacute;tica ortodoxa: si el bien jur&iacute;dico es unitario y relacional, la armon&iacute;a familiar, no puede lesionarse "varias veces" por el mismo agente contra el mismo grupo. La SP505-2026 no discute esa premisa; convive con ella. Su salida es te&oacute;ricamente elegante: desplaza el foco del bien jur&iacute;dico a la acci&oacute;n. No se discute cu&aacute;ntas veces se lesiona la armon&iacute;a, sino cu&aacute;ntas unidades de acci&oacute;n aut&oacute;nomas se despliegan. Pero la soluci&oacute;n genera una anomal&iacute;a frente a la doctrina general del concurso homog&eacute;neo, que tradicionalmente se justifica por pluralidad de lesiones al bien jur&iacute;dico. La Corte tendr&aacute; que precisar en providencias sucesivas c&oacute;mo se articula esta l&oacute;gica con la teor&iacute;a concursal general.</p>
-
-        <p><strong>Segunda tensi&oacute;n: el riesgo de expansi&oacute;n punitiva selectiva.</strong> La Sala advierte con lucidez, en los numerales 20 y 38, que restringir el concurso ten&iacute;a "fines garantistas" para minimizar los da&ntilde;os colaterales de la pena sobre la familia. Al abrir la puerta al concurso, ese costo colateral resurge. En violencia intrafamiliar la sanci&oacute;n impacta a la v&iacute;ctima y a los hijos comunes: aumentar penas puede desincentivar la denuncia, precarizar econ&oacute;micamente al n&uacute;cleo agredido y, en &uacute;ltima instancia, revictimizar. La regla nueva servir&aacute; bien en los casos paradigm&aacute;ticos de agresores seriales; el riesgo est&aacute; en su aplicaci&oacute;n mec&aacute;nica a supuestos ordinarios de conflicto familiar recurrente.</p>
-
-        <p><strong>El obiter expansivo: omisi&oacute;n impropia y posici&oacute;n de garante.</strong> La providencia introduce, en las notas al pie 21 y 25, una afirmaci&oacute;n que no incide en el caso pero abre un frente doctrinal significativo: la violencia intrafamiliar admitir&iacute;a realizaci&oacute;n por omisi&oacute;n impropia cuando el sujeto activo ostenta posici&oacute;n de garante, y el abandono grave y reiterado en alimentaci&oacute;n, vestuario o cuidado integral configurar&iacute;a el delito. La observaci&oacute;n es potente (abarcar&iacute;a hip&oacute;tesis de violencia patrimonial y econ&oacute;mica no explotadas jurisprudencialmente) pero enfrenta un obst&aacute;culo normativo: el par&aacute;grafo del art&iacute;culo 25 del C&oacute;digo Penal restringe la posici&oacute;n de garante a delitos contra la vida y la integridad personal, la libertad individual y la libertad sexual. La construcci&oacute;n de una omisi&oacute;n impropia en violencia intrafamiliar exige, por tanto, una lectura sistem&aacute;tica m&aacute;s elaborada. La Sala la anuncia, no la desarrolla. Ser&aacute; un tema para providencias venideras.</p>
+        <p><strong>El obiter expansivo:</strong> la providencia sugiere, en notas al pie, que la violencia intrafamiliar admitir&iacute;a <em>omisi&oacute;n impropia</em> cuando el agente, con posici&oacute;n de garante, abandona grave y reiteradamente la alimentaci&oacute;n o el cuidado integral. La idea abrir&iacute;a la puerta a la violencia patrimonial, pero choca con el par&aacute;grafo del art. 25 C.P., que restringe esa posici&oacute;n a delitos contra la vida y la libertad. La Sala la anuncia, no la desarrolla.</p>
 
         <h2>7. Marco normativo y jurisprudencial</h2>
 
@@ -330,54 +327,50 @@ body{background:var(--blanco);color:var(--texto);font-family:"Source Sans 3",san
           <tbody>
             <tr>
               <td><span class="rad">C.P. Art. 229</span></td>
-              <td>Tipifica la violencia intrafamiliar. Bien jur&iacute;dico protegido: unidad y armon&iacute;a familiar (bien no personal&iacute;simo). Delito residual, subsidiario, pluriofensivo y de consumaci&oacute;n instant&aacute;nea.</td>
+              <td>Tipifica la violencia intrafamiliar. Bien jur&iacute;dico no personal&iacute;simo: unidad y armon&iacute;a familiar.</td>
             </tr>
             <tr>
               <td><span class="rad">C.P. Art. 31</span></td>
-              <td>Concurso de conductas punibles. Admite el concurso homog&eacute;neo cuando el autor "con varias acciones u omisiones infrinja varias veces la misma disposici&oacute;n".</td>
+              <td>Concurso de conductas punibles. Admite concurso homog&eacute;neo si el autor infringe varias veces la misma disposici&oacute;n.</td>
             </tr>
             <tr>
               <td><span class="rad">C.P. Art. 25 (par&aacute;grafo)</span></td>
-              <td>Posici&oacute;n de garante. Restringe su aplicaci&oacute;n a delitos contra la vida y la integridad personal, la libertad individual y la libertad y formaci&oacute;n sexual. Norma en tensi&oacute;n con el <em>obiter</em> de las notas 21 y 25 de la SP505-2026.</td>
+              <td>Posici&oacute;n de garante, restringida a vida, integridad y libertad sexual. En tensi&oacute;n con el <em>obiter</em> de la SP505-2026.</td>
             </tr>
             <tr>
               <td><span class="rad">Ley 906/2004 &middot; Art. 184 inc. 3&ordm;</span></td>
-              <td>Casaci&oacute;n oficiosa. Habilita a la Sala a resolver de fondo aun cuando se inadmite la demanda, en atenci&oacute;n a los fines materiales del recurso.</td>
+              <td>Casaci&oacute;n oficiosa: habilita resolver de fondo aun con demanda inadmitida.</td>
             </tr>
             <tr>
               <td><span class="rad">Ley 1257 de 2008 &middot; Art. 4 lit. f)</span></td>
-              <td>Derecho de las v&iacute;ctimas de violencia de g&eacute;nero a la reserva de su identidad. Fundamento del uso de iniciales en la providencia.</td>
+              <td>Reserva de identidad de v&iacute;ctimas de violencia de g&eacute;nero.</td>
             </tr>
             <tr>
               <td><span class="rad">Ley 1959 de 2019 &middot; Art. 1</span></td>
-              <td>Modific&oacute; el art&iacute;culo 229 C.P. Ampli&oacute; los sujetos activos y pasivos: la separaci&oacute;n o divorcio no excluye la tipicidad. Rige los episodios posteriores a su entrada en vigor.</td>
+              <td>Modific&oacute; el art. 229: la separaci&oacute;n o divorcio no excluye la tipicidad.</td>
             </tr>
             <tr>
               <td><span class="rad">CSJ SP679-2019 &middot; Rad. 51951</span></td>
-              <td><strong>Precedente modificado.</strong> Estableci&oacute; la unidad de acci&oacute;n como excluyente del concurso real en violencia intrafamiliar, por la naturaleza no personal&iacute;sima del bien jur&iacute;dico.</td>
+              <td><strong>Precedente modificado.</strong> Unidad de acci&oacute;n como excluyente del concurso real.</td>
             </tr>
             <tr>
-              <td><span class="rad">CSJ SP3274-2020 &middot; Rad. 50587</span></td>
-              <td>Reiter&oacute; SP679-2019: las diversas manifestaciones de maltrato dentro de un mismo marco relacional convergen en un solo delito.</td>
+              <td><span class="rad">CSJ SP3274-2020, SP5414-2021 y SP1886-2025</span></td>
+              <td>Reiteraciones sucesivas de la l&iacute;nea SP679-2019 hasta la SP505-2026.</td>
             </tr>
             <tr>
-              <td><span class="rad">CSJ SP5414-2021 &middot; Rad. 51015 y CSJ SP1886-2025 &middot; Rad. 67901</span></td>
-              <td>Reiteraciones sucesivas de la l&iacute;nea SP679-2019, mantenida sin variaci&oacute;n hasta la SP505-2026.</td>
-            </tr>
-            <tr>
-              <td><span class="rad">CSJ SP468-2020 &middot; Rad. 53037 y CSJ SP919-2020 &middot; Rad. 47370</span></td>
-              <td>N&uacute;cleo familiar como <em>comunidad de vida</em>: la separaci&oacute;n formal no torna at&iacute;pica la conducta cuando el agresor persiste en actos de dominaci&oacute;n, acoso o control. Fundamento del an&aacute;lisis del cuarto episodio.</td>
+              <td><span class="rad">CSJ SP468-2020 y SP919-2020</span></td>
+              <td>N&uacute;cleo familiar como <em>comunidad de vida</em>: la separaci&oacute;n formal no atipifica si persiste el control. Base del cuarto episodio.</td>
             </tr>
             <tr>
               <td><span class="rad">CSJ SP505-2026 &middot; Rad. 61519</span></td>
-              <td><strong>Providencia analizada.</strong> M.P. Fernando Le&oacute;n Bola&ntilde;os Palacios, 3 jun. 2026. Casa de oficio y parcialmente. Ratio en los numerales 22, 23, 29 y 30. Nueva pena: 85 meses.</td>
+              <td><strong>Providencia analizada.</strong> M.P. Fernando Le&oacute;n Bola&ntilde;os Palacios, 3 jun. 2026. Ratio en num. 22, 23, 29 y 30. Pena: 85 meses.</td>
             </tr>
           </tbody>
         </table>
 
         <div class="art-conclusion">
           <div class="art-conclusion-label">&#10003; Puntos clave</div>
-          <div class="art-conclusion-text">La <strong>SP505-2026</strong> (Rad. 61519, M.P. Fernando Le&oacute;n Bola&ntilde;os Palacios, 3 jun. 2026) es una <strong>sentencia hito</strong> que <em>modifica</em>, no invierte, la l&iacute;nea SP679-2019 y SP3274-2020. La <strong>regla general</strong> se mantiene: la violencia intrafamiliar se rige por la unidad de acci&oacute;n, que aglutina las plurales agresiones de un mismo curso de maltrato en un solo delito. La <strong>regla excepcional</strong> es nueva: cabe concurso real homog&eacute;neo y sucesivo cuando concurren varias unidades de acci&oacute;n <strong>aut&oacute;nomas y escindibles</strong>, diferenciables en <strong>tiempo, espacio y modo</strong>, con <strong>base probatoria propia</strong> de cada evento, bajo una <strong>misma cuerda procesal</strong> y sin <strong>doble c&oacute;mputo</strong> del mismo elemento conductual. La comisi&oacute;n por <strong>omisi&oacute;n impropia</strong> con posici&oacute;n de garante queda anunciada en <em>obiter</em>, aunque en tensi&oacute;n con el par&aacute;grafo del art. 25 C.P. La <strong>casaci&oacute;n oficiosa</strong> oper&oacute; por violaci&oacute;n al principio de legalidad; la <em>non reformatio in pejus</em> impidi&oacute; recalificar el cuarto episodio como violencia intrafamiliar, pero no obst&oacute; a corregir la dosificaci&oacute;n por legalidad. Pena final: <strong>85 meses</strong>.</div>
+          <div class="art-conclusion-text">La <strong>SP505-2026</strong> es una <strong>sentencia hito</strong> que <em>modifica</em>, no invierte, la l&iacute;nea SP679-2019. La <strong>regla general</strong> se mantiene: la unidad de acci&oacute;n aglutina las agresiones de un mismo curso de maltrato en un solo delito. La <strong>excepci&oacute;n</strong> es nueva: cabe concurso real cuando concurren varias unidades <strong>aut&oacute;nomas y escindibles</strong>, con <strong>base probatoria propia</strong>, bajo una misma cuerda y sin <strong>doble c&oacute;mputo</strong>. La omisi&oacute;n impropia por posici&oacute;n de garante queda anunciada en <em>obiter</em>, en tensi&oacute;n con el art. 25 C.P. Pena final: <strong>85 meses</strong>.</div>
         </div>
 
       </div>
