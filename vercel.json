@@ -5,6 +5,21 @@
       "has": [{ "type": "header", "key": "x-forwarded-proto", "value": "http" }],
       "destination": "https://www.lexpraxis.co/$1",
       "permanent": true
+    },
+    {
+      "source": "/noticias/suspension-provisional-petro-2026",
+      "destination": "/actualidad-juridica",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/:slug",
+      "destination": "/actualidad-juridica/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/noticias",
+      "destination": "/actualidad-juridica",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -16,8 +31,8 @@
     { "source": "/jurisprudencia", "destination": "/index.html" },
     { "source": "/herramientas",   "destination": "/index.html" },
     { "source": "/sobre",          "destination": "/index.html" },
-    { "source": "/noticias",       "destination": "/noticias/index.html" },
-    { "source": "/noticias/:slug", "destination": "/noticias/:slug.html" },
+    { "source": "/actualidad-juridica",       "destination": "/actualidad-juridica/index.html" },
+    { "source": "/actualidad-juridica/:slug", "destination": "/actualidad-juridica/:slug.html" },
     { "source": "/lineas",         "destination": "/lineas/index.html" },
     { "source": "/lineas/:slug",   "destination": "/lineas/:slug.html" },
     { "source": "/(.*)",           "destination": "/index.html" }

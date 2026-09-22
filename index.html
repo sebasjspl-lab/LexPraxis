@@ -915,7 +915,6 @@ body.on-home #sb-toggle{display:none!important}
 /* El hamburger flotante .sb-toggle se oculta en portada vía body.on-home (regla más arriba); aquí .mag-mobnav es el único punto de entrada al sidebar */
 
 /* ===== Panel Noticias / Análisis ===== */
-#noticias .panel-inner{max-width:860px}
 .nx-head{margin-bottom:26px;padding-bottom:18px;border-bottom:1px solid var(--borde)}
 .nx-eyebrow{font-family:"JetBrains Mono",monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--rojo);margin-bottom:8px;display:inline-flex;align-items:center;gap:9px}
 .nx-eyebrow::before{content:"";width:18px;height:2px;background:var(--rojo);border-radius:2px}
@@ -1332,7 +1331,7 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
     <!-- Directos sueltos -->
     <div style="padding:4px 8px 2px">
       <button class="sb-item-direct" id="nav-tools" onclick="showPanel('ptools')"><span class="sb-nav-icon" style="color:rgba(255,255,255,.55)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M11.5 2C10 2 9 3 9 4.5c0 .4.1.7.2.9L3.5 11l.3 2.2 2.2-.3 5.6-5.6c.3.1.6.2.9.2C13 7.5 14 6.5 14 5s-1-2.5-2.5-2.5z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" fill="none"/></svg></span>Herramientas</button>
-      <a href="#noticias" onclick="showPanel('noticias');return false;" class="sb-item-direct" id="nav-noticias"><span class="sb-nav-icon" style="color:rgba(122,40,40,.9)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1.5" y="3" width="12" height="9.5" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="4.5" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="4.5" y1="8.5" x2="8.5" y2="8.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="4.5" y1="4.5" x2="6.5" y2="4.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>Actualidad Jurídica<span class="sb-badge" style="background:rgba(122,40,40,.5);color:#e8a0a0;margin-left:auto">NUEVO</span></a>
+      <a href="/actualidad-juridica" class="sb-item-direct" id="nav-noticias"><span class="sb-nav-icon" style="color:rgba(122,40,40,.9)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1.5" y="3" width="12" height="9.5" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="4.5" y1="6.5" x2="10.5" y2="6.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="4.5" y1="8.5" x2="8.5" y2="8.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="4.5" y1="4.5" x2="6.5" y2="4.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>Actualidad Jurídica<span class="sb-badge" style="background:rgba(122,40,40,.5);color:#e8a0a0;margin-left:auto">NUEVO</span></a>
     </div>
   </div>
   <div class="sb-footer"><a href="#" onclick="showPanel('psobre');return false;" style="color:rgba(255,255,255,.55);text-decoration:none;font-size:10px;display:block;margin-bottom:8px;font-weight:600">Sobre Lex Praxis →</a> Lex Praxis © 2026<br>Contenido académico — no asesoría jurídica</div>
@@ -1425,8 +1424,8 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
     <div class="hb-eyebrow"><span class="hero-eyebrow-dot"></span> Plataforma interactiva</div>
     <p class="hb-purpose">Leyes comentadas, l&iacute;neas jurisprudenciales y herramientas pr&aacute;cticas para estudiar, comprender y aplicar el derecho penal.</p>
     <div class="hb-paths">
-      <a href="/noticias" onclick="showPanel('noticias');return false;" class="hb-path p-news">
-        <span class="hb-path-ico"><svg viewBox="0 0 18 18" fill="none"><rect x="2.5" y="3" width="13" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5" y1="6.5" x2="13" y2="6.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5" y1="9" x2="10" y2="9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5" y1="11.5" x2="11.5" y2="11.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span><span class="hb-path-txt"><span class="hb-path-name">Actualidad Jur&iacute;dica</span><span class="hb-path-desc">An&aacute;lisis &middot; Noticias</span></span><span class="hb-path-arr">&#8594;</span>
+      <a href="/actualidad-juridica" class="hb-path p-news">
+        <span class="hb-path-ico"><svg viewBox="0 0 18 18" fill="none"><rect x="2.5" y="3" width="13" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5" y1="6.5" x2="13" y2="6.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5" y1="9" x2="10" y2="9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5" y1="11.5" x2="11.5" y2="11.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span><span class="hb-path-txt"><span class="hb-path-name">Actualidad Jur&iacute;dica</span><span class="hb-path-desc">An&aacute;lisis &middot; Jurisprudencia</span></span><span class="hb-path-arr">&#8594;</span>
       </a>
       <a href="#" onclick="showPanel('p599');return false;" class="hb-path p-sust">
         <span class="hb-path-ico"><svg viewBox="0 0 18 18" fill="none"><path d="M9 4.2C8 3.4 6.6 3 5 3H2.4v9.6H5c1.6 0 3 .4 4 1.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M9 4.2C10 3.4 11.4 3 13 3h2.6v9.6H13c-1.6 0-3 .4-4 1.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M9 4.2v9.8" stroke="currentColor" stroke-width="1.05"/></svg></span><span class="hb-path-txt"><span class="hb-path-name">Derecho Sustancial</span><span class="hb-path-desc">Ley 599</span></span><span class="hb-path-arr">&#8594;</span>
@@ -1482,7 +1481,7 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
       <a href="/lineas/violencia-intrafamiliar" class="lin-pill l2"><span class="lp-ico"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1.8L2 4v3.2c0 3 2.1 4.8 5 5.8 2.9-1 5-2.8 5-5.8V4L7 1.8z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg></span>Violencia intrafamiliar<span class="lp-n">20 sent.</span></a>
       <a href="/lineas/testimonio-adjunto" class="lin-pill l3"><span class="lp-ico"><svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="4.6" r="2.4" stroke="currentColor" stroke-width="1.1"/><path d="M2.5 12c.6-2.4 2.3-3.7 4.5-3.7s3.9 1.3 4.5 3.7" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg></span>Testimonio adjunto<span class="lp-n">9 sent.</span></a>
       <a href="/lineas/inasistencia-alimentaria" class="lin-pill l4"><span class="lp-ico"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1.6v10.8M3.4 4.4h7.2M3.4 9.6h7.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg></span>Inasistencia alimentaria<span class="lp-n">6 sent.</span></a><a href="/lineas/prueba-sobreviniente" class="lin-pill l5"><span class="lp-ico"><svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.4" stroke="currentColor" stroke-width="1.1"/><path d="M4.6 7l1.6 1.6 3.4-3.4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Prueba sobreviniente<span class="lp-n">5 sent.</span></a>
-      <a href="#" onclick="showPanel('pjuris');return false;" class="lin-pill lall">Ver todas las l&iacute;neas <span style="font-size:13px">&#8594;</span></a>
+      <a href="/lineas" class="lin-pill lall">Ver todas las l&iacute;neas <span style="font-size:13px">&#8594;</span></a>
     </div>
   </section>
 </div>
@@ -1634,39 +1633,6 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
   </section>
 </div>
 
-<!-- FOOTER -->
-  <section class="section obs-strip">
-    <div class="wrap">
-      <div class="sec-eyebrow">&Uacute;ltimas incorporaciones</div>
-      <div class="sec-title">Lo m&aacute;s reciente del observatorio</div>
-      <div class="sec-sub">Cada pieza se suma al acervo: aqu&iacute; el criterio se acumula, no caduca.</div>
-      <div class="inc-grid">
-        <a href="/noticias/cuenca-chaux-sp601-2026" class="inc-card ic-l">
-          <span class="inc-ico"><svg viewBox="0 0 17 17" fill="none"><path d="M2.5 14V10M6.5 14V7M10.5 14V8.8M14.5 14V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-          <div class="inc-cat">Jurisprudencia &middot; SP601-2026</div>
-          <div class="inc-tit">Absuelto por duda razonable: la hip&oacute;tesis alternativa plausible derrumb&oacute; una condena</div>
-          <div class="inc-desc">La Corte revoca la condena del representante Cuenca Chaux por corrupci&oacute;n de sufragante. Modelo pedag&oacute;gico de valoraci&oacute;n probatoria.</div>
-          <div class="inc-foot"><span class="inc-date">28 jun 2026</span><span class="inc-arr">&#8594;</span></div>
-        </a>
-        <a href="/noticias/suspension-provisional-petro-2026" class="inc-card ic-d">
-          <span class="inc-ico"><svg viewBox="0 0 17 17" fill="none"><path d="M8.5 1.8L2 4.6v3.6c0 3.8 2.7 6 6.5 7.2 3.8-1.2 6.5-3.4 6.5-7.2V4.6L8.5 1.8z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M8.5 5.5v3.2M8.5 11h.01" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <div class="inc-cat">Derecho Disciplinario &middot; Auto Rad. 7525</div>
-          <div class="inc-tit">&iquest;Puede la Comisi&oacute;n de Acusaci&oacute;n suspender al Presidente?</div>
-          <div class="inc-desc">La suspensi&oacute;n provisional ordenada y rectificada en horas: el choque entre el Art. 217 de la Ley 1952 y el fuero presidencial.</div>
-          <div class="inc-foot"><span class="inc-date">10 jun 2026</span><span class="inc-arr">&#8594;</span></div>
-        </a>
-        <a href="/noticias/extorsion-atipicidad-sp337-2026" class="inc-card ic-l">
-          <span class="inc-ico"><svg viewBox="0 0 17 17" fill="none"><path d="M2.5 14V10M6.5 14V7M10.5 14V8.8M14.5 14V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-          <div class="inc-cat">Jurisprudencia &middot; SP337-2026</div>
-          <div class="inc-tit">Extorsi&oacute;n: el constre&ntilde;imiento como elemento sine qua non</div>
-          <div class="inc-desc">La mera exigencia econ&oacute;mica sin presi&oacute;n que doble la voluntad de la v&iacute;ctima es at&iacute;pica. Art. 244 Ley 599.</div>
-          <div class="inc-foot"><span class="inc-date">10 jun 2026</span><span class="inc-arr">&#8594;</span></div>
-        </a>
-      </div>
-      <div class="inc-all"><a href="#noticias" onclick="showPanel('noticias');return false;">Ver todas las incorporaciones <span style="font-size:12px">&#8594;</span></a></div>
-    </div>
-  </section>
-
 <!-- ══ SECCIÓN CORTE IDH EN PORTADA ══ -->
 <div class="wrap">
   <section class="section">
@@ -1695,28 +1661,6 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
         <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:2px">
           <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Amnistía</span>
           <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Lesa humanidad</span>
-        </div>
-      </a>
-
-      <!-- Almonacid Arellano -->
-      <a href="/cidh/almonacid-arellano" onclick="showPanel('pcaso-almonacid');return false;" style="display:flex;flex-direction:column;gap:8px;padding:18px 20px;border-radius:12px;border:1px solid var(--borde);background:var(--fondo2);text-decoration:none;transition:border-color .18s,transform .18s" onmouseover="this.style.borderColor='rgba(26,100,180,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--borde)';this.style.transform='none'">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,100,180,.6)">Serie C No. 154 &middot; 2006 &middot; Chile</div>
-        <div style="font-family:'Lora',serif;font-size:14px;font-weight:700;color:var(--texto);line-height:1.3">Almonacid Arellano</div>
-        <div style="font-size:12px;color:var(--texto3);line-height:1.5">Origen del control de convencionalidad. Imprescriptibilidad de crímenes de lesa humanidad.</div>
-        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:2px">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Control convencionalidad</span>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Ius cogens</span>
-        </div>
-      </a>
-
-      <!-- Gelman -->
-      <a href="/cidh/gelman" onclick="showPanel('pcaso-gelman');return false;" style="display:flex;flex-direction:column;gap:8px;padding:18px 20px;border-radius:12px;border:1px solid var(--borde);background:var(--fondo2);text-decoration:none;transition:border-color .18s,transform .18s" onmouseover="this.style.borderColor='rgba(26,100,180,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--borde)';this.style.transform='none'">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,100,180,.6)">Serie C No. 221 &middot; 2011 &middot; Uruguay</div>
-        <div style="font-family:'Lora',serif;font-size:14px;font-weight:700;color:var(--texto);line-height:1.3">Gelman</div>
-        <div style="font-size:12px;color:var(--texto3);line-height:1.5">La democracia no puede amnistiar crímenes de lesa humanidad. Control de convencionalidad vincula a todos los poderes.</div>
-        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:2px">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Democracia y DDHH</span>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 8px;border-radius:4px;background:rgba(26,100,180,.09);color:rgba(26,100,180,.8)">Desap. forzada</span>
         </div>
       </a>
 
@@ -1759,7 +1703,7 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
     <nav class="footer-nav">
       <div class="footer-col">
         <div class="footer-col-hdr">Contenido</div>
-        <a href="#noticias" onclick="showPanel('noticias');return false;">Actualidad Jurídica</a>
+        <a href="/actualidad-juridica">Actualidad Jurídica</a>
         <a href="/jurisprudencia" onclick="showPanel('pjuris');return false;">Jurisprudencia CSJ</a>
         <a href="/herramientas" onclick="showPanel('ptools');return false;">Herramientas</a>
         <a href="/sobre" onclick="showPanel('psobre');return false;">Sobre Lex Praxis</a>
@@ -1779,51 +1723,6 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 </div>
 </div>
 
-<div class="panel" id="noticias"><div class="panel-inner">
-  <div class="nx-head">
-    <div class="nx-eyebrow">Observatorio · Actualidad Jurídica</div>
-    <div class="nx-title">Actualidad Jurídica</div>
-    <div class="nx-sub">Lectura curada de la jurisprudencia y la coyuntura del derecho penal colombiano. Cada pieza se incorpora al acervo: no es un feed que caduca, es criterio que se acumula.</div>
-  </div>
-  <div class="nx-banner"><span>✓</span><div><b>Cada análisis enlaza al texto completo.</b> Las piezas se incorporan al acervo: aquí el criterio se acumula, no caduca.</div></div>
-
-  <a href="/noticias/cuenca-chaux-sp601-2026" class="nx-card lead">
-    <div class="nx-cat"><span class="c-lead">Jurisprudencia · Valoración Probatoria</span><span class="nx-chip">SP601-2026</span></div>
-    <div class="nx-h">Absuelto por duda razonable: cómo la hipótesis alternativa plausible derrumbó una condena de congresista</div>
-    <div class="nx-resumen">La Sala de Casación Penal revocó la condena de 92 meses contra el Representante Cuenca Chaux por corrupción de sufragante (Ley 600). La Corte construyó un modelo pedagógico de valoración probatoria: cómo el testimonio seleccionado por el denunciante, los videos con respuestas inducidas y la omisión de prueba de descargo generan duda razonable que obliga a absolver.</div>
-    <div class="nx-foot"><span class="nx-fecha">28 jun 2026</span><span class="nx-status">Leer análisis completo →</span></div>
-  </a>
-
-  <a href="/noticias/suspension-provisional-petro-2026" class="nx-card juris">
-    <div class="nx-cat"><span class="c-lead">Derecho Disciplinario · Actualidad</span><span class="nx-chip">AUTO RAD. 7525</span></div>
-    <div class="nx-h">¿Puede la Comisión de Acusación suspender al Presidente? El choque jurídico del Auto Rad. 7525</div>
-    <div class="nx-resumen">La Representante Investigadora ordenó la suspensión provisional de Gustavo Petro por presunta participación en política — y rectificó el auto en horas. El análisis aborda la figura del artículo 217 de la Ley 1952, la tensión con el fuero presidencial de los artículos 175 y 199 de la Constitución, y el vicio de competencia que hizo colapsar la medida.</div>
-    <div class="nx-foot"><span class="nx-fecha">10 jun 2026</span><span class="nx-status">Leer análisis completo →</span></div>
-  </a>
-
-  <a href="/noticias/extorsion-atipicidad-sp337-2026" class="nx-card juris">
-    <div class="nx-cat"><span class="c-juris">Jurisprudencia · SP337-2026</span><span class="nx-chip">RAD. 67954</span></div>
-    <div class="nx-h">No toda exigencia de dinero es extorsión: el constreñimiento como elemento sine qua non</div>
-    <div class="nx-resumen">La mera exigencia económica sin violencia, amenaza ni presión que doble la voluntad de la víctima no configura el tipo penal del Art. 244 Ley 599. La víctima conservó autonomía plena.</div>
-    <div class="nx-foot"><span class="nx-fecha">10 jun 2026</span><span class="nx-status">Leer análisis completo →</span></div>
-  </a>
-
-  <a href="/noticias/evidencia-demostrativa-ley-906" class="nx-card juris">
-    <div class="nx-cat"><span class="c-juris">Jurisprudencia · SP196-2026</span><span class="nx-chip">ART. 423 L.906</span></div>
-    <div class="nx-h">Evidencia demostrativa en el proceso penal colombiano: legalidad vs. autenticidad</div>
-    <div class="nx-resumen">Es herramienta procesal para que el testigo comunique eficientemente lo que conoce — no prueba autónoma. La prueba es el testimonio. Art. 423 Ley 906.</div>
-    <div class="nx-foot"><span class="nx-fecha">5 jun 2026</span><span class="nx-status">Leer análisis completo →</span></div>
-  </a>
-
-    <a href="/noticias/inimputabilidad-sp205-2026" class="nx-card juris">
-    <div class="nx-cat"><span class="c-juris">Jurisprudencia &middot; SP205-2026</span><span class="nx-chip">RAD. 64067</span></div>
-    <div class="nx-h">Inimputabilidad: las reglas que reitera la Corte Suprema en la SP205-2026</div>
-    <div class="nx-resumen">La Sala de Casaci&oacute;n Penal confirm&oacute; la condena contra un habitante de calle con esquizofrenia por actos sexuales con menor de 14 a&ntilde;os. M&aacute;s all&aacute; del desenlace, reitera las reglas del Art. 33 C.P.: condici&oacute;n mental, concomitancia, incidencia funcional y reserva judicial. M.P. Jorge Hern&aacute;n D&iacute;az Soto.</div>
-    <div class="nx-foot"><span class="nx-fecha">15 abr 2026</span><span class="nx-status">Leer an&aacute;lisis completo &rarr;</span></div>
-  </a>
-
-  <div class="nx-back"><button onclick="showPanel('inicio')">← Volver a la portada</button></div>
-</div></div>
 
 <!-- ══ LEY 599 ══ -->
 <div class="panel" id="p599"><div class="panel-inner">
@@ -5536,8 +5435,8 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adju
 
 <script>
 /* ══ PANELES ══ */
-var PANELS=['inicio','noticias','p599','p600','p906','p1826','p1098','pjuris','pcidh','pcaso-rosendo','pcaso-vrp','pcaso-velasquez','pcaso-castillo','pcaso-barrios','pcaso-almonacid','pcaso-gelman','pcaso-campo','pcaso-atala','pcaso-awas','pcaso-artavia','ptools','psobre'];
-var NAVMAP={inicio:'nav-inicio',noticias:'nav-noticias',p599:'nav-599',p600:'nav-600',p906:'nav-906',p1826:'nav-1826',p1098:'nav-1098',pjuris:'nav-juris',pcidh:'nav-cidh',ptools:'nav-tools'};
+var PANELS=['inicio','p599','p600','p906','p1826','p1098','pjuris','pcidh','pcaso-rosendo','pcaso-vrp','pcaso-velasquez','pcaso-castillo','pcaso-barrios','pcaso-almonacid','pcaso-gelman','pcaso-campo','pcaso-atala','pcaso-awas','pcaso-artavia','ptools','psobre'];
+var NAVMAP={inicio:'nav-inicio',p599:'nav-599',p600:'nav-600',p906:'nav-906',p1826:'nav-1826',p1098:'nav-1098',pjuris:'nav-juris',pcidh:'nav-cidh',ptools:'nav-tools'};
 
 /* ══ URL ROUTING — mapeo ruta limpia ↔ panel ══ */
 var URL_TO_PANEL={
@@ -5549,7 +5448,7 @@ var URL_TO_PANEL={
   '/cidh/gelman':'pcaso-gelman','/cidh/campo-algodonero':'pcaso-campo',
   '/cidh/atala-riffo':'pcaso-atala','/cidh/awas-tingni':'pcaso-awas',
   '/cidh/artavia-murillo':'pcaso-artavia',
-  '/herramientas':'ptools','/noticias':'noticias','/sobre':'psobre'
+  '/herramientas':'ptools','/sobre':'psobre'
 };
 var PANEL_TO_URL={
   'inicio':'/','p599':'/ley-599','p906':'/ley-906','p1826':'/ley-1826','p1098':'/ley-1098','p600':'/ley-600',
@@ -5560,7 +5459,7 @@ var PANEL_TO_URL={
   'pcaso-gelman':'/cidh/gelman','pcaso-campo':'/cidh/campo-algodonero',
   'pcaso-atala':'/cidh/atala-riffo','pcaso-awas':'/cidh/awas-tingni',
   'pcaso-artavia':'/cidh/artavia-murillo',
-  'ptools':'/herramientas','noticias':'/noticias','psobre':'/sobre'
+  'ptools':'/herramientas','psobre':'/sobre'
 };
 /* Leer la URL actual y resolver el panel inicial */
 (function(){
@@ -8189,11 +8088,6 @@ var LP_NOTICIAS = [
    eyebrow:'Jurisprudencia · SP601-2026', chip:'RAD. 68470',
    resumen:'La Sala de Casación Penal revocó la condena de 92 meses contra el Representante Cuenca Chaux por corrupción de sufragante. Modelo pedagógico de valoración probatoria: testimonio seleccionado por el denunciante, videos inducidos y omisión de prueba de descargo generan duda razonable.',
    year:2026},
-  {slug:'suspension-provisional-petro-2026',
-   titulo:'¿Puede la Comisión de Acusación suspender al Presidente? El choque jurídico del Auto Rad. 7525',
-   eyebrow:'Derecho Disciplinario · Actualidad', chip:'AUTO RAD. 7525',
-   resumen:'La Representante Investigadora ordenó la suspensión provisional de Gustavo Petro por presunta participación en política y rectificó el auto en horas. Análisis del artículo 217 de la Ley 1952, la tensión con el fuero presidencial de los artículos 175 y 199 de la Constitución, y el vicio de competencia que hizo colapsar la medida.',
-   year:2026},
   {slug:'extorsion-atipicidad-sp337-2026',
    titulo:'No toda exigencia de dinero es extorsión: el constreñimiento como elemento sine qua non',
    eyebrow:'Jurisprudencia · SP337-2026', chip:'RAD. 67954',
@@ -8208,6 +8102,21 @@ var LP_NOTICIAS = [
    titulo:'Inimputabilidad: las reglas que reitera la Corte Suprema en la SP205-2026',
    eyebrow:'Jurisprudencia · SP205-2026', chip:'RAD. 64067',
    resumen:'La Sala de Casación Penal confirmó la condena contra un habitante de calle con esquizofrenia por actos sexuales con menor de 14 años. Reitera las reglas del Art. 33 C.P.: condición mental, concomitancia, incidencia funcional y reserva judicial. M.P. Jorge Hernán Díaz Soto.',
+   year:2026},
+  {slug:'legitima-defensa-hostigamiento-sp430-2026',
+   titulo:'Legítima defensa sin ataque físico previo: el contexto de hostigamiento basta',
+   eyebrow:'Jurisprudencia · SP430-2026', chip:'SP430-2026',
+   resumen:'La Sala de Casación Penal reconoce que la legítima defensa se configura aunque el agresor no haya iniciado un ataque físico, si existe un contexto previo de hostigamiento, amenazas y violencia basada en género.',
+   year:2026},
+  {slug:'prueba-referencia-menores-sp780-2025',
+   titulo:'La prueba de referencia admisible no basta para condenar, aunque el relato de la menor sea coherente',
+   eyebrow:'Jurisprudencia · SP780-2025', chip:'RAD. 63703',
+   resumen:'La Corte revoca condena por actos sexuales con menor. Sistematiza las reglas sobre prueba de referencia y declaraciones de menores víctimas, y exhorta a la Fiscalía a usar la práctica anticipada.',
+   year:2025},
+  {slug:'violencia-intrafamiliar-concurso-sp505-2026',
+   titulo:'Corte varía precedente: cabe concurso real en violencia intrafamiliar',
+   eyebrow:'Jurisprudencia · SP505-2026', chip:'SP505-2026',
+   resumen:'La Sala, en casación oficiosa, modifica la línea de la SP679-2019 y admite excepcionalmente el concurso real homogéneo y sucesivo en violencia intrafamiliar cuando concurren unidades de acción autónomas y escindibles.',
    year:2026}
 ];
 
@@ -8278,7 +8187,7 @@ function lpBuildIndex(){
       body:N.resumen,
       chip:N.chip, year:N.year || 2026,
       action:(function(slug){ return function(){
-        window.location.href = '/noticias/' + slug;
+        window.location.href = '/actualidad-juridica/' + slug;
       };})(N.slug)
     });
   });

@@ -79,34 +79,44 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Actualidad Jurídica (noticias) -->
+  <!-- Actualidad Jurídica -->
   <url>
-    <loc>https://www.lexpraxis.co/noticias</loc>
+    <loc>https://www.lexpraxis.co/actualidad-juridica</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.lexpraxis.co/noticias/cuenca-chaux-sp601-2026</loc>
+    <loc>https://www.lexpraxis.co/actualidad-juridica/cuenca-chaux-sp601-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lexpraxis.co/noticias/suspension-provisional-petro-2026</loc>
+    <loc>https://www.lexpraxis.co/actualidad-juridica/extorsion-atipicidad-sp337-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lexpraxis.co/noticias/extorsion-atipicidad-sp337-2026</loc>
+    <loc>https://www.lexpraxis.co/actualidad-juridica/evidencia-demostrativa-ley-906</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lexpraxis.co/noticias/evidencia-demostrativa-ley-906</loc>
+    <loc>https://www.lexpraxis.co/actualidad-juridica/inimputabilidad-sp205-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lexpraxis.co/noticias/inimputabilidad-sp205-2026</loc>
+    <loc>https://www.lexpraxis.co/actualidad-juridica/legitima-defensa-hostigamiento-sp430-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lexpraxis.co/actualidad-juridica/prueba-referencia-menores-sp780-2025</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lexpraxis.co/actualidad-juridica/violencia-intrafamiliar-concurso-sp505-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
